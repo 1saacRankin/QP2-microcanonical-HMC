@@ -213,7 +213,7 @@ def compare_methods_on_target(target_name, logdensity_fn, dim, initial_position,
 # Run these experiemnst on the three targets: correlated Gaussian, bimodal isotropic Gaussians, Banana
 
 # Dimension of target density
-dim = 5
+dim = 3
 
 # Start at the origin
 initial_position = jnp.zeros(dim)

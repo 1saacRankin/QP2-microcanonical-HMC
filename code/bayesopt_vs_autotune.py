@@ -140,7 +140,7 @@ def compare_methods_on_target(target_name, logdensity_fn, dim, initial_position,
     )
 
     # Plot the BayesOpt exploration-exploitation and save it
-    file_path = f"bayesopt_progress_{target_name}.png"
+    file_path = f"plots/bayesopt_progress_{target_name}.png"
     plot_bayesopt_progress(bayes_results, target_name, save_path=file_path)
 
     
@@ -174,12 +174,12 @@ def compare_methods_on_target(target_name, logdensity_fn, dim, initial_position,
         "Auto-tuning": val_auto
     }
     # Save it
-    comparison_path = f"comparison_{target_name}.png"
+    comparison_path = f"plots/comparison_{target_name}.png"
     plot_comparison(results, target_name, save_path = comparison_path)
 
 
     # Plot the trace for the first dimension and a scatterplot of samples for the two given dimensions
-    scatter_path = f"traces_{target_name}.png"
+    scatter_path = f"plots/traces_{target_name}.png"
     plot_trace_and_samples(results, target_name, dim_pair=plot_dims, 
                           num_chains_to_plot = None,  # None = plot all chains, high dimensions would look nasty if all are plotted
                           save_path = scatter_path)

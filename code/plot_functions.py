@@ -21,99 +21,8 @@ import arviz as az
 
 
 
-# Plot a comparsion of BayesOpt and Autotuned hyperparamters
 
-# def plot_comparison(results_dict, target_name, save_path = None):
-#     fig, axes = plt.subplots(2, 3, figsize = (18, 10))
-
-#     methods = ["BayesOpt", "Auto-tuning"]
-#     colours = ["#1B5872", "#794661"]
-
-#     # ESS boxplot
-#     ax = axes[0, 0] # Top left
-#     ess_data = [results_dict[m]["ess"] for m in methods] # Pull out ess by hyperparam method
-#     bp = ax.boxplot(ess_data, labels=methods, patch_artist=True) # Boxplot it
-#     for b, c in zip(bp["boxes"], colours):
-#         b.set_facecolor(c)
-#         b.set_alpha(0.7)
-#     ax.set_title("ESS Distribution")
-#     ax.grid(True, alpha = 0.25)
-
-#     # R-hat bars
-#     ax = axes[0, 1] # Top row in the middle
-#     rhat_vals = [results_dict[m]["rhat"] for m in methods] # Pull out the rhat values
-#     ax.bar(methods, rhat_vals, color = colours, alpha = 0.8)
-#     ax.set_title("Max R-hat")
-#     ax.legend()
-#     ax.grid(True, alpha = 0.25)
-
-#     # Acceptance rate
-#     ax = axes[0, 2]
-#     acc_data = [results_dict[m]["acceptance"] for m in methods]
-#     bp = ax.boxplot(acc_data, labels = methods, patch_artist = True)
-#     for b, c in zip(bp["boxes"], colours):
-#         b.set_facecolor(c)
-#         b.set_alpha(0.7)
-#     ax.set_title("Acceptance Rate")
-#     ax.legend()
-#     ax.grid(True, alpha = 0.25)
-
-#     # Time for each chain
-#     ax = axes[1, 0] # Bottom left
-#     time_data = [results_dict[m]["time_per_chain"] for m in methods]
-#     bp = ax.boxplot(time_data, labels = methods, patch_artist = True)
-#     for b, c in zip(bp["boxes"], colours):
-#         b.set_facecolor(c)
-#         b.set_alpha(0.7)
-#     ax.set_title("Time per Chain (seconds)")
-#     ax.grid(True, alpha = 0.25)
-
-#     # L values # Actually why am I plotting this?
-#     ax = axes[1, 1]
-#     L_data = [results_dict[m]["L"] for m in methods]
-#     bp = ax.boxplot(L_data, labels = methods, patch_artist = True)
-#     for b, c in zip(bp["boxes"], colours):
-#         b.set_facecolor(c)
-#         b.set_alpha(0.7)
-#     ax.set_title("L Distribution")
-#     ax.grid(True, alpha = 0.25)
-
-#     # Summary table so I dont need to strolll through all the code output, just amke a plot, kinda janky
-#     ax = axes[1, 2]
-#     ax.axis("off")
-
-#     table_data = [] # Hmmmm maybe I should add sd or var
-#     for m in methods:
-#         r = results_dict[m]
-#         table_data.append([
-#             m,
-#             f"{jnp.mean(r['ess']):.0f}",
-#             f"{r['rhat']:.3f}",
-#             f"{jnp.mean(r['acceptance']):.2f}",
-#             f"{jnp.mean(r['time_per_chain']):.1f}s"
-#         ])
-
-#     tbl = ax.table(
-#         cellText=table_data,
-#         colLabels=["Method", "ESS", "R-hat", "Acc", "Time"],
-#         cellLoc="center",
-#         loc="center"
-#     )
-#     tbl.auto_set_font_size(False)
-#     tbl.set_fontsize(10)
-
-#     plt.suptitle(f"MAMS Comparison – {target_name}", fontsize=16, fontweight="bold")
-#     plt.tight_layout()
-
-#     if save_path:
-#         plt.savefig(save_path, dpi=150, bbox_inches="tight")
-
-#     return fig
-
-
-
-# Same as above but bin the L 
-# And save the table as a seperate figure, yes, kinda janky
+# Plot key chain stats for BayesOpt and AutoTuned
 
 def plot_comparison(results_dict, target_name, save_path = None):
     fig, axes = plt.subplots(2, 2, figsize=(18, 10))
@@ -191,12 +100,12 @@ def plot_comparison(results_dict, target_name, save_path = None):
     tbl.auto_set_font_size(False)
     tbl.set_fontsize(10)
 
-    plt.suptitle(f"MAMS Hyperparameter Tuning Comparison: {target_name}", fontsize=16, fontweight="bold")
+    plt.suptitle(f"MAMS Hyperparameter Tuning Comparison: {target_name}", fontsize = 16, fontweight = "bold")
     plt.tight_layout()
 
     if save_path:
         table_path = save_path.replace('.png', '_table.png')
-        fig_table.savefig(table_path, dpi=150, bbox_inches="tight")
+        fig_table.savefig(table_path, dpi=150, bbox_inches = "tight")
 
     return fig, fig_table
 

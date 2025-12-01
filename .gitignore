@@ -287,3 +287,6 @@ TSWLatexianTemp*
 # Python cache
 __pycache__/
 *.pyc
+
+# Tables saved as png
+*_table.png

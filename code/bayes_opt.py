@@ -35,7 +35,7 @@ def objective_function_with_convergence(ess, rhat, acceptance_rate, chain_length
     # If R-hat > 1, take amount above 1, then penalize more for more chains and longer chains 
     # chain length * number of chains * amount R-hat is above 1
     # So smaller penalty for R-hat just above 1 but huge penalty for terrible R-hat
-    penalty_rhat = chain_length * num_chains * jnp.maximum(rhat - rhat_threshold, 0)
+    penalty_rhat = chain_length * num_chains * num_chains * jnp.maximum(rhat - rhat_threshold, 0)
 
     
     # ESS has weird behaviour when no samples are accepted
@@ -45,7 +45,7 @@ def objective_function_with_convergence(ess, rhat, acceptance_rate, chain_length
     # chain length * number of chains * amount acceptance rate is below 0.25
     # No penalty above 0.25 acceptance rate
     if acceptance_rate < 0.25:
-        penalty_acc = chain_length * num_chains * (0.25 - acceptance_rate)
+        penalty_acc = chain_length * num_chains * num_chains * (0.25 - acceptance_rate)
     else:
         penalty_acc = 0.0
 

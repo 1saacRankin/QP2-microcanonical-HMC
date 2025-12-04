@@ -18,7 +18,8 @@ import arviz as az
 
 # Axeis and subplots: https://matplotlib.org/stable/users/explain/axes/index.html
 
-
+# Poach loops and fancy grids and stuff from the gallery:
+# https://matplotlib.org/stable/gallery/index.html
 
 
 
@@ -85,10 +86,10 @@ def plot_comparison(results_dict, target_name, save_path = None):
         r = results_dict[m]
         table_data.append([ # What I want to save
             m,
-            f"{jnp.mean(r['ess']):.1f} +/- sd: {jnp.std(r['ess']):.2f}",
+            f"{jnp.mean(r['ess']):.3f} +/- sd: {jnp.std(r['ess']):.3f}",
             f"{r['rhat']:.3f}",
-            f"{jnp.mean(r['acceptance']):.2f} +/- sd: {jnp.std(r['acceptance']):.2f}",
-            f"{jnp.mean(r['time_per_chain']):.1f}s +/- sd: {jnp.std(r['time_per_chain']):.2f}"
+            f"{jnp.mean(r['acceptance']):.3f} +/- sd: {jnp.std(r['acceptance']):.3f}",
+            f"{jnp.mean(r['time_per_chain']):.3f}s +/- sd: {jnp.std(r['time_per_chain']):.3f}"
         ])
 
     tbl = ax_table.table(
@@ -136,7 +137,7 @@ def plot_trace_and_samples(results_dict, target_name, dim_pair = (0, 1), num_cha
             ax.plot(chain_samples, alpha = 0.5, linewidth = 1, label=f'Chain {chain_id + 1}')
         ax.set_xlabel('Iteration', fontsize = 10)
         ax.set_ylabel(f'Dimension {dim1}', fontsize = 10)
-        ax.set_title(f'{method}: Trace Plot (Dim {dim1})', fontsize = 12, fontweight='bold')
+        ax.set_title(f'{method}: Trace Plot (Dimension {dim1})', fontsize = 12, fontweight='bold')
         ax.grid(True, alpha = 0.25)
         if num_chains <= 5:# Legend if a managebale number of chains
             ax.legend(fontsize = 9)
@@ -147,11 +148,11 @@ def plot_trace_and_samples(results_dict, target_name, dim_pair = (0, 1), num_cha
         for chain_id in range(num_chains):
             x = samples[chain_id, :, dim1]
             y = samples[chain_id, :, dim2]
-            ax.scatter(x, y, s = 5, alpha = 0.5, c = range(len(x)), cmap = 'viridis', label=f'Chain {chain_id+1}' if chain_id == 0 else '')
-            ax.plot(x, y, color='gray', alpha = 0.25, linewidth = 1)
+            ax.scatter(x, y, s = 5, alpha = 0.25, c = range(len(x)), cmap = 'coolwarm', label=f'Chain {chain_id+1}' if chain_id == 0 else '')
+            ax.plot(x, y, color='gray', alpha = 0.1, linewidth = 1)
         ax.set_xlabel(f'Dimension {dim1}', fontsize = 10)
         ax.set_ylabel(f'Dimension {dim2}', fontsize = 10)
-        ax.set_title(f'{method}: Sample Path (Dims {dim1}, {dim2})', fontsize = 12, fontweight = 'bold')
+        ax.set_title(f'{method}: Sample Path (Dimensions {dim1}, {dim2})', fontsize = 12, fontweight = 'bold')
         ax.grid(True, alpha = 0.25)
     
     plt.suptitle(f'{target_name}: Traces and Chain Paths', fontsize = 14, fontweight = 'bold', y = 0.98)
@@ -195,36 +196,38 @@ def plot_bayesopt_progress(bayes_results, target_name, save_path = None):
     # R-hat vs iteration in top right
     ax = axes[0, 1]
     ax.plot(it, rhat, "o-")
-    ax.axhline(1.0, color = "red", linestyle = "--", label = "Target") # Why color not colour?
+    #ax.axhline(1.0, color = "red", linestyle = "--", label = "Target") # Why color not colour?
     ax.set_title("R-hat over iterations")
     ax.set_xlabel("Iteration")
     ax.set_ylabel("R-hat")
     ax.set_xticks(range(len(it)))
     ax.set_xticklabels([i+1 for i in range(len(it))])
-    ax.legend()
     ax.grid(True, alpha = 0.25)
 
 
     # Hyperparameter (L, e) exploration in the bottom left
     ax = axes[1, 0]
-    scatter = ax.scatter(Ls, steps, c = obj, cmap = "viridis", s = 100) # objective function to colour the points
-    ax.set_xlabel("L")
-    ax.set_ylabel("step_size")
+    scatter = ax.scatter(Ls, steps, c = obj, cmap = "turbo", s = 100) # objective function to colour the points
+    ax.set_xlabel("Trajectory Length")
+    ax.set_ylabel("Step Size")
     ax.set_title("Hyperparameter Search")
     plt.colorbar(scatter, ax=ax, label="Objective")
     ax.grid(True, alpha = 0.25)
+    best = int(np.argmax(obj)) # Find best hyperparams
+    ax.scatter(Ls[best], steps[best], s = 250, edgecolors = "grey", c = "red", marker = "*", label = "Best")
+    ax.legend(loc = "upper left")
 
     # Objective function over iteration in bottom right
     ax = axes[1, 1]
     ax.plot(it, obj, "o-")
     best = int(np.argmax(obj))
-    ax.scatter(it[best], obj[best], s = 200, c = "red", marker = "*", label = "Best")
+    ax.scatter(it[best], obj[best], s = 250, edgecolors = "grey", c = "red", marker = "*", label = "Max", zorder = 10) # Star on top
     ax.set_title("Objective Progress")
     ax.set_xlabel("Iteration")
     ax.set_ylabel("Objective")
     ax.set_xticks(range(len(it)))
     ax.set_xticklabels([i+1 for i in range(len(it))])
-    ax.legend()
+    ax.legend(loc = "upper left")
     ax.grid(True, alpha = 0.25)
 
     plt.suptitle(f"BayesOpt Hyperparameter Tuning Progress: {target_name}", fontsize = 16, fontweight = "bold")

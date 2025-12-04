@@ -40,7 +40,9 @@ from bayes_opt import objective_function_with_convergence, run_bayesopt_tuning
 from samplers import compute_ess, compute_rhat
 from samplers import run_mams_fixed, run_mams_auto, run_multiple_chains_fixed, run_multiple_chains_auto
 
-
+# Make plots folder
+import os
+os.makedirs('plots', exist_ok = True) ##### Run the script from the code folder then it makes the plots folder, so cd into code
 
 
 # Run a few longer chains with the BayesOpt-ed hyperparameters from a few positions
@@ -93,13 +95,13 @@ def validate_method(method_name, logdensity_fn, initial_position, validation_key
     # Print the results, line stuff up even though the names are different lengths
     print("")
     print(f"Validation results for: {method_name}")
-    print(f"            ESS mean +/- sd: {jnp.mean(ess_arr):.1f} ± {jnp.std(ess_arr):.1f}")
+    print(f"            ESS mean +/- sd: {jnp.mean(ess_arr):.3f} ± {jnp.std(ess_arr):.3f}")
     print(f"                  R-hat max: {rhat:.4f}")
     print(f"Acceptance rate mean +/- sd: {jnp.mean(acc_arr):.3f} ± {jnp.std(acc_arr):.3f}")
     print(f"              L mean +/- sd: {jnp.mean(L_values):.3f} ± {jnp.std(L_values):.3f}")
     print(f"      Step size mean +/- sd: {jnp.mean(step_values):.4f} ± {jnp.std(step_values):.4f}")
-    print(f" Time per chain mean +/- sd: {jnp.mean(time_arr):.2f}s ± {jnp.std(time_arr):.2f}s")
-    print(f"                 Total time: {elapsed:.1f}s")
+    print(f" Time per chain mean +/- sd: {jnp.mean(time_arr):.3f}s ± {jnp.std(time_arr):.3f}s")
+    print(f"                 Total time: {elapsed:.3f}s")
 
     
     # Return everytging
@@ -210,26 +212,33 @@ def compare_methods_on_target(target_name, logdensity_fn, dim, initial_position,
 
 
 
-# Run these experiemnst on the three targets: correlated Gaussian, bimodal isotropic Gaussians, Banana
+############################# Run these experiemnst on the three targets: correlated Gaussian, bimodal isotropic Gaussians, Banana
 
+############################# Bimodal
 # Dimension of target density
-dim = 3
-
+dim = 8
 # Start at the origin
 initial_position = jnp.zeros(dim)
 
-
-
-# Bimodal
 target1 = make_bimodal_gaussian_logdensity(mean1 = [-2] * dim, mean2 = [2] * dim, correlation = 0)
 compare_methods_on_target("Bimodal Gaussian", target1, dim, initial_position, tune_mass_matrix = False)
 
 
-# Correlated Gaussian
+############################# Correlated Gaussian
+# Dimension of target density
+dim = 20
+# Start at the origin
+initial_position = jnp.zeros(dim)
+
 target2 = make_correlated_gaussian_logdensity(dim, correlation = 0.8)
 compare_methods_on_target("Correlated Gaussian", target2, dim, initial_position, tune_mass_matrix = False)
 
 
-# Banana
+############################# Banana
+# Dimension of target density
+dim = 2
+# Start at the origin
+initial_position = jnp.zeros(dim)
+
 target3 = make_banana_logdensity(dim)
 compare_methods_on_target("Banana", target3, dim, initial_position, tune_mass_matrix = False)

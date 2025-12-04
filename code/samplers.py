@@ -34,7 +34,7 @@ from modified_mams_adaptation import adjusted_mclmc_find_L_and_step_size
 # https://blackjax-devs.github.io/blackjax/autoapi/blackjax/mcmc/adjusted_mclmc/index.html#
 # https://blackjax-devs.github.io/blackjax/_modules/blackjax/mcmc/adjusted_mclmc.html#as_top_level_api
 
-# Need to change the integrator to velocity_verlet: https://blackjax-devs.github.io/blackjax/_modules/blackjax/mcmc/integrators.html#isokinetic_velocity_verlet
+# Need to change the integrator to (isokinetic) velocity_verlet: https://blackjax-devs.github.io/blackjax/_modules/blackjax/mcmc/integrators.html#isokinetic_velocity_verlet
 
 
 
@@ -94,7 +94,7 @@ def run_mams_fixed(logdensity_fn, chain_length, initial_position, key, L, step_s
         logdensity_fn = logdensity_fn,
         step_size = step_size, # Given step size
         num_integration_steps = num_integration_steps, # Eseentialy L
-        #integrator = blackjax.mcmc.integrators.velocity_verlet # Want leapfrog/verlocit verlet
+        integrator = blackjax.mcmc.integrators.isokinetic_velocity_verlet # Want leapfrog/verlocit verlet
     )
     
     # Do one proposal and keep info so we can look at the accpetance rates
@@ -139,8 +139,9 @@ def run_mams_auto(logdensity_fn, num_steps, initial_position, key, tune_mass_mat
         num_steps_int = jnp.ceil(avg_num_integration_steps).astype(int)
         
         kernel_fn = blackjax.mcmc.adjusted_mclmc.build_kernel(
-            logdensity_fn=logdensity_fn,
-            inverse_mass_matrix=inverse_mass_matrix,
+            logdensity_fn = logdensity_fn,
+            inverse_mass_matrix = inverse_mass_matrix,
+            integrator = blackjax.mcmc.integrators.isokinetic_velocity_verlet # Leapfrog
         )
         
         return kernel_fn(
@@ -182,7 +183,7 @@ def run_mams_auto(logdensity_fn, num_steps, initial_position, key, tune_mass_mat
         step_size = step_size,
         num_integration_steps = num_integration_steps,
         inverse_mass_matrix = inverse_mass_matrix,
-        #integrator = blackjax.mcmc.integrators.velocity_verlet # Leapfrog
+        integrator = blackjax.mcmc.integrators.isokinetic_velocity_verlet # Leapfrog
     )
     
     # Get the info for one proposal

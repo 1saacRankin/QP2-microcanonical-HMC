@@ -2,263 +2,263 @@
 ######################################### Iteration 1/20
 Running 5 chains with L = 39.588, and step size = 1.3553
 ---------------- Chain 1 started at [0.22643081 0.0106989  0.00307871 0.25753881 0.15749109] (first 5 coordinates)
------- ESS = 12300.5, Acceptance rate = 0.995, Time = 1.67s, Samples = 1000
+------ ESS = 12300.5, Acceptance rate = 0.995, Time = 2.87s, Samples = 1000
 ---------------- Chain 2 started at [ 0.51094452 -1.18444617  1.03082057 -1.44234647 -0.74718794] (first 5 coordinates)
------- ESS = 12673.9, Acceptance rate = 0.995, Time = 0.37s, Samples = 1000
+------ ESS = 12673.9, Acceptance rate = 0.995, Time = 0.56s, Samples = 1000
 ---------------- Chain 3 started at [ 0.25143823  0.74271521  0.43965008 -2.640405   -0.82865002] (first 5 coordinates)
------- ESS = 13136.1, Acceptance rate = 0.995, Time = 0.34s, Samples = 1000
+------ ESS = 13136.1, Acceptance rate = 0.995, Time = 0.57s, Samples = 1000
 ---------------- Chain 4 started at [ 1.20688089  0.5195564  -1.34414412  0.40589876 -0.73317499] (first 5 coordinates)
------- ESS = 12584.5, Acceptance rate = 0.996, Time = 0.40s, Samples = 1000
+------ ESS = 12584.5, Acceptance rate = 0.996, Time = 0.69s, Samples = 1000
 ---------------- Chain 5 started at [-0.48766019 -0.28608873  0.41212124  0.64496842  2.33455779] (first 5 coordinates)
------- ESS = 11960.5, Acceptance rate = 0.997, Time = 0.34s, Samples = 1000
+------ ESS = 11960.5, Acceptance rate = 0.997, Time = 0.57s, Samples = 1000
 ESS = 12531.1, R-hat = 2.109, Acceptance rate = 0.996, Objective function = -15181.5
 ######################################### Iteration 2/20
 Running 5 chains with L = 5.026, and step size = 0.9119
 ---------------- Chain 1 started at [-1.17946794  0.37153357 -1.06969186 -0.48399282 -0.99422632] (first 5 coordinates)
------- ESS = 12111.0, Acceptance rate = 0.988, Time = 0.30s, Samples = 1000
+------ ESS = 12111.0, Acceptance rate = 0.988, Time = 0.49s, Samples = 1000
 ---------------- Chain 2 started at [-0.63407418  0.03941151 -1.3243513  -1.40357582 -1.61787763] (first 5 coordinates)
------- ESS = 12141.1, Acceptance rate = 0.989, Time = 0.30s, Samples = 1000
+------ ESS = 12141.1, Acceptance rate = 0.989, Time = 0.48s, Samples = 1000
 ---------------- Chain 3 started at [-0.16789144 -0.03655301 -2.02582487 -0.029937   -0.14255692] (first 5 coordinates)
------- ESS = 12106.5, Acceptance rate = 0.988, Time = 0.30s, Samples = 1000
+------ ESS = 12106.5, Acceptance rate = 0.988, Time = 0.49s, Samples = 1000
 ---------------- Chain 4 started at [-0.69516689  1.16388363  0.7921152  -0.29020733  0.68069391] (first 5 coordinates)
------- ESS = 12053.8, Acceptance rate = 0.988, Time = 0.29s, Samples = 1000
+------ ESS = 12053.8, Acceptance rate = 0.988, Time = 0.48s, Samples = 1000
 ---------------- Chain 5 started at [ 0.52153188 -0.57949733  2.04415913 -1.39351994  0.66578957] (first 5 coordinates)
------- ESS = 12175.8, Acceptance rate = 0.989, Time = 0.29s, Samples = 1000
+------ ESS = 12175.8, Acceptance rate = 0.989, Time = 0.47s, Samples = 1000
 ESS = 12117.7, R-hat = 2.101, Acceptance rate = 0.988, Objective function = -15411.2
 ######################################### Iteration 3/20
 Running 5 chains with L = 24.776, and step size = 3.5719
 ---------------- Chain 1 started at [0.04966064 1.22706242 0.54370396 0.19246836 1.59044413] (first 5 coordinates)
------- ESS = 12158.4, Acceptance rate = 0.899, Time = 0.30s, Samples = 1000
+------ ESS = 12158.4, Acceptance rate = 0.899, Time = 0.48s, Samples = 1000
 ---------------- Chain 2 started at [ 1.21063622 -1.62858719  0.01845845  0.97330274 -0.2224663 ] (first 5 coordinates)
------- ESS = 12232.7, Acceptance rate = 0.884, Time = 0.31s, Samples = 1000
+------ ESS = 12232.7, Acceptance rate = 0.884, Time = 0.48s, Samples = 1000
 ---------------- Chain 3 started at [-0.25826134 -1.30174922 -0.00181312  0.3420465   0.1102095 ] (first 5 coordinates)
------- ESS = 12174.0, Acceptance rate = 0.887, Time = 0.30s, Samples = 1000
+------ ESS = 12174.0, Acceptance rate = 0.887, Time = 0.49s, Samples = 1000
 ---------------- Chain 4 started at [-1.31469434 -0.67339452 -0.9968563  -0.02891727 -0.64394074] (first 5 coordinates)
------- ESS = 12142.9, Acceptance rate = 0.884, Time = 0.29s, Samples = 1000
+------ ESS = 12142.9, Acceptance rate = 0.884, Time = 0.57s, Samples = 1000
 ---------------- Chain 5 started at [ 0.25641038  0.12062575  0.02493665 -0.80101458 -1.09044722] (first 5 coordinates)
------- ESS = 12049.1, Acceptance rate = 0.883, Time = 0.34s, Samples = 1000
+------ ESS = 12049.1, Acceptance rate = 0.883, Time = 0.67s, Samples = 1000
 ESS = 12151.4, R-hat = 2.106, Acceptance rate = 0.888, Objective function = -15505.2
 ######################################### Iteration 4/20
 Running 5 chains with L = 14.901, and step size = 2.2419
 ---------------- Chain 1 started at [-0.85598455  0.19628467  1.1121566   0.64346579 -0.36133706] (first 5 coordinates)
------- ESS = 12338.0, Acceptance rate = 0.968, Time = 0.29s, Samples = 1000
+------ ESS = 12338.0, Acceptance rate = 0.968, Time = 0.54s, Samples = 1000
 ---------------- Chain 2 started at [ 0.1981974  -0.15843248 -0.94845794 -0.33049916  0.87557866] (first 5 coordinates)
------- ESS = 12107.3, Acceptance rate = 0.961, Time = 0.29s, Samples = 1000
+------ ESS = 12107.3, Acceptance rate = 0.961, Time = 0.51s, Samples = 1000
 ---------------- Chain 3 started at [ 1.02062219  1.79559294 -0.31594784  0.31452401 -0.73321006] (first 5 coordinates)
------- ESS = 12202.4, Acceptance rate = 0.964, Time = 0.29s, Samples = 1000
+------ ESS = 12202.4, Acceptance rate = 0.964, Time = 0.49s, Samples = 1000
 ---------------- Chain 4 started at [ 1.69194872 -1.3544234   1.68139369 -0.36234562  0.13245039] (first 5 coordinates)
------- ESS = 12177.0, Acceptance rate = 0.963, Time = 0.29s, Samples = 1000
+------ ESS = 12177.0, Acceptance rate = 0.963, Time = 0.55s, Samples = 1000
 ---------------- Chain 5 started at [ 0.31615554 -0.04465521  1.66782481  0.08261997 -0.05511287] (first 5 coordinates)
------- ESS = 12054.8, Acceptance rate = 0.963, Time = 0.29s, Samples = 1000
+------ ESS = 12054.8, Acceptance rate = 0.963, Time = 0.84s, Samples = 1000
 ESS = 12175.9, R-hat = 2.032, Acceptance rate = 0.964, Objective function = -13626.1
 ######################################### Iteration 5/20
 Running 5 chains with L = 34.651, and step size = 0.6164
 ---------------- Chain 1 started at [-0.28626605 -0.72338295  1.34502686  0.07937111 -0.56034068] (first 5 coordinates)
------- ESS = 12438.3, Acceptance rate = 0.995, Time = 0.40s, Samples = 1000
+------ ESS = 12438.3, Acceptance rate = 0.995, Time = 0.65s, Samples = 1000
 ---------------- Chain 2 started at [ 0.46094454  1.68343965 -0.11948517  0.52483593 -0.41127691] (first 5 coordinates)
------- ESS = 11461.2, Acceptance rate = 0.994, Time = 0.40s, Samples = 1000
+------ ESS = 11461.2, Acceptance rate = 0.994, Time = 0.66s, Samples = 1000
 ---------------- Chain 3 started at [-0.37482536 -0.60817486 -1.01434402 -1.33924077 -0.1948057 ] (first 5 coordinates)
------- ESS = 12324.2, Acceptance rate = 0.995, Time = 0.38s, Samples = 1000
+------ ESS = 12324.2, Acceptance rate = 0.995, Time = 0.66s, Samples = 1000
 ---------------- Chain 4 started at [-0.59452862  0.59177386 -0.01470532 -0.65768091 -0.73985969] (first 5 coordinates)
------- ESS = 12603.1, Acceptance rate = 0.995, Time = 0.38s, Samples = 1000
+------ ESS = 12603.1, Acceptance rate = 0.995, Time = 0.90s, Samples = 1000
 ---------------- Chain 5 started at [-0.87430098 -0.37482464  1.37591414  0.88226346  0.57284586] (first 5 coordinates)
------- ESS = 12014.4, Acceptance rate = 0.995, Time = 0.40s, Samples = 1000
+------ ESS = 12014.4, Acceptance rate = 0.995, Time = 0.68s, Samples = 1000
 ESS = 12168.2, R-hat = 2.088, Acceptance rate = 0.995, Objective function = -15039.6
 ######################################### Iteration 6/20
 Running 5 chains with L = 7.495, and step size = 3.2764
 ---------------- Chain 1 started at [-1.00367399 -0.02886648  0.0441875   1.08731455 -0.73680005] (first 5 coordinates)
------- ESS = 12797.5, Acceptance rate = 0.867, Time = 0.30s, Samples = 1000
+------ ESS = 12797.5, Acceptance rate = 0.867, Time = 0.48s, Samples = 1000
 ---------------- Chain 2 started at [-1.31948923 -0.20117435 -2.21944524 -1.79111556  1.38750817] (first 5 coordinates)
------- ESS = 12355.4, Acceptance rate = 0.864, Time = 0.29s, Samples = 1000
+------ ESS = 12355.4, Acceptance rate = 0.864, Time = 0.48s, Samples = 1000
 ---------------- Chain 3 started at [ 0.24596047 -1.7474897   0.63564832 -0.47460317 -0.18952357] (first 5 coordinates)
------- ESS = 13483.9, Acceptance rate = 0.872, Time = 0.40s, Samples = 1000
+------ ESS = 13483.9, Acceptance rate = 0.872, Time = 0.65s, Samples = 1000
 ---------------- Chain 4 started at [-0.49058498  0.01720404 -0.64964646 -0.40431594 -0.87539282] (first 5 coordinates)
------- ESS = 9971.4, Acceptance rate = 0.869, Time = 0.29s, Samples = 1000
+------ ESS = 9971.4, Acceptance rate = 0.869, Time = 0.48s, Samples = 1000
 ---------------- Chain 5 started at [ 0.78778104 -1.10634417  1.60202217 -0.64877471 -0.78155069] (first 5 coordinates)
------- ESS = 10612.5, Acceptance rate = 0.868, Time = 0.29s, Samples = 1000
+------ ESS = 10612.5, Acceptance rate = 0.868, Time = 0.48s, Samples = 1000
 ESS = 11844.1, R-hat = 2.700, Acceptance rate = 0.868, Objective function = -30652.7
 ######################################### Iteration 7/20
 Running 5 chains with L = 27.245, and step size = 1.9464
 ---------------- Chain 1 started at [ 0.65681    -0.28600975  0.57278841  1.28360434 -0.83549262] (first 5 coordinates)
------- ESS = 11485.7, Acceptance rate = 0.993, Time = 0.30s, Samples = 1000
+------ ESS = 11485.7, Acceptance rate = 0.993, Time = 0.51s, Samples = 1000
 ---------------- Chain 2 started at [ 0.51975427 -1.64429028 -0.12907735 -1.53175926  0.38785352] (first 5 coordinates)
------- ESS = 12058.6, Acceptance rate = 0.994, Time = 0.33s, Samples = 1000
+------ ESS = 12058.6, Acceptance rate = 0.994, Time = 0.51s, Samples = 1000
 ---------------- Chain 3 started at [ 1.0109116  -0.32181904  0.46520376  1.80827101 -0.80971037] (first 5 coordinates)
------- ESS = 11366.5, Acceptance rate = 0.991, Time = 0.30s, Samples = 1000
+------ ESS = 11366.5, Acceptance rate = 0.991, Time = 0.53s, Samples = 1000
 ---------------- Chain 4 started at [-0.97781494 -2.06980022 -1.44852754 -1.49570898 -0.5481786 ] (first 5 coordinates)
------- ESS = 11678.7, Acceptance rate = 0.995, Time = 0.30s, Samples = 1000
+------ ESS = 11678.7, Acceptance rate = 0.995, Time = 0.51s, Samples = 1000
 ---------------- Chain 5 started at [-0.58076379  0.67258518  1.13728615 -1.26045188  0.15774453] (first 5 coordinates)
------- ESS = 12017.3, Acceptance rate = 0.994, Time = 0.30s, Samples = 1000
+------ ESS = 12017.3, Acceptance rate = 0.994, Time = 0.51s, Samples = 1000
 ESS = 11721.3, R-hat = 2.443, Acceptance rate = 0.994, Objective function = -24349.1
 ######################################### Iteration 8/20
 Running 5 chains with L = 17.370, and step size = 0.1730
 ---------------- Chain 1 started at [ 0.04577235 -1.95839135 -0.44600615  0.93279067  1.97342443] (first 5 coordinates)
------- ESS = 13514.0, Acceptance rate = 1.000, Time = 0.47s, Samples = 1000
+------ ESS = 13514.0, Acceptance rate = 1.000, Time = 0.81s, Samples = 1000
 ---------------- Chain 2 started at [ 1.20932785 -0.88074107  0.69151295 -2.06223311  1.06545479] (first 5 coordinates)
------- ESS = 12327.7, Acceptance rate = 1.000, Time = 0.46s, Samples = 1000
+------ ESS = 12327.7, Acceptance rate = 1.000, Time = 0.80s, Samples = 1000
 ---------------- Chain 3 started at [ 1.50936472 -2.04396996  0.47438022  0.52120831  0.00602243] (first 5 coordinates)
------- ESS = 12739.2, Acceptance rate = 1.000, Time = 0.47s, Samples = 1000
+------ ESS = 12739.2, Acceptance rate = 1.000, Time = 0.80s, Samples = 1000
 ---------------- Chain 4 started at [ 1.30825963  1.08163193 -2.08500319 -0.49778626 -0.15388985] (first 5 coordinates)
------- ESS = 11674.7, Acceptance rate = 1.000, Time = 0.48s, Samples = 1000
+------ ESS = 11674.7, Acceptance rate = 1.000, Time = 0.80s, Samples = 1000
 ---------------- Chain 5 started at [-0.77848986  1.54283671 -0.05653925 -0.12705653 -0.82761783] (first 5 coordinates)
------- ESS = 13477.7, Acceptance rate = 1.000, Time = 0.65s, Samples = 1000
+------ ESS = 13477.7, Acceptance rate = 1.000, Time = 0.80s, Samples = 1000
 ESS = 12746.7, R-hat = 2.528, Acceptance rate = 1.000, Objective function = -25458.8
 ######################################### Iteration 9/20
 Running 5 chains with L = 37.120, and step size = 2.8330
 ---------------- Chain 1 started at [-0.78208346  0.84264231  0.4767776  -0.56341003  0.78000256] (first 5 coordinates)
------- ESS = 12326.8, Acceptance rate = 0.958, Time = 0.34s, Samples = 1000
+------ ESS = 12326.8, Acceptance rate = 0.958, Time = 0.51s, Samples = 1000
 ---------------- Chain 2 started at [-0.96811728 -0.94698434 -0.71808042  0.81165066 -0.02648436] (first 5 coordinates)
------- ESS = 11811.6, Acceptance rate = 0.961, Time = 0.33s, Samples = 1000
+------ ESS = 11811.6, Acceptance rate = 0.961, Time = 0.52s, Samples = 1000
 ---------------- Chain 3 started at [-0.14950478  0.30752279 -0.40239048  0.18775833 -0.2643085 ] (first 5 coordinates)
------- ESS = 12399.5, Acceptance rate = 0.956, Time = 0.40s, Samples = 1000
+------ ESS = 12399.5, Acceptance rate = 0.956, Time = 0.52s, Samples = 1000
 ---------------- Chain 4 started at [-5.53918806e-01  1.73866613e+00  5.30460546e-04  1.45062188e-03
  -8.58233931e-01] (first 5 coordinates)
------- ESS = 13188.4, Acceptance rate = 0.960, Time = 0.47s, Samples = 1000
+------ ESS = 13188.4, Acceptance rate = 0.960, Time = 0.63s, Samples = 1000
 ---------------- Chain 5 started at [ 0.94324913  1.62552806 -0.5898116   0.72792268  0.8296977 ] (first 5 coordinates)
------- ESS = 11901.5, Acceptance rate = 0.956, Time = 0.32s, Samples = 1000
+------ ESS = 11901.5, Acceptance rate = 0.956, Time = 0.51s, Samples = 1000
 ESS = 12325.6, R-hat = 2.591, Acceptance rate = 0.958, Objective function = -27455.0
 ######################################### Iteration 10/20
 Running 5 chains with L = 2.557, and step size = 1.5030
 ---------------- Chain 1 started at [ 1.82177069 -2.92727798  0.7588697  -0.18676704  0.00770754] (first 5 coordinates)
------- ESS = 11758.5, Acceptance rate = 0.976, Time = 0.29s, Samples = 1000
+------ ESS = 11758.5, Acceptance rate = 0.976, Time = 0.49s, Samples = 1000
 ---------------- Chain 2 started at [ 1.23765803 -1.10463081 -1.63677324 -0.56917809 -0.47119288] (first 5 coordinates)
------- ESS = 11823.0, Acceptance rate = 0.976, Time = 0.28s, Samples = 1000
+------ ESS = 11823.0, Acceptance rate = 0.976, Time = 0.48s, Samples = 1000
 ---------------- Chain 3 started at [-0.1645953  -1.12784562  1.38416261 -0.57256608 -1.36090755] (first 5 coordinates)
------- ESS = 11390.0, Acceptance rate = 0.978, Time = 0.28s, Samples = 1000
+------ ESS = 11390.0, Acceptance rate = 0.978, Time = 0.47s, Samples = 1000
 ---------------- Chain 4 started at [-0.22191975 -0.92810364 -0.85110141  0.96069543 -2.75592434] (first 5 coordinates)
------- ESS = 12609.3, Acceptance rate = 0.978, Time = 0.29s, Samples = 1000
+------ ESS = 12609.3, Acceptance rate = 0.978, Time = 0.48s, Samples = 1000
 ---------------- Chain 5 started at [-0.92561545  0.22983169 -0.48513809 -1.14509022  0.05455713] (first 5 coordinates)
------- ESS = 12489.5, Acceptance rate = 0.978, Time = 0.28s, Samples = 1000
+------ ESS = 12489.5, Acceptance rate = 0.978, Time = 0.48s, Samples = 1000
 ESS = 12014.1, R-hat = 2.090, Acceptance rate = 0.977, Objective function = -15242.9
 ######################################### Iteration 11/20
 Running 5 chains with L = 22.307, and step size = 1.0597
 ---------------- Chain 1 started at [ 0.28096104  0.09617591 -0.32403194  0.03938364  0.95465608] (first 5 coordinates)
------- ESS = 12438.8, Acceptance rate = 0.986, Time = 0.32s, Samples = 1000
+------ ESS = 12438.8, Acceptance rate = 0.986, Time = 0.54s, Samples = 1000
 ---------------- Chain 2 started at [ 0.59245666 -0.78144599  0.15981464 -1.25586056 -0.86401666] (first 5 coordinates)
------- ESS = 12419.3, Acceptance rate = 0.986, Time = 0.32s, Samples = 1000
+------ ESS = 12419.3, Acceptance rate = 0.986, Time = 0.54s, Samples = 1000
 ---------------- Chain 3 started at [-1.85769934  0.39684141  0.30042173  1.00853912 -0.70692871] (first 5 coordinates)
------- ESS = 12666.4, Acceptance rate = 0.987, Time = 0.32s, Samples = 1000
+------ ESS = 12666.4, Acceptance rate = 0.987, Time = 0.54s, Samples = 1000
 ---------------- Chain 4 started at [ 0.0045622  -0.79919254  0.31004665 -0.00402476 -1.29202507] (first 5 coordinates)
------- ESS = 11943.4, Acceptance rate = 0.986, Time = 0.32s, Samples = 1000
+------ ESS = 11943.4, Acceptance rate = 0.986, Time = 0.54s, Samples = 1000
 ---------------- Chain 5 started at [-0.61243675  1.12084934  0.64300142  0.08000953  0.86217283] (first 5 coordinates)
------- ESS = 11911.2, Acceptance rate = 0.986, Time = 0.31s, Samples = 1000
+------ ESS = 11911.2, Acceptance rate = 0.986, Time = 0.53s, Samples = 1000
 ESS = 12275.8, R-hat = 2.447, Acceptance rate = 0.986, Objective function = -23890.4
 ######################################### Iteration 12/20
 Running 5 chains with L = 12.432, and step size = 3.7197
 ---------------- Chain 1 started at [ 0.2927615  -0.51845583 -0.79196034 -0.37717892 -0.89677483] (first 5 coordinates)
------- ESS = 11795.7, Acceptance rate = 0.917, Time = 0.29s, Samples = 1000
+------ ESS = 11795.7, Acceptance rate = 0.917, Time = 0.48s, Samples = 1000
 ---------------- Chain 2 started at [ 2.34390943 -0.52834201 -0.17989394  1.10978526  0.96450598] (first 5 coordinates)
------- ESS = 12152.8, Acceptance rate = 0.929, Time = 0.29s, Samples = 1000
+------ ESS = 12152.8, Acceptance rate = 0.929, Time = 0.48s, Samples = 1000
 ---------------- Chain 3 started at [ 0.20943786  0.62754973 -0.27464736  0.92501132 -0.89765739] (first 5 coordinates)
------- ESS = 13043.2, Acceptance rate = 0.909, Time = 0.28s, Samples = 1000
+------ ESS = 13043.2, Acceptance rate = 0.909, Time = 0.49s, Samples = 1000
 ---------------- Chain 4 started at [ 0.17951715  0.40598942 -0.83677066  0.44965332 -0.86501892] (first 5 coordinates)
------- ESS = 11853.8, Acceptance rate = 0.924, Time = 0.29s, Samples = 1000
+------ ESS = 11853.8, Acceptance rate = 0.924, Time = 0.48s, Samples = 1000
 ---------------- Chain 5 started at [-2.77147211 -1.489085    1.06438433  0.88651368 -0.72594602] (first 5 coordinates)
------- ESS = 11410.7, Acceptance rate = 0.920, Time = 0.29s, Samples = 1000
+------ ESS = 11410.7, Acceptance rate = 0.920, Time = 0.49s, Samples = 1000
 ESS = 12051.2, R-hat = 2.359, Acceptance rate = 0.920, Objective function = -21927.7
 ######################################### Iteration 13/20
 Running 5 chains with L = 40.000, and step size = 4.0000
 ---------------- Chain 1 started at [ 0.74212533 -0.02899331  1.92220212  1.13530405  0.8901667 ] (first 5 coordinates)
------- ESS = 9020.3, Acceptance rate = 0.005, Time = 0.30s, Samples = 1000
+------ ESS = 9020.3, Acceptance rate = 0.005, Time = 0.51s, Samples = 1000
 ---------------- Chain 2 started at [-1.03493922  0.16336722 -0.80594684  1.14706502  1.18764412] (first 5 coordinates)
------- ESS = 19007.9, Acceptance rate = 0.002, Time = 0.31s, Samples = 1000
+------ ESS = 19007.9, Acceptance rate = 0.002, Time = 0.49s, Samples = 1000
 ---------------- Chain 3 started at [ 1.49705933 -1.11849853  0.70519322  0.16951749 -0.28597351] (first 5 coordinates)
------- ESS = 12254.1, Acceptance rate = 0.930, Time = 0.32s, Samples = 1000
+------ ESS = 12254.1, Acceptance rate = 0.930, Time = 0.50s, Samples = 1000
 ---------------- Chain 4 started at [ 0.28617186 -0.73957357  2.16867462 -0.40869923  1.66221593] (first 5 coordinates)
------- ESS = 14246.4, Acceptance rate = 0.930, Time = 0.66s, Samples = 1000
+------ ESS = 14246.4, Acceptance rate = 0.930, Time = 0.49s, Samples = 1000
 ---------------- Chain 5 started at [ 0.25321592 -0.33771459 -1.01547676 -1.70525404 -0.51264963] (first 5 coordinates)
------- ESS = 12425.7, Acceptance rate = 0.934, Time = 0.34s, Samples = 1000
+------ ESS = 12425.7, Acceptance rate = 0.934, Time = 0.50s, Samples = 1000
 ESS = 13390.9, R-hat = 2.691, Acceptance rate = 0.560, Objective function = -28890.2
 ######################################### Iteration 14/20
 Running 5 chains with L = 0.500, and step size = 4.0000
 ---------------- Chain 1 started at [-0.45444194 -0.33498561 -2.58269338  1.35682883 -1.8651719 ] (first 5 coordinates)
------- ESS = 12088.0, Acceptance rate = 0.798, Time = 0.30s, Samples = 1000
+------ ESS = 12088.0, Acceptance rate = 0.798, Time = 0.46s, Samples = 1000
 ---------------- Chain 2 started at [1.35332935 0.64048933 1.68511154 0.01832427 2.01637191] (first 5 coordinates)
------- ESS = 11939.3, Acceptance rate = 0.809, Time = 0.39s, Samples = 1000
+------ ESS = 11939.3, Acceptance rate = 0.809, Time = 0.46s, Samples = 1000
 ---------------- Chain 3 started at [-1.81530451 -0.28382798  0.1343638  -1.49496002 -0.01448726] (first 5 coordinates)
------- ESS = 12592.6, Acceptance rate = 0.793, Time = 0.32s, Samples = 1000
+------ ESS = 12592.6, Acceptance rate = 0.793, Time = 0.46s, Samples = 1000
 ---------------- Chain 4 started at [ 0.71398686  0.46632481 -0.82898482  0.81002592  0.52556159] (first 5 coordinates)
------- ESS = 12289.9, Acceptance rate = 0.809, Time = 0.51s, Samples = 1000
+------ ESS = 12289.9, Acceptance rate = 0.809, Time = 0.75s, Samples = 1000
 ---------------- Chain 5 started at [ 0.61246391  1.32118801 -0.95936741 -0.91249315 -0.52569328] (first 5 coordinates)
------- ESS = 12524.5, Acceptance rate = 0.808, Time = 0.31s, Samples = 1000
+------ ESS = 12524.5, Acceptance rate = 0.808, Time = 0.46s, Samples = 1000
 ESS = 12286.9, R-hat = 2.452, Acceptance rate = 0.803, Objective function = -24021.9
 ######################################### Iteration 15/20
 Running 5 chains with L = 0.500, and step size = 4.0000
 ---------------- Chain 1 started at [-0.9515538  -0.65990064  0.74890182 -0.83585285  1.25255216] (first 5 coordinates)
------- ESS = 11765.2, Acceptance rate = 0.804, Time = 0.28s, Samples = 1000
+------ ESS = 11765.2, Acceptance rate = 0.804, Time = 0.46s, Samples = 1000
 ---------------- Chain 2 started at [-1.05838179 -0.63925255  0.90745148 -2.49009045  0.94159637] (first 5 coordinates)
------- ESS = 11874.8, Acceptance rate = 0.808, Time = 0.28s, Samples = 1000
+------ ESS = 11874.8, Acceptance rate = 0.808, Time = 0.46s, Samples = 1000
 ---------------- Chain 3 started at [ 0.37929031 -1.05859407 -0.50005556  2.13069297 -1.13220466] (first 5 coordinates)
------- ESS = 12611.3, Acceptance rate = 0.808, Time = 0.29s, Samples = 1000
+------ ESS = 12611.3, Acceptance rate = 0.808, Time = 0.46s, Samples = 1000
 ---------------- Chain 4 started at [ 0.78210779 -0.16367736  0.28992644 -0.8597781   1.35734609] (first 5 coordinates)
------- ESS = 11889.6, Acceptance rate = 0.788, Time = 0.28s, Samples = 1000
+------ ESS = 11889.6, Acceptance rate = 0.788, Time = 0.56s, Samples = 1000
 ---------------- Chain 5 started at [ 1.0727292  -0.32193073  0.35253207  0.34024968 -0.18192562] (first 5 coordinates)
------- ESS = 12364.3, Acceptance rate = 0.792, Time = 0.29s, Samples = 1000
+------ ESS = 12364.3, Acceptance rate = 0.792, Time = 0.76s, Samples = 1000
 ESS = 12101.0, R-hat = 2.106, Acceptance rate = 0.800, Objective function = -15541.8
 ######################################### Iteration 16/20
 Running 5 chains with L = 0.500, and step size = 4.0000
 ---------------- Chain 1 started at [ 1.19033082 -0.82196333  0.05813786  0.97387042 -0.54996086] (first 5 coordinates)
------- ESS = 11886.8, Acceptance rate = 0.811, Time = 0.29s, Samples = 1000
+------ ESS = 11886.8, Acceptance rate = 0.811, Time = 0.57s, Samples = 1000
 ---------------- Chain 2 started at [ 1.13196162 -0.02439998 -1.15433231  0.40024926 -0.97021393] (first 5 coordinates)
------- ESS = 11815.2, Acceptance rate = 0.801, Time = 0.27s, Samples = 1000
+------ ESS = 11815.2, Acceptance rate = 0.801, Time = 0.48s, Samples = 1000
 ---------------- Chain 3 started at [ 0.4490518   0.27592271 -0.52970808  0.77314468  0.72283125] (first 5 coordinates)
------- ESS = 13105.4, Acceptance rate = 0.803, Time = 0.27s, Samples = 1000
+------ ESS = 13105.4, Acceptance rate = 0.803, Time = 0.48s, Samples = 1000
 ---------------- Chain 4 started at [ 1.96599107 -1.85598322  2.34993149 -0.41520897 -0.0407592 ] (first 5 coordinates)
------- ESS = 12393.2, Acceptance rate = 0.813, Time = 0.30s, Samples = 1000
+------ ESS = 12393.2, Acceptance rate = 0.813, Time = 0.52s, Samples = 1000
 ---------------- Chain 5 started at [-0.95762353  1.33708424  0.78496193 -0.03155196 -1.67060292] (first 5 coordinates)
------- ESS = 11845.1, Acceptance rate = 0.793, Time = 0.29s, Samples = 1000
+------ ESS = 11845.1, Acceptance rate = 0.793, Time = 0.46s, Samples = 1000
 ESS = 12209.2, R-hat = 2.445, Acceptance rate = 0.804, Objective function = -23913.4
 ######################################### Iteration 17/20
 Running 5 chains with L = 0.500, and step size = 4.0000
 ---------------- Chain 1 started at [ 0.10921592 -1.13531392 -0.17078565 -0.37535086 -0.71403083] (first 5 coordinates)
------- ESS = 12472.6, Acceptance rate = 0.794, Time = 0.54s, Samples = 1000
+------ ESS = 12472.6, Acceptance rate = 0.794, Time = 0.81s, Samples = 1000
 ---------------- Chain 2 started at [-0.13792849 -1.82457184 -0.69003259  0.36340186 -0.56916128] (first 5 coordinates)
------- ESS = 12239.2, Acceptance rate = 0.796, Time = 0.28s, Samples = 1000
+------ ESS = 12239.2, Acceptance rate = 0.796, Time = 0.46s, Samples = 1000
 ---------------- Chain 3 started at [-1.25742656  0.22803092  0.02987516 -0.15168207 -0.24195405] (first 5 coordinates)
------- ESS = 12193.5, Acceptance rate = 0.793, Time = 0.32s, Samples = 1000
+------ ESS = 12193.5, Acceptance rate = 0.793, Time = 0.46s, Samples = 1000
 ---------------- Chain 4 started at [-0.20942708  1.11792041  0.15501895 -0.02881021  0.12887062] (first 5 coordinates)
------- ESS = 12336.7, Acceptance rate = 0.805, Time = 0.29s, Samples = 1000
+------ ESS = 12336.7, Acceptance rate = 0.805, Time = 0.46s, Samples = 1000
 ---------------- Chain 5 started at [-0.4318291  -0.93579537  0.04457048 -1.1653945   0.4641127 ] (first 5 coordinates)
------- ESS = 12034.7, Acceptance rate = 0.803, Time = 0.27s, Samples = 1000
+------ ESS = 12034.7, Acceptance rate = 0.803, Time = 0.46s, Samples = 1000
 ESS = 12255.3, R-hat = 2.088, Acceptance rate = 0.798, Objective function = -14946.8
 ######################################### Iteration 18/20
 Running 5 chains with L = 0.500, and step size = 4.0000
 ---------------- Chain 1 started at [-1.38913802  1.23216228  1.01156222  0.52573231 -0.04427068] (first 5 coordinates)
------- ESS = 11978.1, Acceptance rate = 0.794, Time = 0.41s, Samples = 1000
+------ ESS = 11978.1, Acceptance rate = 0.794, Time = 0.46s, Samples = 1000
 ---------------- Chain 2 started at [-1.57260308  0.05187736 -1.3747834  -0.57413102 -0.19367094] (first 5 coordinates)
------- ESS = 12285.0, Acceptance rate = 0.796, Time = 0.29s, Samples = 1000
+------ ESS = 12285.0, Acceptance rate = 0.796, Time = 0.46s, Samples = 1000
 ---------------- Chain 3 started at [0.61783449 0.08932893 0.8703511  1.17752024 0.78290163] (first 5 coordinates)
------- ESS = 12610.7, Acceptance rate = 0.806, Time = 0.27s, Samples = 1000
+------ ESS = 12610.7, Acceptance rate = 0.806, Time = 0.45s, Samples = 1000
 ---------------- Chain 4 started at [-0.95866459 -0.36574995 -0.51177962 -0.5388238  -1.12599394] (first 5 coordinates)
------- ESS = 11294.1, Acceptance rate = 0.799, Time = 0.27s, Samples = 1000
+------ ESS = 11294.1, Acceptance rate = 0.799, Time = 0.46s, Samples = 1000
 ---------------- Chain 5 started at [-1.4250817  -0.09599026 -1.49281096  1.54528307 -0.22397657] (first 5 coordinates)
------- ESS = 12576.7, Acceptance rate = 0.808, Time = 0.27s, Samples = 1000
+------ ESS = 12576.7, Acceptance rate = 0.808, Time = 0.46s, Samples = 1000
 ESS = 12148.9, R-hat = 2.443, Acceptance rate = 0.801, Objective function = -23932.0
 ######################################### Iteration 19/20
 Running 5 chains with L = 0.500, and step size = 4.0000
 ---------------- Chain 1 started at [-0.97592055 -0.10251763  0.23816012 -0.82043898  0.11577418] (first 5 coordinates)
------- ESS = 10500.2, Acceptance rate = 0.785, Time = 0.31s, Samples = 1000
+------ ESS = 10500.2, Acceptance rate = 0.785, Time = 0.49s, Samples = 1000
 ---------------- Chain 2 started at [-1.05461889 -0.37211894  0.63834017 -0.18955097 -0.46055814] (first 5 coordinates)
------- ESS = 11784.8, Acceptance rate = 0.797, Time = 0.28s, Samples = 1000
+------ ESS = 11784.8, Acceptance rate = 0.797, Time = 0.46s, Samples = 1000
 ---------------- Chain 3 started at [-0.46939316  0.62507496 -0.52384471  1.20787716  0.3304035 ] (first 5 coordinates)
------- ESS = 12088.2, Acceptance rate = 0.796, Time = 0.28s, Samples = 1000
+------ ESS = 12088.2, Acceptance rate = 0.796, Time = 0.45s, Samples = 1000
 ---------------- Chain 4 started at [ 0.75784438  0.9623077  -0.11096729  0.11178672  0.11673766] (first 5 coordinates)
------- ESS = 12090.1, Acceptance rate = 0.809, Time = 0.28s, Samples = 1000
+------ ESS = 12090.1, Acceptance rate = 0.809, Time = 0.46s, Samples = 1000
 ---------------- Chain 5 started at [ 0.63046005 -1.74238232 -2.49000272  0.8410068  -0.32044592] (first 5 coordinates)
------- ESS = 11969.6, Acceptance rate = 0.801, Time = 0.28s, Samples = 1000
+------ ESS = 11969.6, Acceptance rate = 0.801, Time = 0.46s, Samples = 1000
 ESS = 11686.6, R-hat = 2.077, Acceptance rate = 0.798, Objective function = -15248.0
 ######################################### Iteration 20/20
 Running 5 chains with L = 0.500, and step size = 4.0000
 ---------------- Chain 1 started at [-0.52135192  1.92855837  1.11424553 -0.70502385 -1.21049709] (first 5 coordinates)
------- ESS = 11781.3, Acceptance rate = 0.802, Time = 0.31s, Samples = 1000
+------ ESS = 11781.3, Acceptance rate = 0.802, Time = 0.51s, Samples = 1000
 ---------------- Chain 2 started at [ 1.66698072 -0.89873121  1.06316208 -0.09064309  1.15377384] (first 5 coordinates)
------- ESS = 11869.8, Acceptance rate = 0.802, Time = 0.57s, Samples = 1000
+------ ESS = 11869.8, Acceptance rate = 0.802, Time = 0.91s, Samples = 1000
 ---------------- Chain 3 started at [-1.68177208  1.82310764 -0.07209231 -0.81697601  1.07741139] (first 5 coordinates)
------- ESS = 11619.0, Acceptance rate = 0.801, Time = 0.28s, Samples = 1000
+------ ESS = 11619.0, Acceptance rate = 0.801, Time = 0.48s, Samples = 1000
 ---------------- Chain 4 started at [ 2.16965669  0.85349179  0.93009161 -0.50760467 -0.80413114] (first 5 coordinates)
------- ESS = 12314.4, Acceptance rate = 0.799, Time = 0.48s, Samples = 1000
+------ ESS = 12314.4, Acceptance rate = 0.799, Time = 0.49s, Samples = 1000
 ---------------- Chain 5 started at [-0.71100678 -0.79365988  0.30146507 -0.12578829  0.67053063] (first 5 coordinates)
------- ESS = 11751.1, Acceptance rate = 0.798, Time = 0.31s, Samples = 1000
+------ ESS = 11751.1, Acceptance rate = 0.798, Time = 0.47s, Samples = 1000
 ESS = 11867.1, R-hat = 2.460, Acceptance rate = 0.800, Objective function = -24622.6
 ---------------------------------------BEST HYPERPARAMTEERS ACCORDING TO BAYESOPT-----------------------------------------------------
 Best hyperparameters: L = 14.901, step size = 2.2419
@@ -266,25 +266,25 @@ Best hyperparameters: L = 14.901, step size = 2.2419
 Running: 10 chains each of length 5000
 Using hyperparameters: L = 14.901, step_size = 2.24192
 ---------------- Chain 1 started at [-0.49504106  0.73476808 -0.47600015  1.03564988  0.99888291] (first 5 coordinates)
------- ESS = 61009.5, Acceptance rate = 0.965, Time = 0.95s, Samples = 5000
+------ ESS = 61009.5, Acceptance rate = 0.965, Time = 1.11s, Samples = 5000
 ---------------- Chain 2 started at [ 0.37107152 -0.83708675 -0.20602019  0.41403159  0.19798728] (first 5 coordinates)
------- ESS = 62426.2, Acceptance rate = 0.964, Time = 0.40s, Samples = 5000
+------ ESS = 62426.2, Acceptance rate = 0.964, Time = 0.66s, Samples = 5000
 ---------------- Chain 3 started at [ 0.62350724 -1.23962211  0.34710131 -0.45252958  0.91608291] (first 5 coordinates)
------- ESS = 59887.6, Acceptance rate = 0.964, Time = 0.53s, Samples = 5000
+------ ESS = 59887.6, Acceptance rate = 0.964, Time = 0.67s, Samples = 5000
 ---------------- Chain 4 started at [-1.23777995  1.77622834  0.27951648 -0.01965472 -0.89525383] (first 5 coordinates)
------- ESS = 60928.3, Acceptance rate = 0.964, Time = 0.38s, Samples = 5000
+------ ESS = 60928.3, Acceptance rate = 0.964, Time = 0.63s, Samples = 5000
 ---------------- Chain 5 started at [-0.79479898  1.57988632  0.61556182  0.10563994 -0.46409834] (first 5 coordinates)
------- ESS = 61857.1, Acceptance rate = 0.964, Time = 0.38s, Samples = 5000
+------ ESS = 61857.1, Acceptance rate = 0.964, Time = 0.63s, Samples = 5000
 ---------------- Chain 6 started at [-0.00635953 -0.22009873  0.41737349  1.13513879 -0.14887213] (first 5 coordinates)
------- ESS = 61273.8, Acceptance rate = 0.963, Time = 0.41s, Samples = 5000
+------ ESS = 61273.8, Acceptance rate = 0.963, Time = 0.76s, Samples = 5000
 ---------------- Chain 7 started at [-0.32970354 -0.95529003 -0.05677956 -0.1324335   0.22007979] (first 5 coordinates)
------- ESS = 59842.8, Acceptance rate = 0.965, Time = 0.38s, Samples = 5000
+------ ESS = 59842.8, Acceptance rate = 0.965, Time = 1.03s, Samples = 5000
 ---------------- Chain 8 started at [-2.47632017 -0.42172383  0.85637423  0.38856076 -1.00814964] (first 5 coordinates)
------- ESS = 61477.9, Acceptance rate = 0.965, Time = 0.37s, Samples = 5000
+------ ESS = 61477.9, Acceptance rate = 0.965, Time = 0.66s, Samples = 5000
 ---------------- Chain 9 started at [ 0.00381117 -1.35489315  0.94157697  0.89904982 -0.75887514] (first 5 coordinates)
------- ESS = 60383.6, Acceptance rate = 0.965, Time = 0.41s, Samples = 5000
+------ ESS = 60383.6, Acceptance rate = 0.965, Time = 0.63s, Samples = 5000
 ---------------- Chain 10 started at [ 0.31800761 -0.47462281  0.08338251  1.95521093  0.77478792] (first 5 coordinates)
------- ESS = 61140.5, Acceptance rate = 0.964, Time = 0.41s, Samples = 5000
+------ ESS = 61140.5, Acceptance rate = 0.964, Time = 0.64s, Samples = 5000
 
 Validation results for: BayesOpt
             ESS mean +/- sd: 61022.725 ± 777.699
@@ -292,42 +292,42 @@ Validation results for: BayesOpt
 Acceptance rate mean +/- sd: 0.964 ± 0.001
               L mean +/- sd: 14.901 ± 0.000
       Step size mean +/- sd: 2.2419 ± 0.0000
- Time per chain mean +/- sd: 0.462s ± 0.168s
-                 Total time: 4.833s
+ Time per chain mean +/- sd: 0.742s ± 0.167s
+                 Total time: 7.721s
 ######################################### VALIDATING: Auto-tuning
 Running: 10 chains each of length 5000
 ######################################### Running Auto Tuning
 Running: 10 chains each of length 5000
 ---------------- Chain 1 started at [-0.49504106  0.73476808 -0.47600015  1.03564988  0.99888291] (first 5 coordinates)
 Auto tuning chose: L = 1.312 and step size = 1.19234 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
------- L = 1.31, step size = 1.19234  ESS = 61946.2, Acceptance rate = 0.988, Time = 3.03s, Samples = 5000
+------ L = 1.31, step size = 1.19234  ESS = 61946.2, Acceptance rate = 0.988, Time = 4.73s, Samples = 5000
 ---------------- Chain 2 started at [ 0.37107152 -0.83708675 -0.20602019  0.41403159  0.19798728] (first 5 coordinates)
 Auto tuning chose: L = 1.273 and step size = 1.15761 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
------- L = 1.27, step size = 1.15761  ESS = 60260.9, Acceptance rate = 0.989, Time = 1.51s, Samples = 5000
+------ L = 1.27, step size = 1.15761  ESS = 60260.9, Acceptance rate = 0.989, Time = 2.45s, Samples = 5000
 ---------------- Chain 3 started at [ 0.62350724 -1.23962211  0.34710131 -0.45252958  0.91608291] (first 5 coordinates)
 Auto tuning chose: L = 1.064 and step size = 0.96748 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
------- L = 1.06, step size = 0.96748  ESS = 61485.9, Acceptance rate = 0.994, Time = 1.50s, Samples = 5000
+------ L = 1.06, step size = 0.96748  ESS = 61485.9, Acceptance rate = 0.994, Time = 2.49s, Samples = 5000
 ---------------- Chain 4 started at [-1.23777995  1.77622834  0.27951648 -0.01965472 -0.89525383] (first 5 coordinates)
 Auto tuning chose: L = 1.172 and step size = 1.06508 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
------- L = 1.17, step size = 1.06508  ESS = 61233.3, Acceptance rate = 0.991, Time = 1.84s, Samples = 5000
+------ L = 1.17, step size = 1.06508  ESS = 61233.3, Acceptance rate = 0.991, Time = 3.10s, Samples = 5000
 ---------------- Chain 5 started at [-0.79479898  1.57988632  0.61556182  0.10563994 -0.46409834] (first 5 coordinates)
 Auto tuning chose: L = 1.512 and step size = 1.37478 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
------- L = 1.51, step size = 1.37478  ESS = 58036.9, Acceptance rate = 0.983, Time = 1.48s, Samples = 5000
+------ L = 1.51, step size = 1.37478  ESS = 58036.9, Acceptance rate = 0.983, Time = 2.45s, Samples = 5000
 ---------------- Chain 6 started at [-0.00635953 -0.22009873  0.41737349  1.13513879 -0.14887213] (first 5 coordinates)
 Auto tuning chose: L = 1.376 and step size = 1.25065 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
------- L = 1.38, step size = 1.25065  ESS = 61759.2, Acceptance rate = 0.986, Time = 1.48s, Samples = 5000
+------ L = 1.38, step size = 1.25065  ESS = 61759.2, Acceptance rate = 0.986, Time = 2.51s, Samples = 5000
 ---------------- Chain 7 started at [-0.32970354 -0.95529003 -0.05677956 -0.1324335   0.22007979] (first 5 coordinates)
 Auto tuning chose: L = 1.343 and step size = 1.22070 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
------- L = 1.34, step size = 1.22070  ESS = 61885.0, Acceptance rate = 0.988, Time = 1.50s, Samples = 5000
+------ L = 1.34, step size = 1.22070  ESS = 61885.0, Acceptance rate = 0.988, Time = 2.50s, Samples = 5000
 ---------------- Chain 8 started at [-2.47632017 -0.42172383  0.85637423  0.38856076 -1.00814964] (first 5 coordinates)
 Auto tuning chose: L = 1.304 and step size = 1.18537 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
------- L = 1.30, step size = 1.18537  ESS = 61831.0, Acceptance rate = 0.988, Time = 1.50s, Samples = 5000
+------ L = 1.30, step size = 1.18537  ESS = 61831.0, Acceptance rate = 0.988, Time = 3.52s, Samples = 5000
 ---------------- Chain 9 started at [ 0.00381117 -1.35489315  0.94157697  0.89904982 -0.75887514] (first 5 coordinates)
 Auto tuning chose: L = 1.428 and step size = 1.29822 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
------- L = 1.43, step size = 1.29822  ESS = 60954.2, Acceptance rate = 0.985, Time = 1.53s, Samples = 5000
+------ L = 1.43, step size = 1.29822  ESS = 60954.2, Acceptance rate = 0.985, Time = 2.77s, Samples = 5000
 ---------------- Chain 10 started at [ 0.31800761 -0.47462281  0.08338251  1.95521093  0.77478792] (first 5 coordinates)
 Auto tuning chose: L = 1.319 and step size = 1.19871 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
------- L = 1.32, step size = 1.19871  ESS = 61517.4, Acceptance rate = 0.988, Time = 1.58s, Samples = 5000
+------ L = 1.32, step size = 1.19871  ESS = 61517.4, Acceptance rate = 0.988, Time = 2.55s, Samples = 5000
 
 Validation results for: Auto-tuning
             ESS mean +/- sd: 61091.002 ± 1129.114
@@ -335,8 +335,8 @@ Validation results for: Auto-tuning
 Acceptance rate mean +/- sd: 0.988 ± 0.003
               L mean +/- sd: 1.310 ± 0.119
       Step size mean +/- sd: 1.1911 ± 0.1080
- Time per chain mean +/- sd: 1.694s ± 0.456s
-                 Total time: 16.975s
+ Time per chain mean +/- sd: 2.908s ± 0.693s
+                 Total time: 29.139s
 Saved trace plot: plots/traces_Bimodal Gaussian.png
 ##############################################################################
 Results
@@ -346,262 +346,262 @@ BayesOpt ESS mean: 61022.7
 ######################################### Iteration 1/20
 Running 5 chains with L = 39.588, and step size = 1.3553
 ---------------- Chain 1 started at [-0.46400869  0.23274566  0.58347044  0.56719153 -0.07117488] (first 5 coordinates)
------- ESS = 658.8, Acceptance rate = 0.986, Time = 1.11s, Samples = 1000
+------ ESS = 658.8, Acceptance rate = 0.986, Time = 2.16s, Samples = 1000
 ---------------- Chain 2 started at [0.37997604 0.32687877 0.37495064 0.05373584 1.0099822 ] (first 5 coordinates)
------- ESS = 638.1, Acceptance rate = 0.985, Time = 0.37s, Samples = 1000
+------ ESS = 638.1, Acceptance rate = 0.985, Time = 0.76s, Samples = 1000
 ---------------- Chain 3 started at [-0.15447628 -1.17693698 -0.8802963   0.07308654  1.402078  ] (first 5 coordinates)
------- ESS = 635.7, Acceptance rate = 0.986, Time = 0.37s, Samples = 1000
+------ ESS = 635.7, Acceptance rate = 0.986, Time = 0.94s, Samples = 1000
 ---------------- Chain 4 started at [ 0.8993601  -0.1222088  -0.9400402   0.02923204 -0.03822755] (first 5 coordinates)
------- ESS = 633.9, Acceptance rate = 0.985, Time = 0.36s, Samples = 1000
+------ ESS = 633.9, Acceptance rate = 0.985, Time = 0.68s, Samples = 1000
 ---------------- Chain 5 started at [-2.36366206 -0.05531229 -0.50908121  0.71512328 -1.41806108] (first 5 coordinates)
------- ESS = 640.0, Acceptance rate = 0.985, Time = 0.40s, Samples = 1000
+------ ESS = 640.0, Acceptance rate = 0.985, Time = 0.64s, Samples = 1000
 ESS = 641.3, R-hat = 1.019, Acceptance rate = 0.985, Objective function = 163.2
 ######################################### Iteration 2/20
 Running 5 chains with L = 5.026, and step size = 0.9119
 ---------------- Chain 1 started at [ 1.78550428 -0.28148951 -0.38745102 -0.82830451  0.72451434] (first 5 coordinates)
------- ESS = 687.3, Acceptance rate = 0.972, Time = 0.34s, Samples = 1000
+------ ESS = 687.3, Acceptance rate = 0.972, Time = 0.57s, Samples = 1000
 ---------------- Chain 2 started at [-1.46801584 -1.17237362  2.05778863  1.41366842  0.37659325] (first 5 coordinates)
------- ESS = 617.8, Acceptance rate = 0.974, Time = 0.33s, Samples = 1000
+------ ESS = 617.8, Acceptance rate = 0.974, Time = 0.57s, Samples = 1000
 ---------------- Chain 3 started at [0.90346445 0.71984631 0.88873625 0.96167506 0.41624985] (first 5 coordinates)
------- ESS = 857.4, Acceptance rate = 0.974, Time = 0.32s, Samples = 1000
+------ ESS = 857.4, Acceptance rate = 0.974, Time = 0.63s, Samples = 1000
 ---------------- Chain 4 started at [ 0.49367268  0.95757847  0.87488485  0.07179911 -1.39317358] (first 5 coordinates)
------- ESS = 684.6, Acceptance rate = 0.974, Time = 0.31s, Samples = 1000
+------ ESS = 684.6, Acceptance rate = 0.974, Time = 0.61s, Samples = 1000
 ---------------- Chain 5 started at [ 0.93000977  1.54590818 -0.70949395  2.01094913  0.17496381] (first 5 coordinates)
------- ESS = 710.0, Acceptance rate = 0.972, Time = 0.30s, Samples = 1000
+------ ESS = 710.0, Acceptance rate = 0.972, Time = 0.56s, Samples = 1000
 ESS = 711.4, R-hat = 1.068, Acceptance rate = 0.973, Objective function = -1000.3
 ######################################### Iteration 3/20
 Running 5 chains with L = 24.776, and step size = 3.5719
 ---------------- Chain 1 started at [ 0.64611892 -0.05366357  0.88613539 -0.12117474  0.59145681] (first 5 coordinates)
------- ESS = 639.4, Acceptance rate = 0.753, Time = 0.32s, Samples = 1000
+------ ESS = 639.4, Acceptance rate = 0.753, Time = 0.61s, Samples = 1000
 ---------------- Chain 2 started at [-0.11420161 -0.63595743  0.36962659 -0.66877441 -2.49473289] (first 5 coordinates)
------- ESS = 651.6, Acceptance rate = 0.756, Time = 0.31s, Samples = 1000
+------ ESS = 651.6, Acceptance rate = 0.756, Time = 0.53s, Samples = 1000
 ---------------- Chain 3 started at [-0.90080886  1.34950419 -0.48247663 -0.30749061  1.58010083] (first 5 coordinates)
------- ESS = 658.7, Acceptance rate = 0.759, Time = 0.33s, Samples = 1000
+------ ESS = 658.7, Acceptance rate = 0.759, Time = 0.54s, Samples = 1000
 ---------------- Chain 4 started at [1.10374881 0.43568195 0.40689289 1.57921209 1.40320142] (first 5 coordinates)
------- ESS = 648.0, Acceptance rate = 0.752, Time = 0.34s, Samples = 1000
+------ ESS = 648.0, Acceptance rate = 0.752, Time = 0.54s, Samples = 1000
 ---------------- Chain 5 started at [ 0.7191849  -0.94162061  2.01779336  0.04463853 -0.7050565 ] (first 5 coordinates)
------- ESS = 645.4, Acceptance rate = 0.744, Time = 0.35s, Samples = 1000
+------ ESS = 645.4, Acceptance rate = 0.744, Time = 0.74s, Samples = 1000
 ESS = 648.6, R-hat = 1.001, Acceptance rate = 0.753, Objective function = 633.7
 ######################################### Iteration 4/20
 Running 5 chains with L = 14.901, and step size = 2.2419
 ---------------- Chain 1 started at [ 0.86407682 -1.17582744 -0.05061101  1.12235807  0.90450383] (first 5 coordinates)
------- ESS = 780.6, Acceptance rate = 0.930, Time = 0.33s, Samples = 1000
+------ ESS = 780.6, Acceptance rate = 0.930, Time = 0.62s, Samples = 1000
 ---------------- Chain 2 started at [-0.23673841 -0.08825528 -0.28187134  0.58221697  0.06392286] (first 5 coordinates)
------- ESS = 622.2, Acceptance rate = 0.931, Time = 0.31s, Samples = 1000
+------ ESS = 622.2, Acceptance rate = 0.931, Time = 0.55s, Samples = 1000
 ---------------- Chain 3 started at [-1.30699921  1.05203665  0.04527039  1.07676596 -0.50585765] (first 5 coordinates)
------- ESS = 621.2, Acceptance rate = 0.931, Time = 0.32s, Samples = 1000
+------ ESS = 621.2, Acceptance rate = 0.931, Time = 0.52s, Samples = 1000
 ---------------- Chain 4 started at [-0.12807162 -0.84875692 -0.24516001 -1.97458066 -2.08802831] (first 5 coordinates)
------- ESS = 772.7, Acceptance rate = 0.930, Time = 0.35s, Samples = 1000
+------ ESS = 772.7, Acceptance rate = 0.930, Time = 0.53s, Samples = 1000
 ---------------- Chain 5 started at [-0.78372301  0.8216637   0.19847471  1.10318331  0.27277725] (first 5 coordinates)
------- ESS = 672.5, Acceptance rate = 0.928, Time = 0.32s, Samples = 1000
+------ ESS = 672.5, Acceptance rate = 0.928, Time = 0.53s, Samples = 1000
 ESS = 693.8, R-hat = 1.009, Acceptance rate = 0.930, Objective function = 475.0
 ######################################### Iteration 5/20
 Running 5 chains with L = 34.651, and step size = 0.6164
 ---------------- Chain 1 started at [ 1.85582183 -0.05731772  0.04590942 -1.22893201  0.34108568] (first 5 coordinates)
------- ESS = 645.9, Acceptance rate = 0.986, Time = 0.43s, Samples = 1000
+------ ESS = 645.9, Acceptance rate = 0.986, Time = 0.74s, Samples = 1000
 ---------------- Chain 2 started at [ 0.11352159  0.56891891 -0.56739691  0.1465619   0.31413557] (first 5 coordinates)
------- ESS = 642.8, Acceptance rate = 0.986, Time = 0.43s, Samples = 1000
+------ ESS = 642.8, Acceptance rate = 0.986, Time = 0.73s, Samples = 1000
 ---------------- Chain 3 started at [-0.80470903 -0.17980043  0.83052801  0.06953758 -0.77128983] (first 5 coordinates)
------- ESS = 625.8, Acceptance rate = 0.986, Time = 0.44s, Samples = 1000
+------ ESS = 625.8, Acceptance rate = 0.986, Time = 0.80s, Samples = 1000
 ---------------- Chain 4 started at [ 1.62953194  0.82769778 -0.12836271 -0.08344111  1.2152644 ] (first 5 coordinates)
------- ESS = 637.0, Acceptance rate = 0.988, Time = 0.47s, Samples = 1000
+------ ESS = 637.0, Acceptance rate = 0.988, Time = 0.78s, Samples = 1000
 ---------------- Chain 5 started at [-1.15936951  1.41134513 -1.4030649   0.75439372  0.09295399] (first 5 coordinates)
------- ESS = 653.8, Acceptance rate = 0.985, Time = 0.44s, Samples = 1000
+------ ESS = 653.8, Acceptance rate = 0.985, Time = 0.79s, Samples = 1000
 ESS = 641.1, R-hat = 1.002, Acceptance rate = 0.986, Objective function = 595.2
 ######################################### Iteration 6/20
 Running 5 chains with L = 7.495, and step size = 3.2764
 ---------------- Chain 1 started at [-0.0046773   0.29228755  1.57840337 -1.14769063  0.75812542] (first 5 coordinates)
------- ESS = 633.3, Acceptance rate = 0.708, Time = 0.33s, Samples = 1000
+------ ESS = 633.3, Acceptance rate = 0.708, Time = 0.57s, Samples = 1000
 ---------------- Chain 2 started at [ 2.32096401 -0.82936708  1.6939002   0.64760686 -0.71233454] (first 5 coordinates)
------- ESS = 679.8, Acceptance rate = 0.712, Time = 0.34s, Samples = 1000
+------ ESS = 679.8, Acceptance rate = 0.712, Time = 0.55s, Samples = 1000
 ---------------- Chain 3 started at [-1.00543015 -0.17121918  0.1577254  -1.10735796  2.15057787] (first 5 coordinates)
------- ESS = 669.8, Acceptance rate = 0.706, Time = 0.36s, Samples = 1000
+------ ESS = 669.8, Acceptance rate = 0.706, Time = 0.52s, Samples = 1000
 ---------------- Chain 4 started at [-0.11627912 -1.10674094  0.91623482  0.85557616  0.12699274] (first 5 coordinates)
------- ESS = 687.3, Acceptance rate = 0.713, Time = 0.31s, Samples = 1000
+------ ESS = 687.3, Acceptance rate = 0.713, Time = 0.52s, Samples = 1000
 ---------------- Chain 5 started at [-0.72559501 -0.59492088  1.1493891   0.42300794  2.12651656] (first 5 coordinates)
------- ESS = 685.9, Acceptance rate = 0.700, Time = 0.30s, Samples = 1000
+------ ESS = 685.9, Acceptance rate = 0.700, Time = 0.51s, Samples = 1000
 ESS = 671.2, R-hat = 1.086, Acceptance rate = 0.708, Objective function = -1472.9
 ######################################### Iteration 7/20
 Running 5 chains with L = 27.245, and step size = 1.9464
 ---------------- Chain 1 started at [-0.43943417  1.23364061  0.69429976 -0.97393233 -1.56099843] (first 5 coordinates)
------- ESS = 618.8, Acceptance rate = 0.984, Time = 0.33s, Samples = 1000
+------ ESS = 618.8, Acceptance rate = 0.984, Time = 0.59s, Samples = 1000
 ---------------- Chain 2 started at [ 0.17610885  0.05887634  0.83832824 -1.19486152 -1.02994676] (first 5 coordinates)
------- ESS = 651.5, Acceptance rate = 0.986, Time = 0.36s, Samples = 1000
+------ ESS = 651.5, Acceptance rate = 0.986, Time = 0.56s, Samples = 1000
 ---------------- Chain 3 started at [-0.34460215 -1.35403668  0.13060573 -0.53743204 -0.24796596] (first 5 coordinates)
------- ESS = 641.2, Acceptance rate = 0.985, Time = 0.36s, Samples = 1000
+------ ESS = 641.2, Acceptance rate = 0.985, Time = 0.57s, Samples = 1000
 ---------------- Chain 4 started at [ 0.98682507 -0.38763862  0.50866245  0.88315335  1.20103216] (first 5 coordinates)
------- ESS = 635.7, Acceptance rate = 0.982, Time = 0.33s, Samples = 1000
+------ ESS = 635.7, Acceptance rate = 0.982, Time = 0.56s, Samples = 1000
 ---------------- Chain 5 started at [ 0.97546507 -1.63369346  1.0316009  -0.32882378  0.14673891] (first 5 coordinates)
------- ESS = 634.6, Acceptance rate = 0.985, Time = 0.33s, Samples = 1000
+------ ESS = 634.6, Acceptance rate = 0.985, Time = 0.55s, Samples = 1000
 ESS = 636.4, R-hat = 1.008, Acceptance rate = 0.984, Objective function = 445.7
 ######################################### Iteration 8/20
 Running 5 chains with L = 17.370, and step size = 0.1730
 ---------------- Chain 1 started at [-0.52774333 -0.08952956  0.69335851  0.5590136   0.33978822] (first 5 coordinates)
------- ESS = 623.9, Acceptance rate = 0.999, Time = 0.55s, Samples = 1000
+------ ESS = 623.9, Acceptance rate = 0.999, Time = 0.95s, Samples = 1000
 ---------------- Chain 2 started at [0.35811477 0.05629504 1.5557649  0.85829123 0.11039034] (first 5 coordinates)
------- ESS = 652.1, Acceptance rate = 0.999, Time = 0.55s, Samples = 1000
+------ ESS = 652.1, Acceptance rate = 0.999, Time = 0.97s, Samples = 1000
 ---------------- Chain 3 started at [-0.56250679 -0.18902413  1.69764124  1.48038583 -0.02481805] (first 5 coordinates)
------- ESS = 605.9, Acceptance rate = 0.999, Time = 0.57s, Samples = 1000
+------ ESS = 605.9, Acceptance rate = 0.999, Time = 0.93s, Samples = 1000
 ---------------- Chain 4 started at [-0.43066852  1.44291562  0.41784567  0.56537613 -0.09391099] (first 5 coordinates)
------- ESS = 744.0, Acceptance rate = 0.999, Time = 0.53s, Samples = 1000
+------ ESS = 744.0, Acceptance rate = 0.999, Time = 0.91s, Samples = 1000
 ---------------- Chain 5 started at [ 0.75652758 -0.07973263 -0.99708276 -0.51401169 -0.13762809] (first 5 coordinates)
------- ESS = 619.6, Acceptance rate = 0.999, Time = 0.56s, Samples = 1000
+------ ESS = 619.6, Acceptance rate = 0.999, Time = 0.93s, Samples = 1000
 ESS = 649.1, R-hat = 1.006, Acceptance rate = 0.999, Objective function = 505.4
 ######################################### Iteration 9/20
 Running 5 chains with L = 37.120, and step size = 2.8330
 ---------------- Chain 1 started at [-1.41383909 -0.448653   -0.3318288  -0.27787121 -0.7007404 ] (first 5 coordinates)
------- ESS = 629.6, Acceptance rate = 0.894, Time = 0.38s, Samples = 1000
+------ ESS = 629.6, Acceptance rate = 0.894, Time = 0.56s, Samples = 1000
 ---------------- Chain 2 started at [ 1.11536122  0.03239136 -0.24472883  0.87678804  0.56641112] (first 5 coordinates)
------- ESS = 639.0, Acceptance rate = 0.887, Time = 0.33s, Samples = 1000
+------ ESS = 639.0, Acceptance rate = 0.887, Time = 0.59s, Samples = 1000
 ---------------- Chain 3 started at [ 0.63915416  1.52008806  0.05770246 -0.25675492  0.28433819] (first 5 coordinates)
------- ESS = 660.1, Acceptance rate = 0.880, Time = 0.32s, Samples = 1000
+------ ESS = 660.1, Acceptance rate = 0.880, Time = 0.55s, Samples = 1000
 ---------------- Chain 4 started at [ 0.60238711  1.33542527 -0.04353861 -1.16674422 -0.43243226] (first 5 coordinates)
------- ESS = 627.3, Acceptance rate = 0.886, Time = 0.32s, Samples = 1000
+------ ESS = 627.3, Acceptance rate = 0.886, Time = 0.57s, Samples = 1000
 ---------------- Chain 5 started at [ 0.57897398  1.90942993 -0.37854765 -0.23494737  0.13461926] (first 5 coordinates)
------- ESS = 655.1, Acceptance rate = 0.881, Time = 0.34s, Samples = 1000
+------ ESS = 655.1, Acceptance rate = 0.881, Time = 0.56s, Samples = 1000
 ESS = 642.2, R-hat = 1.101, Acceptance rate = 0.885, Objective function = -1884.4
 ######################################### Iteration 10/20
 Running 5 chains with L = 2.557, and step size = 1.5030
 ---------------- Chain 1 started at [ 0.73134011  0.24590534 -0.86251111 -2.15618383 -2.32644008] (first 5 coordinates)
------- ESS = 783.2, Acceptance rate = 0.951, Time = 0.31s, Samples = 1000
+------ ESS = 783.2, Acceptance rate = 0.951, Time = 0.51s, Samples = 1000
 ---------------- Chain 2 started at [-0.69831096 -0.0625407  -2.21399622 -0.24330524 -1.76723487] (first 5 coordinates)
------- ESS = 654.3, Acceptance rate = 0.951, Time = 0.31s, Samples = 1000
+------ ESS = 654.3, Acceptance rate = 0.951, Time = 0.51s, Samples = 1000
 ---------------- Chain 3 started at [ 3.01578799 -0.45173971 -0.05139504  1.10397656 -1.01907144] (first 5 coordinates)
------- ESS = 941.7, Acceptance rate = 0.953, Time = 0.30s, Samples = 1000
+------ ESS = 941.7, Acceptance rate = 0.953, Time = 0.52s, Samples = 1000
 ---------------- Chain 4 started at [ 0.83010436 -0.09677618  0.04632261  0.39698304  0.23302633] (first 5 coordinates)
------- ESS = 1193.3, Acceptance rate = 0.953, Time = 0.30s, Samples = 1000
+------ ESS = 1193.3, Acceptance rate = 0.953, Time = 0.51s, Samples = 1000
 ---------------- Chain 5 started at [ 0.58223418  0.04270083  1.17027701 -0.03411102  0.66780105] (first 5 coordinates)
------- ESS = 1576.2, Acceptance rate = 0.950, Time = 0.83s, Samples = 1000
+------ ESS = 1576.2, Acceptance rate = 0.950, Time = 1.65s, Samples = 1000
 ESS = 1029.7, R-hat = 1.371, Acceptance rate = 0.952, Objective function = -8256.4
 ######################################### Iteration 11/20
 Running 5 chains with L = 22.307, and step size = 1.0597
 ---------------- Chain 1 started at [ 1.19831129  1.59439765  0.25824882 -0.79662297  1.43158648] (first 5 coordinates)
------- ESS = 651.8, Acceptance rate = 0.967, Time = 0.37s, Samples = 1000
+------ ESS = 651.8, Acceptance rate = 0.967, Time = 0.62s, Samples = 1000
 ---------------- Chain 2 started at [-1.63735979 -0.57290745 -1.49146975 -0.56935402 -0.56656987] (first 5 coordinates)
------- ESS = 653.1, Acceptance rate = 0.969, Time = 0.36s, Samples = 1000
+------ ESS = 653.1, Acceptance rate = 0.969, Time = 0.59s, Samples = 1000
 ---------------- Chain 3 started at [-0.26261395  0.51975297  0.96526864  0.09671341 -2.22207738] (first 5 coordinates)
------- ESS = 628.8, Acceptance rate = 0.967, Time = 0.35s, Samples = 1000
+------ ESS = 628.8, Acceptance rate = 0.967, Time = 0.58s, Samples = 1000
 ---------------- Chain 4 started at [0.54266537 0.10330396 0.42560556 0.25800108 1.09172152] (first 5 coordinates)
------- ESS = 662.2, Acceptance rate = 0.969, Time = 0.35s, Samples = 1000
+------ ESS = 662.2, Acceptance rate = 0.969, Time = 0.60s, Samples = 1000
 ---------------- Chain 5 started at [-1.29992473 -0.46575591 -0.60074636 -0.38623049 -0.13982475] (first 5 coordinates)
------- ESS = 653.9, Acceptance rate = 0.969, Time = 0.34s, Samples = 1000
+------ ESS = 653.9, Acceptance rate = 0.969, Time = 0.59s, Samples = 1000
 ESS = 650.0, R-hat = 1.007, Acceptance rate = 0.968, Objective function = 463.4
 ######################################### Iteration 12/20
 Running 5 chains with L = 12.432, and step size = 3.7197
 ---------------- Chain 1 started at [ 1.23451009  0.63791064  0.16694576 -0.71276541  0.31038093] (first 5 coordinates)
------- ESS = 656.4, Acceptance rate = 0.865, Time = 0.34s, Samples = 1000
+------ ESS = 656.4, Acceptance rate = 0.865, Time = 0.50s, Samples = 1000
 ---------------- Chain 2 started at [-1.78877072  1.67199665 -1.28863672  0.30655673  0.15032102] (first 5 coordinates)
------- ESS = 719.1, Acceptance rate = 0.854, Time = 0.32s, Samples = 1000
+------ ESS = 719.1, Acceptance rate = 0.854, Time = 0.52s, Samples = 1000
 ---------------- Chain 3 started at [-0.93854997  0.07034195 -0.12175971 -0.8895895  -0.3058561 ] (first 5 coordinates)
------- ESS = 649.1, Acceptance rate = 0.878, Time = 0.34s, Samples = 1000
+------ ESS = 649.1, Acceptance rate = 0.878, Time = 0.58s, Samples = 1000
 ---------------- Chain 4 started at [-1.20406222 -0.21003735 -0.00327408  0.83466976 -0.00143243] (first 5 coordinates)
------- ESS = 662.9, Acceptance rate = 0.866, Time = 0.37s, Samples = 1000
+------ ESS = 662.9, Acceptance rate = 0.866, Time = 0.52s, Samples = 1000
 ---------------- Chain 5 started at [ 1.09242595 -0.68763601 -0.31432636  0.46778975 -0.63151501] (first 5 coordinates)
------- ESS = 718.0, Acceptance rate = 0.851, Time = 0.33s, Samples = 1000
+------ ESS = 718.0, Acceptance rate = 0.851, Time = 0.51s, Samples = 1000
 ESS = 681.1, R-hat = 1.020, Acceptance rate = 0.863, Objective function = 193.3
 ######################################### Iteration 13/20
 Running 5 chains with L = 5.035, and step size = 0.0100
 ---------------- Chain 1 started at [ 1.04611844 -0.12909601 -1.82138978  0.51494815 -0.33348796] (first 5 coordinates)
------- ESS = 849.3, Acceptance rate = 1.000, Time = 1.78s, Samples = 1000
+------ ESS = 849.3, Acceptance rate = 1.000, Time = 2.68s, Samples = 1000
 ---------------- Chain 2 started at [ 1.57840007 -1.762817    1.51695401 -1.00850182  0.09588298] (first 5 coordinates)
------- ESS = 752.9, Acceptance rate = 1.000, Time = 1.69s, Samples = 1000
+------ ESS = 752.9, Acceptance rate = 1.000, Time = 2.67s, Samples = 1000
 ---------------- Chain 3 started at [-2.45769868  1.27168757 -0.25861716  0.35982721 -0.11111763] (first 5 coordinates)
------- ESS = 635.2, Acceptance rate = 1.000, Time = 1.62s, Samples = 1000
+------ ESS = 635.2, Acceptance rate = 1.000, Time = 2.62s, Samples = 1000
 ---------------- Chain 4 started at [-1.52564432 -0.05998528  0.88213381  0.2978555  -0.85700697] (first 5 coordinates)
------- ESS = 1062.7, Acceptance rate = 1.000, Time = 1.48s, Samples = 1000
+------ ESS = 1062.7, Acceptance rate = 1.000, Time = 2.64s, Samples = 1000
 ---------------- Chain 5 started at [-0.1857576  -0.59418199  1.09758802  0.56556508  0.26762722] (first 5 coordinates)
------- ESS = 616.1, Acceptance rate = 1.000, Time = 1.62s, Samples = 1000
+------ ESS = 616.1, Acceptance rate = 1.000, Time = 2.67s, Samples = 1000
 ESS = 783.2, R-hat = 1.219, Acceptance rate = 1.000, Objective function = -4687.9
 ######################################### Iteration 14/20
 Running 5 chains with L = 19.730, and step size = 3.1072
 ---------------- Chain 1 started at [-3.56739803 -1.2276857   2.12430078 -1.33478505 -1.4226023 ] (first 5 coordinates)
------- ESS = 672.2, Acceptance rate = 0.659, Time = 0.39s, Samples = 1000
+------ ESS = 672.2, Acceptance rate = 0.659, Time = 0.51s, Samples = 1000
 ---------------- Chain 2 started at [ 0.09335334  0.56142367 -0.45406058 -0.45395698 -1.75430371] (first 5 coordinates)
------- ESS = 683.0, Acceptance rate = 0.634, Time = 0.32s, Samples = 1000
+------ ESS = 683.0, Acceptance rate = 0.634, Time = 0.51s, Samples = 1000
 ---------------- Chain 3 started at [-1.06146885 -1.34560799 -0.45168283  0.79831031  1.24375236] (first 5 coordinates)
------- ESS = 598.2, Acceptance rate = 0.708, Time = 0.32s, Samples = 1000
+------ ESS = 598.2, Acceptance rate = 0.708, Time = 0.51s, Samples = 1000
 ---------------- Chain 4 started at [-2.43730737 -1.16854232 -0.41389293  0.52447553 -0.92195424] (first 5 coordinates)
------- ESS = 682.4, Acceptance rate = 0.651, Time = 0.34s, Samples = 1000
+------ ESS = 682.4, Acceptance rate = 0.651, Time = 0.55s, Samples = 1000
 ---------------- Chain 5 started at [-0.47198395  0.84728422  0.03028685  0.21812138 -0.57923123] (first 5 coordinates)
------- ESS = 670.7, Acceptance rate = 0.663, Time = 0.33s, Samples = 1000
+------ ESS = 670.7, Acceptance rate = 0.663, Time = 0.53s, Samples = 1000
 ESS = 661.3, R-hat = 1.031, Acceptance rate = 0.663, Objective function = -108.5
 ######################################### Iteration 15/20
 Running 5 chains with L = 27.964, and step size = 0.0100
 ---------------- Chain 1 started at [ 1.00337444  0.51598728 -0.65841718  2.2389014   0.63891793] (first 5 coordinates)
------- ESS = 639.6, Acceptance rate = 1.000, Time = 7.13s, Samples = 1000
+------ ESS = 639.6, Acceptance rate = 1.000, Time = 13.01s, Samples = 1000
 ---------------- Chain 2 started at [-0.12633059 -1.19902497 -2.29640525 -0.81408289 -0.05451202] (first 5 coordinates)
------- ESS = 605.5, Acceptance rate = 1.000, Time = 6.95s, Samples = 1000
+------ ESS = 605.5, Acceptance rate = 1.000, Time = 12.59s, Samples = 1000
 ---------------- Chain 3 started at [-0.1780898  -0.0315189  -0.1432033  -1.01298205  0.89668904] (first 5 coordinates)
------- ESS = 648.3, Acceptance rate = 1.000, Time = 7.04s, Samples = 1000
+------ ESS = 648.3, Acceptance rate = 1.000, Time = 12.90s, Samples = 1000
 ---------------- Chain 4 started at [-0.55129741 -0.40594944 -0.10308532 -2.27403985  0.49568063] (first 5 coordinates)
------- ESS = 693.1, Acceptance rate = 1.000, Time = 6.89s, Samples = 1000
+------ ESS = 693.1, Acceptance rate = 1.000, Time = 12.41s, Samples = 1000
 ---------------- Chain 5 started at [-0.13669285 -0.76869639 -0.94595117  1.2078146  -0.73416305] (first 5 coordinates)
------- ESS = 675.3, Acceptance rate = 1.000, Time = 7.13s, Samples = 1000
+------ ESS = 675.3, Acceptance rate = 1.000, Time = 12.39s, Samples = 1000
 ESS = 652.4, R-hat = 1.004, Acceptance rate = 1.000, Objective function = 554.5
 ######################################### Iteration 16/20
 Running 5 chains with L = 28.661, and step size = 0.0100
 ---------------- Chain 1 started at [ 1.4522379   0.51616494  0.36920723  0.647452   -0.29627057] (first 5 coordinates)
------- ESS = 661.1, Acceptance rate = 1.000, Time = 7.18s, Samples = 1000
+------ ESS = 661.1, Acceptance rate = 1.000, Time = 13.00s, Samples = 1000
 ---------------- Chain 2 started at [ 0.08077526 -1.1011496  -0.28061459  0.01414535 -0.88028605] (first 5 coordinates)
------- ESS = 649.2, Acceptance rate = 1.000, Time = 7.18s, Samples = 1000
+------ ESS = 649.2, Acceptance rate = 1.000, Time = 12.74s, Samples = 1000
 ---------------- Chain 3 started at [-0.75402731  0.77598974  1.37950066  0.20680515  0.59462084] (first 5 coordinates)
------- ESS = 633.7, Acceptance rate = 1.000, Time = 7.13s, Samples = 1000
+------ ESS = 633.7, Acceptance rate = 1.000, Time = 13.00s, Samples = 1000
 ---------------- Chain 4 started at [ 0.17064323 -1.38346351  0.06765902  0.08733407 -0.13654457] (first 5 coordinates)
------- ESS = 633.5, Acceptance rate = 1.000, Time = 7.54s, Samples = 1000
+------ ESS = 633.5, Acceptance rate = 1.000, Time = 12.89s, Samples = 1000
 ---------------- Chain 5 started at [ 1.27088353 -1.73084906  0.36109076 -0.16617331  1.60843875] (first 5 coordinates)
------- ESS = 680.2, Acceptance rate = 1.000, Time = 7.12s, Samples = 1000
+------ ESS = 680.2, Acceptance rate = 1.000, Time = 13.11s, Samples = 1000
 ESS = 651.5, R-hat = 1.001, Acceptance rate = 1.000, Objective function = 628.3
 ######################################### Iteration 17/20
 Running 5 chains with L = 40.000, and step size = 0.0100
 ---------------- Chain 1 started at [-0.56738182  0.20726422 -1.33754327 -0.42401755  0.70681668] (first 5 coordinates)
------- ESS = 650.5, Acceptance rate = 1.000, Time = 10.10s, Samples = 1000
+------ ESS = 650.5, Acceptance rate = 1.000, Time = 17.58s, Samples = 1000
 ---------------- Chain 2 started at [ 1.69378304 -0.42324395 -0.85197175 -0.03190514  0.05362214] (first 5 coordinates)
------- ESS = 640.4, Acceptance rate = 1.000, Time = 10.32s, Samples = 1000
+------ ESS = 640.4, Acceptance rate = 1.000, Time = 17.94s, Samples = 1000
 ---------------- Chain 3 started at [-0.61140919  0.13727135 -1.05433838 -0.5257698   1.5384506 ] (first 5 coordinates)
------- ESS = 653.9, Acceptance rate = 1.000, Time = 10.05s, Samples = 1000
+------ ESS = 653.9, Acceptance rate = 1.000, Time = 17.53s, Samples = 1000
 ---------------- Chain 4 started at [-0.21782964  0.37085124  0.99982216 -0.44486399 -0.81475056] (first 5 coordinates)
------- ESS = 644.4, Acceptance rate = 1.000, Time = 10.81s, Samples = 1000
+------ ESS = 644.4, Acceptance rate = 1.000, Time = 21.14s, Samples = 1000
 ---------------- Chain 5 started at [ 0.27173025 -1.78871088  0.03213338  0.0433365  -0.1519994 ] (first 5 coordinates)
------- ESS = 630.2, Acceptance rate = 1.000, Time = 11.61s, Samples = 1000
+------ ESS = 630.2, Acceptance rate = 1.000, Time = 18.23s, Samples = 1000
 ESS = 643.9, R-hat = 1.049, Acceptance rate = 1.000, Objective function = -587.9
 ######################################### Iteration 18/20
 Running 5 chains with L = 40.000, and step size = 0.0100
 ---------------- Chain 1 started at [ 1.18311172 -0.20217693 -0.20638359  1.00896011  1.59146948] (first 5 coordinates)
------- ESS = 679.1, Acceptance rate = 1.000, Time = 11.18s, Samples = 1000
+------ ESS = 679.1, Acceptance rate = 1.000, Time = 18.67s, Samples = 1000
 ---------------- Chain 2 started at [-0.81927721 -0.036856    0.68337359 -0.25856751 -1.43347761] (first 5 coordinates)
------- ESS = 644.4, Acceptance rate = 1.000, Time = 9.88s, Samples = 1000
+------ ESS = 644.4, Acceptance rate = 1.000, Time = 17.85s, Samples = 1000
 ---------------- Chain 3 started at [ 0.22357003  0.46804011  0.75961623 -0.74779622  0.8694428 ] (first 5 coordinates)
------- ESS = 653.1, Acceptance rate = 1.000, Time = 9.75s, Samples = 1000
+------ ESS = 653.1, Acceptance rate = 1.000, Time = 17.82s, Samples = 1000
 ---------------- Chain 4 started at [-1.08355665 -1.23886781 -1.57462283 -0.11181236 -0.94677514] (first 5 coordinates)
------- ESS = 640.6, Acceptance rate = 1.000, Time = 10.01s, Samples = 1000
+------ ESS = 640.6, Acceptance rate = 1.000, Time = 17.50s, Samples = 1000
 ---------------- Chain 5 started at [-0.30669002  1.45624203  0.10444432  0.05905643  3.41640113] (first 5 coordinates)
------- ESS = 648.9, Acceptance rate = 1.000, Time = 9.73s, Samples = 1000
+------ ESS = 648.9, Acceptance rate = 1.000, Time = 17.49s, Samples = 1000
 ESS = 653.2, R-hat = 1.056, Acceptance rate = 1.000, Objective function = -748.3
 ######################################### Iteration 19/20
 Running 5 chains with L = 37.633, and step size = 0.0100
 ---------------- Chain 1 started at [ 0.25932766  0.44649266 -0.84628613  1.1283604   0.32684664] (first 5 coordinates)
------- ESS = 626.8, Acceptance rate = 1.000, Time = 9.16s, Samples = 1000
+------ ESS = 626.8, Acceptance rate = 1.000, Time = 16.90s, Samples = 1000
 ---------------- Chain 2 started at [ 0.37858305 -1.0622582   0.95520139 -0.25467097 -0.42315523] (first 5 coordinates)
------- ESS = 631.6, Acceptance rate = 1.000, Time = 9.19s, Samples = 1000
+------ ESS = 631.6, Acceptance rate = 1.000, Time = 16.66s, Samples = 1000
 ---------------- Chain 3 started at [-0.83306597 -0.8628884  -1.59678132  1.13444084 -0.21934233] (first 5 coordinates)
------- ESS = 645.1, Acceptance rate = 1.000, Time = 9.42s, Samples = 1000
+------ ESS = 645.1, Acceptance rate = 1.000, Time = 17.05s, Samples = 1000
 ---------------- Chain 4 started at [-0.711792   -0.57798451 -1.94909907 -1.63260911 -2.79344693] (first 5 coordinates)
------- ESS = 656.3, Acceptance rate = 1.000, Time = 9.21s, Samples = 1000
+------ ESS = 656.3, Acceptance rate = 1.000, Time = 16.48s, Samples = 1000
 ---------------- Chain 5 started at [ 0.97797147  0.15710311 -0.40475646 -0.01130366 -1.51930063] (first 5 coordinates)
------- ESS = 640.7, Acceptance rate = 1.000, Time = 9.18s, Samples = 1000
+------ ESS = 640.7, Acceptance rate = 1.000, Time = 16.48s, Samples = 1000
 ESS = 640.1, R-hat = 1.005, Acceptance rate = 1.000, Objective function = 509.0
 ######################################### Iteration 20/20
 Running 5 chains with L = 27.916, and step size = 0.0100
 ---------------- Chain 1 started at [ 0.25244442  0.86154808 -0.48072851  1.62717988  1.43260499] (first 5 coordinates)
------- ESS = 641.5, Acceptance rate = 1.000, Time = 7.02s, Samples = 1000
+------ ESS = 641.5, Acceptance rate = 1.000, Time = 12.35s, Samples = 1000
 ---------------- Chain 2 started at [ 2.11133486 -0.22184965 -1.28633609 -0.38052807  1.11907194] (first 5 coordinates)
------- ESS = 619.4, Acceptance rate = 1.000, Time = 7.05s, Samples = 1000
+------ ESS = 619.4, Acceptance rate = 1.000, Time = 12.80s, Samples = 1000
 ---------------- Chain 3 started at [ 0.86314436 -0.23647542  0.49035436  0.23134146 -2.137108  ] (first 5 coordinates)
------- ESS = 621.2, Acceptance rate = 1.000, Time = 6.82s, Samples = 1000
+------ ESS = 621.2, Acceptance rate = 1.000, Time = 12.40s, Samples = 1000
 ---------------- Chain 4 started at [ 0.85735562  0.70672561 -0.87942218 -1.3248063  -0.4625573 ] (first 5 coordinates)
------- ESS = 659.5, Acceptance rate = 1.000, Time = 6.84s, Samples = 1000
+------ ESS = 659.5, Acceptance rate = 1.000, Time = 12.24s, Samples = 1000
 ---------------- Chain 5 started at [ 1.57620984  0.79380138  1.3318853  -0.73590718 -1.53521364] (first 5 coordinates)
------- ESS = 639.9, Acceptance rate = 1.000, Time = 7.15s, Samples = 1000
+------ ESS = 639.9, Acceptance rate = 1.000, Time = 12.54s, Samples = 1000
 ESS = 636.3, R-hat = 1.001, Acceptance rate = 1.000, Objective function = 601.7
 ---------------------------------------BEST HYPERPARAMTEERS ACCORDING TO BAYESOPT-----------------------------------------------------
 Best hyperparameters: L = 24.776, step size = 3.5719
@@ -609,25 +609,25 @@ Best hyperparameters: L = 24.776, step size = 3.5719
 Running: 10 chains each of length 5000
 Using hyperparameters: L = 24.776, step_size = 3.57192
 ---------------- Chain 1 started at [-0.05707938  0.79179168  2.02213257 -1.9814855  -0.18765818] (first 5 coordinates)
------- ESS = 3214.2, Acceptance rate = 0.765, Time = 0.76s, Samples = 5000
+------ ESS = 3214.2, Acceptance rate = 0.765, Time = 1.23s, Samples = 5000
 ---------------- Chain 2 started at [ 1.09543379  0.251419   -0.19833145  1.0735517   0.69289621] (first 5 coordinates)
------- ESS = 3235.9, Acceptance rate = 0.755, Time = 0.45s, Samples = 5000
+------ ESS = 3235.9, Acceptance rate = 0.755, Time = 0.73s, Samples = 5000
 ---------------- Chain 3 started at [-0.9988763  -0.8792376   0.98044592 -0.58586972  0.97565254] (first 5 coordinates)
------- ESS = 3172.7, Acceptance rate = 0.756, Time = 0.45s, Samples = 5000
+------ ESS = 3172.7, Acceptance rate = 0.756, Time = 0.72s, Samples = 5000
 ---------------- Chain 4 started at [-0.87165424 -0.22345207  0.99272677 -0.70486659  0.85727839] (first 5 coordinates)
------- ESS = 3214.6, Acceptance rate = 0.756, Time = 0.45s, Samples = 5000
+------ ESS = 3214.6, Acceptance rate = 0.756, Time = 0.70s, Samples = 5000
 ---------------- Chain 5 started at [ 0.15249529  1.02068418 -2.02690982  0.22464284 -0.21304992] (first 5 coordinates)
------- ESS = 3171.6, Acceptance rate = 0.757, Time = 0.44s, Samples = 5000
+------ ESS = 3171.6, Acceptance rate = 0.757, Time = 0.70s, Samples = 5000
 ---------------- Chain 6 started at [ 1.42347604 -0.62958148  0.42095     0.49139842 -2.29774748] (first 5 coordinates)
------- ESS = 3177.8, Acceptance rate = 0.755, Time = 0.46s, Samples = 5000
+------ ESS = 3177.8, Acceptance rate = 0.755, Time = 0.70s, Samples = 5000
 ---------------- Chain 7 started at [-0.45293593  0.05216213 -0.79857089 -0.52983354  0.68131072] (first 5 coordinates)
------- ESS = 3184.7, Acceptance rate = 0.752, Time = 0.44s, Samples = 5000
+------ ESS = 3184.7, Acceptance rate = 0.752, Time = 0.71s, Samples = 5000
 ---------------- Chain 8 started at [ 0.34341724  0.85985662 -0.82898881  1.09435125  0.19184446] (first 5 coordinates)
------- ESS = 3203.5, Acceptance rate = 0.756, Time = 0.45s, Samples = 5000
+------ ESS = 3203.5, Acceptance rate = 0.756, Time = 0.72s, Samples = 5000
 ---------------- Chain 9 started at [ 0.30450724 -1.04268456 -0.76389656  1.64981571  0.40009893] (first 5 coordinates)
------- ESS = 3175.4, Acceptance rate = 0.755, Time = 0.45s, Samples = 5000
+------ ESS = 3175.4, Acceptance rate = 0.755, Time = 0.70s, Samples = 5000
 ---------------- Chain 10 started at [ 0.19199399 -0.02957597 -1.64786866 -0.35062444 -1.72405476] (first 5 coordinates)
------- ESS = 3117.9, Acceptance rate = 0.754, Time = 0.44s, Samples = 5000
+------ ESS = 3117.9, Acceptance rate = 0.754, Time = 0.71s, Samples = 5000
 
 Validation results for: BayesOpt
             ESS mean +/- sd: 3186.813 ± 30.996
@@ -635,8 +635,8 @@ Validation results for: BayesOpt
 Acceptance rate mean +/- sd: 0.756 ± 0.003
               L mean +/- sd: 24.776 ± 0.000
       Step size mean +/- sd: 3.5719 ± 0.0000
- Time per chain mean +/- sd: 0.478s ± 0.096s
-                 Total time: 4.977s
+ Time per chain mean +/- sd: 0.763s ± 0.155s
+                 Total time: 7.933s
 ######################################### VALIDATING: Auto-tuning
 Running: 10 chains each of length 5000
 ######################################### Running Auto Tuning
@@ -645,52 +645,52 @@ Running: 10 chains each of length 5000
 Auto tuning chose: L = 14.142 and step size = 2.66719 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1.]
------- L = 14.14, step size = 2.66719  ESS = 3245.1, Acceptance rate = 0.886, Time = 2.98s, Samples = 5000
+------ L = 14.14, step size = 2.66719  ESS = 3245.1, Acceptance rate = 0.886, Time = 5.10s, Samples = 5000
 ---------------- Chain 2 started at [ 1.09543379  0.251419   -0.19833145  1.0735517   0.69289621] (first 5 coordinates)
 Auto tuning chose: L = 14.142 and step size = 2.63075 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1.]
------- L = 14.14, step size = 2.63075  ESS = 3252.2, Acceptance rate = 0.899, Time = 1.80s, Samples = 5000
+------ L = 14.14, step size = 2.63075  ESS = 3252.2, Acceptance rate = 0.899, Time = 3.09s, Samples = 5000
 ---------------- Chain 3 started at [-0.9988763  -0.8792376   0.98044592 -0.58586972  0.97565254] (first 5 coordinates)
 Auto tuning chose: L = 14.142 and step size = 2.69158 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1.]
------- L = 14.14, step size = 2.69158  ESS = 3185.0, Acceptance rate = 0.879, Time = 1.77s, Samples = 5000
+------ L = 14.14, step size = 2.69158  ESS = 3185.0, Acceptance rate = 0.879, Time = 3.32s, Samples = 5000
 ---------------- Chain 4 started at [-0.87165424 -0.22345207  0.99272677 -0.70486659  0.85727839] (first 5 coordinates)
 Auto tuning chose: L = 14.142 and step size = 2.43744 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1.]
------- L = 14.14, step size = 2.43744  ESS = 3182.4, Acceptance rate = 0.964, Time = 1.96s, Samples = 5000
+------ L = 14.14, step size = 2.43744  ESS = 3182.4, Acceptance rate = 0.964, Time = 3.53s, Samples = 5000
 ---------------- Chain 5 started at [ 0.15249529  1.02068418 -2.02690982  0.22464284 -0.21304992] (first 5 coordinates)
 Auto tuning chose: L = 14.142 and step size = 2.71061 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1.]
------- L = 14.14, step size = 2.71061  ESS = 3234.6, Acceptance rate = 0.866, Time = 4.91s, Samples = 5000
+------ L = 14.14, step size = 2.71061  ESS = 3234.6, Acceptance rate = 0.866, Time = 5.10s, Samples = 5000
 ---------------- Chain 6 started at [ 1.42347604 -0.62958148  0.42095     0.49139842 -2.29774748] (first 5 coordinates)
 Auto tuning chose: L = 14.142 and step size = 2.70220 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1.]
------- L = 14.14, step size = 2.70220  ESS = 3230.3, Acceptance rate = 0.871, Time = 2.99s, Samples = 5000
+------ L = 14.14, step size = 2.70220  ESS = 3230.3, Acceptance rate = 0.871, Time = 3.59s, Samples = 5000
 ---------------- Chain 7 started at [-0.45293593  0.05216213 -0.79857089 -0.52983354  0.68131072] (first 5 coordinates)
 Auto tuning chose: L = 14.142 and step size = 2.60518 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1.]
------- L = 14.14, step size = 2.60518  ESS = 3267.3, Acceptance rate = 0.908, Time = 2.44s, Samples = 5000
+------ L = 14.14, step size = 2.60518  ESS = 3267.3, Acceptance rate = 0.908, Time = 3.06s, Samples = 5000
 ---------------- Chain 8 started at [ 0.34341724  0.85985662 -0.82898881  1.09435125  0.19184446] (first 5 coordinates)
 Auto tuning chose: L = 14.142 and step size = 2.63583 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1.]
------- L = 14.14, step size = 2.63583  ESS = 3263.4, Acceptance rate = 0.898, Time = 2.85s, Samples = 5000
+------ L = 14.14, step size = 2.63583  ESS = 3263.4, Acceptance rate = 0.898, Time = 3.08s, Samples = 5000
 ---------------- Chain 9 started at [ 0.30450724 -1.04268456 -0.76389656  1.64981571  0.40009893] (first 5 coordinates)
 Auto tuning chose: L = 14.142 and step size = 2.77588 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1.]
------- L = 14.14, step size = 2.77588  ESS = 3164.8, Acceptance rate = 0.840, Time = 2.89s, Samples = 5000
+------ L = 14.14, step size = 2.77588  ESS = 3164.8, Acceptance rate = 0.840, Time = 3.01s, Samples = 5000
 ---------------- Chain 10 started at [ 0.19199399 -0.02957597 -1.64786866 -0.35062444 -1.72405476] (first 5 coordinates)
 Auto tuning chose: L = 14.142 and step size = 2.64088 and inverse mass matrix = [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
  1. 1.]
------- L = 14.14, step size = 2.64088  ESS = 3209.7, Acceptance rate = 0.897, Time = 3.33s, Samples = 5000
+------ L = 14.14, step size = 2.64088  ESS = 3209.7, Acceptance rate = 0.897, Time = 3.03s, Samples = 5000
 
 Validation results for: Auto-tuning
             ESS mean +/- sd: 3223.475 ± 34.315
@@ -698,8 +698,8 @@ Validation results for: Auto-tuning
 Acceptance rate mean +/- sd: 0.891 ± 0.031
               L mean +/- sd: 14.142 ± 0.000
       Step size mean +/- sd: 2.6498 ± 0.0849
- Time per chain mean +/- sd: 2.792s ± 0.877s
-                 Total time: 27.982s
+ Time per chain mean +/- sd: 3.590s ± 0.781s
+                 Total time: 36.002s
 Saved trace plot: plots/traces_Correlated Gaussian.png
 ##############################################################################
 Results
@@ -708,345 +708,343 @@ BayesOpt ESS mean: 3186.8
 ################################################## Target Densiity: Banana
 ######################################### Iteration 1/20
 Running 5 chains with L = 39.588, and step size = 1.3553
----------------- Chain 1 started at [1.13405087 1.40093504 0.58089784 0.06411797 0.34553717] (first 5 coordinates)
------- ESS = 3694.6, Acceptance rate = 0.000, Time = 2.11s, Samples = 1000
----------------- Chain 2 started at [ 0.45034259 -0.95213044 -1.05270481  0.34641198 -1.39695661] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.59s, Samples = 1000
----------------- Chain 3 started at [0.36393735 0.24944466 0.42455819 1.28275686 0.39648616] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.64s, Samples = 1000
----------------- Chain 4 started at [-0.26287661 -0.65575149  1.57094443  0.77417558 -0.34744618] (first 5 coordinates)
------- ESS = 15937.7, Acceptance rate = 0.000, Time = 0.69s, Samples = 1000
----------------- Chain 5 started at [ 0.48890793 -0.67283744  1.36398791 -0.1557517  -1.42818426] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.57s, Samples = 1000
-ESS = 15023.4, R-hat = 2982325261984735.500, Acceptance rate = 0.000, Objective function = -74558131549618339840.0
+---------------- Chain 1 started at [0.30095402 0.69500881] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 1.92s, Samples = 1000
+---------------- Chain 2 started at [-1.64806097  1.37197259] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.50s, Samples = 1000
+---------------- Chain 3 started at [-0.50344262 -1.38490941] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.50s, Samples = 1000
+---------------- Chain 4 started at [-0.0217379  -0.89013692] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.51s, Samples = 1000
+---------------- Chain 5 started at [-0.17057238  1.10049544] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.48s, Samples = 1000
+ESS = 6602.1, R-hat = 1594833980420513.750, Acceptance rate = 0.000, Objective function = -39870849510512820224.0
 ######################################### Iteration 2/20
 Running 5 chains with L = 5.026, and step size = 0.9119
----------------- Chain 1 started at [ 0.94128818 -0.00493893 -0.13524855  0.58473528 -0.81013736] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.51s, Samples = 1000
----------------- Chain 2 started at [-1.38249844  0.46922316 -0.95005497  0.29606871 -0.97093689] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.42s, Samples = 1000
----------------- Chain 3 started at [ 1.31587758  0.72275892  0.48861954 -0.26494193  0.5452451 ] (first 5 coordinates)
------- ESS = 6361.2, Acceptance rate = 0.000, Time = 0.42s, Samples = 1000
----------------- Chain 4 started at [-2.00273678e+00 -5.54416672e-01 -1.10830403e+00 -1.35736812e-01
- -1.50585699e-03] (first 5 coordinates)
------- ESS = 11184.4, Acceptance rate = 0.000, Time = 0.46s, Samples = 1000
----------------- Chain 5 started at [ 1.4188277  -0.09246817  0.51501594  1.86615568  0.99915728] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.41s, Samples = 1000
-ESS = 14606.0, R-hat = 2443888933031267.500, Acceptance rate = 0.000, Objective function = -61097223325781655552.0
+---------------- Chain 1 started at [-0.78062626 -1.88534814] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
+---------------- Chain 2 started at [ 0.43456681 -1.02196081] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
+---------------- Chain 3 started at [-2.64302312  1.25507111] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.43s, Samples = 1000
+---------------- Chain 4 started at [-0.5788801   0.02133902] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
+---------------- Chain 5 started at [-0.66285664  0.17957061] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
+ESS = 6602.1, R-hat = 1658769742405667.000, Acceptance rate = 0.000, Objective function = -41469243560141651968.0
 ######################################### Iteration 3/20
 Running 5 chains with L = 24.776, and step size = 3.5719
----------------- Chain 1 started at [ 2.57811807  0.35942586 -1.13974627  0.14887356  0.55373657] (first 5 coordinates)
------- ESS = 7830.6, Acceptance rate = 0.000, Time = 0.43s, Samples = 1000
----------------- Chain 2 started at [-0.888751    0.35278749 -0.39648252  0.17382133 -1.90558688] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.56s, Samples = 1000
----------------- Chain 3 started at [-0.0036312  -0.82916006 -1.2632877  -0.86688619 -0.42954257] (first 5 coordinates)
------- ESS = 8219.5, Acceptance rate = 0.000, Time = 0.54s, Samples = 1000
----------------- Chain 4 started at [-0.36807947  0.40538138  0.72023691 -1.10480577  0.45502424] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.59s, Samples = 1000
----------------- Chain 5 started at [-0.88573488 -0.86613896  0.06565252  0.48987465  1.46075436] (first 5 coordinates)
------- ESS = 3984.3, Acceptance rate = 0.000, Time = 0.51s, Samples = 1000
-ESS = 11404.8, R-hat = 3380785175551081.500, Acceptance rate = 0.000, Objective function = -84519629388776996864.0
+---------------- Chain 1 started at [-0.94852355 -0.65162104] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
+---------------- Chain 2 started at [-0.71208695 -0.04188168] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.45s, Samples = 1000
+---------------- Chain 3 started at [-0.17361291 -0.58253261] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
+---------------- Chain 4 started at [ 0.33693967 -0.2434742 ] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
+---------------- Chain 5 started at [ 0.81805051 -1.18126707] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.45s, Samples = 1000
+ESS = 6602.1, R-hat = 2772758866452284.500, Acceptance rate = 0.000, Objective function = -69318971661307084800.0
 ######################################### Iteration 4/20
 Running 5 chains with L = 14.901, and step size = 2.2419
----------------- Chain 1 started at [-0.53903719  0.45723619  0.44935805 -0.4242391   0.25878527] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.49s, Samples = 1000
----------------- Chain 2 started at [ 1.59846583 -0.40316404 -1.28314303  1.16462194 -1.30197466] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.45s, Samples = 1000
----------------- Chain 3 started at [ 0.18633623 -0.0399176  -0.08832555  2.37124891  0.27906512] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.50s, Samples = 1000
----------------- Chain 4 started at [-0.2300392  -1.54050341 -1.38489049 -1.43952507 -0.26440921] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 2.82s, Samples = 1000
----------------- Chain 5 started at [-0.05804057  0.71769961  0.25640692  1.2744317   0.51962184] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.43s, Samples = 1000
-ESS = 18494.9, R-hat = 6874175448126057.000, Acceptance rate = 0.000, Objective function = -171854386203151368192.0
+---------------- Chain 1 started at [-0.0428694   1.07537126] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
+---------------- Chain 2 started at [ 1.28093199 -0.16696825] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
+---------------- Chain 3 started at [2.14657207 1.15441701] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.50s, Samples = 1000
+---------------- Chain 4 started at [-1.17382023 -0.25320183] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.45s, Samples = 1000
+---------------- Chain 5 started at [-0.58688505  1.48979024] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.48s, Samples = 1000
+ESS = 6602.1, R-hat = 2539068250948997.000, Acceptance rate = 0.000, Objective function = -63476706273724899328.0
 ######################################### Iteration 5/20
 Running 5 chains with L = 34.651, and step size = 0.6164
----------------- Chain 1 started at [ 0.59729952 -0.82439202  0.07075372  0.51049749  0.1957298 ] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.48s, Samples = 1000
----------------- Chain 2 started at [1.55438933 1.54002025 0.14324696 0.37236803 0.34120297] (first 5 coordinates)
------- ESS = 4706.1, Acceptance rate = 0.000, Time = 0.45s, Samples = 1000
----------------- Chain 3 started at [ 1.10737316  0.55780911  1.00427154 -0.01751147  0.95697672] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.43s, Samples = 1000
----------------- Chain 4 started at [-0.49528489 -0.05688982  0.42917388  1.55606298 -0.47562849] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.48s, Samples = 1000
----------------- Chain 5 started at [ 1.78950156  0.14395389 -1.58808243  0.53528285  0.17075385] (first 5 coordinates)
------- ESS = 16644.2, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
-ESS = 15367.0, R-hat = 3787656859405818.500, Acceptance rate = 0.000, Objective function = -94691421485145423872.0
+---------------- Chain 1 started at [0.91260338 1.52624502] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.56s, Samples = 1000
+---------------- Chain 2 started at [ 1.23309713 -0.69015502] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.56s, Samples = 1000
+---------------- Chain 3 started at [-2.27903574  0.0549931 ] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.55s, Samples = 1000
+---------------- Chain 4 started at [0.18969682 0.11439332] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.56s, Samples = 1000
+---------------- Chain 5 started at [-1.38569135  0.54169128] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.54s, Samples = 1000
+ESS = 6602.1, R-hat = 1825472635681664.250, Acceptance rate = 0.000, Objective function = -45636815892041580544.0
 ######################################### Iteration 6/20
 Running 5 chains with L = 7.495, and step size = 3.2764
----------------- Chain 1 started at [-0.521605    0.34019314  1.4662758  -0.92461762 -0.0125755 ] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.42s, Samples = 1000
----------------- Chain 2 started at [-0.55894032 -1.03095024  0.43528945  1.4270897  -0.68730063] (first 5 coordinates)
------- ESS = 12025.2, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
----------------- Chain 3 started at [-0.53675286  0.18462253  0.31409671 -0.80603125  1.62425675] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.57s, Samples = 1000
----------------- Chain 4 started at [0.28018071 0.7371393  2.35952479 0.96428255 0.5016996 ] (first 5 coordinates)
------- ESS = 13307.9, Acceptance rate = 0.000, Time = 0.46s, Samples = 1000
----------------- Chain 5 started at [ 0.06510671 -2.08494792 -0.88535612 -1.52281431 -0.39076184] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.41s, Samples = 1000
-ESS = 16163.5, R-hat = 2831317066421196.000, Acceptance rate = 0.000, Objective function = -70782926660529864704.0
+---------------- Chain 1 started at [ 0.33268814 -0.97070598] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.47s, Samples = 1000
+---------------- Chain 2 started at [ 0.55944144 -1.6035994 ] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.45s, Samples = 1000
+---------------- Chain 3 started at [-0.02842196 -0.75821199] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.51s, Samples = 1000
+---------------- Chain 4 started at [-0.8456845   0.96645507] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 1.80s, Samples = 1000
+---------------- Chain 5 started at [0.17041968 1.31190802] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.49s, Samples = 1000
+ESS = 6602.1, R-hat = 2609864410168478.500, Acceptance rate = 0.000, Objective function = -65246610254211940352.0
 ######################################### Iteration 7/20
 Running 5 chains with L = 27.245, and step size = 1.9464
----------------- Chain 1 started at [ 0.27114292 -2.1111971  -1.32450034 -1.66410946  0.8881138 ] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.47s, Samples = 1000
----------------- Chain 2 started at [-1.10192678  0.37582909 -1.89062389  2.16057542  0.37401501] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
----------------- Chain 3 started at [-0.46950135  0.92685565  1.47279956  0.97059551 -0.19137919] (first 5 coordinates)
------- ESS = 9276.8, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
----------------- Chain 4 started at [-0.97642572  0.33432158  0.17261689  0.94682204  0.5197767 ] (first 5 coordinates)
------- ESS = 9002.2, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
----------------- Chain 5 started at [ 0.96392175 -0.98153549 -1.25120439  0.21861304 -1.11287599] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.39s, Samples = 1000
-ESS = 14752.7, R-hat = 2965435473454130.500, Acceptance rate = 0.000, Objective function = -74135886836353220608.0
+---------------- Chain 1 started at [0.93782731 0.11405135] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.59s, Samples = 1000
+---------------- Chain 2 started at [-0.42185404  1.16460749] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.47s, Samples = 1000
+---------------- Chain 3 started at [-1.57480099 -0.30966216] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.49s, Samples = 1000
+---------------- Chain 4 started at [-1.06122273 -2.01376706] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.48s, Samples = 1000
+---------------- Chain 5 started at [-0.91490135 -0.85907065] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.48s, Samples = 1000
+ESS = 6602.1, R-hat = 3892498555106590.500, Acceptance rate = 0.000, Objective function = -97312463877664735232.0
 ######################################### Iteration 8/20
 Running 5 chains with L = 17.370, and step size = 0.1730
----------------- Chain 1 started at [-0.16646168  1.35309226 -1.66993077  1.1656879   1.83834934] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.49s, Samples = 1000
----------------- Chain 2 started at [ 0.25049805  3.27899232  0.14068606 -0.53790337 -1.01470255] (first 5 coordinates)
------- ESS = 8885.5, Acceptance rate = 0.000, Time = 0.62s, Samples = 1000
----------------- Chain 3 started at [-0.13047933  0.88562551 -0.87264834  0.57305494 -0.15484067] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.52s, Samples = 1000
----------------- Chain 4 started at [-0.73395397 -1.95196753 -1.56730505 -0.81536761  0.36710541] (first 5 coordinates)
------- ESS = 6092.3, Acceptance rate = 0.000, Time = 0.53s, Samples = 1000
----------------- Chain 5 started at [ 0.01247108 -0.96164183 -0.47239834  0.51411361 -1.04081766] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.52s, Samples = 1000
-ESS = 14092.5, R-hat = 1768799237253356.250, Acceptance rate = 0.000, Objective function = -44219980931333873664.0
+---------------- Chain 1 started at [2.09347025 0.49766068] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.62s, Samples = 1000
+---------------- Chain 2 started at [-0.22549839  1.53000221] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.67s, Samples = 1000
+---------------- Chain 3 started at [0.38812442 1.12805018] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.64s, Samples = 1000
+---------------- Chain 4 started at [0.26307797 0.03801835] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.63s, Samples = 1000
+---------------- Chain 5 started at [-0.87565686  0.31307655] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.63s, Samples = 1000
+ESS = 6602.1, R-hat = 2680387966529447.000, Acceptance rate = 0.000, Objective function = -67009699163236147200.0
 ######################################### Iteration 9/20
 Running 5 chains with L = 37.120, and step size = 2.8330
----------------- Chain 1 started at [ 0.86932405 -0.61610387 -0.87791351  0.33111845 -0.85567067] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
----------------- Chain 2 started at [-0.23602584  1.26798534 -0.74868666 -0.04660788 -0.0221413 ] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.48s, Samples = 1000
----------------- Chain 3 started at [ 1.09292441 -0.61674966 -0.61110211  0.91739388 -0.81633554] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.72s, Samples = 1000
----------------- Chain 4 started at [-0.07812168  1.1746866   0.48891798  0.56055718 -0.12996408] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.49s, Samples = 1000
----------------- Chain 5 started at [-0.98063001  0.38875872  0.65706353  0.25113173 -0.73987791] (first 5 coordinates)
------- ESS = 10903.4, Acceptance rate = 0.000, Time = 0.55s, Samples = 1000
-ESS = 16976.6, R-hat = 2123815033460330.250, Acceptance rate = 0.000, Objective function = -53095375836508225536.0
+---------------- Chain 1 started at [-1.4635572   1.42170434] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.46s, Samples = 1000
+---------------- Chain 2 started at [-1.68361531 -1.35901355] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.49s, Samples = 1000
+---------------- Chain 3 started at [-1.06986279  1.0407768 ] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.46s, Samples = 1000
+---------------- Chain 4 started at [-1.01017592 -0.14089588] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.47s, Samples = 1000
+---------------- Chain 5 started at [-1.95225067  0.68481845] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.46s, Samples = 1000
+ESS = 6602.1, R-hat = 2943904646792189.000, Acceptance rate = 0.000, Objective function = -73597616169804701696.0
 ######################################### Iteration 10/20
 Running 5 chains with L = 2.557, and step size = 1.5030
----------------- Chain 1 started at [ 0.06222967  2.34784802 -0.64827305  1.61689231 -0.69949814] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.36s, Samples = 1000
----------------- Chain 2 started at [ 2.9728702   1.0483157   1.78356493 -1.14765126  1.08010171] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.61s, Samples = 1000
----------------- Chain 3 started at [-3.32053404  1.36209326 -1.71466642 -0.73061117  0.70392744] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.40s, Samples = 1000
----------------- Chain 4 started at [-1.06945532 -0.60597649  0.37029801  0.71943642 -0.30071894] (first 5 coordinates)
------- ESS = 4984.2, Acceptance rate = 0.000, Time = 0.39s, Samples = 1000
----------------- Chain 5 started at [-0.24881642 -0.02203396 -1.60128274  0.74532547  0.34712976] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.47s, Samples = 1000
-ESS = 15792.7, R-hat = 2518395507491451.500, Acceptance rate = 0.000, Objective function = -62959887687286251520.0
+---------------- Chain 1 started at [ 1.0404733  -0.17162854] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
+---------------- Chain 2 started at [0.04709101 0.14826369] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.46s, Samples = 1000
+---------------- Chain 3 started at [ 0.11187269 -2.24463988] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.47s, Samples = 1000
+---------------- Chain 4 started at [-0.48264502 -0.43334611] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.54s, Samples = 1000
+---------------- Chain 5 started at [-1.30768711 -1.02435365] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.48s, Samples = 1000
+ESS = 6602.1, R-hat = 7586618414911208.000, Acceptance rate = 0.000, Objective function = -189665460372780187648.0
 ######################################### Iteration 11/20
 Running 5 chains with L = 22.307, and step size = 1.0597
----------------- Chain 1 started at [-1.51572289 -1.41478599  1.42110041 -0.98219497  0.54467495] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.48s, Samples = 1000
----------------- Chain 2 started at [ 0.21265246 -1.23630047 -0.81167489 -0.49641111 -0.50194739] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.41s, Samples = 1000
----------------- Chain 3 started at [-0.24526865  1.24686854  0.49047032 -0.54957403 -0.25672673] (first 5 coordinates)
------- ESS = 10084.2, Acceptance rate = 0.000, Time = 0.36s, Samples = 1000
----------------- Chain 4 started at [ 0.6304202   2.48763727 -0.90351694 -0.61842387 -0.13161152] (first 5 coordinates)
------- ESS = 12841.5, Acceptance rate = 0.000, Time = 0.37s, Samples = 1000
----------------- Chain 5 started at [ 0.16192164 -0.40685646  0.52370021 -0.91300192 -0.05502799] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.37s, Samples = 1000
-ESS = 15682.0, R-hat = 2863384292989968.500, Acceptance rate = 0.000, Objective function = -71584607324749176832.0
+---------------- Chain 1 started at [0.76413089 1.24771353] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.48s, Samples = 1000
+---------------- Chain 2 started at [-0.67331466  1.96397492] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.50s, Samples = 1000
+---------------- Chain 3 started at [-0.58265674  2.209768  ] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.80s, Samples = 1000
+---------------- Chain 4 started at [-0.46050541  1.97010127] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.58s, Samples = 1000
+---------------- Chain 5 started at [0.76287031 0.79760742] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.51s, Samples = 1000
+ESS = 6602.1, R-hat = 1741792618129374.000, Acceptance rate = 0.000, Objective function = -43544815453234323456.0
 ######################################### Iteration 12/20
 Running 5 chains with L = 12.432, and step size = 3.7197
----------------- Chain 1 started at [-1.62349306  0.07953049 -0.98930374 -0.01710152  0.72739985] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.36s, Samples = 1000
----------------- Chain 2 started at [0.39402931 0.97725509 0.24506675 1.08911829 1.50828092] (first 5 coordinates)
------- ESS = 18492.8, Acceptance rate = 0.000, Time = 0.34s, Samples = 1000
----------------- Chain 3 started at [-1.33876225 -0.98412611 -0.3022654   1.5460839   0.03078682] (first 5 coordinates)
------- ESS = 5101.9, Acceptance rate = 0.000, Time = 0.38s, Samples = 1000
----------------- Chain 4 started at [ 0.22838521  0.04795845 -1.76814763 -1.60961936  0.58310473] (first 5 coordinates)
------- ESS = 10872.4, Acceptance rate = 0.000, Time = 0.41s, Samples = 1000
----------------- Chain 5 started at [ 0.55639195  0.0442216  -1.12571766  0.05141742 -1.93711161] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.39s, Samples = 1000
-ESS = 14291.4, R-hat = 2479972981568356.500, Acceptance rate = 0.000, Objective function = -61999324539208876032.0
+---------------- Chain 1 started at [0.98204119 0.85113596] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.47s, Samples = 1000
+---------------- Chain 2 started at [-0.65099292  0.17887614] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.45s, Samples = 1000
+---------------- Chain 3 started at [-0.82747544  1.73710927] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.44s, Samples = 1000
+---------------- Chain 4 started at [-0.01416255  0.78654961] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.45s, Samples = 1000
+---------------- Chain 5 started at [ 0.262      -0.41479007] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.45s, Samples = 1000
+ESS = 6602.1, R-hat = 2430228312508934.500, Acceptance rate = 0.000, Objective function = -60755707812723335168.0
 ######################################### Iteration 13/20
-Running 5 chains with L = 0.500, and step size = 4.0000
----------------- Chain 1 started at [ 2.13503817  0.89512494 -0.82341181  0.39567471  0.90317033] (first 5 coordinates)
------- ESS = 7465.4, Acceptance rate = 0.000, Time = 1.41s, Samples = 1000
----------------- Chain 2 started at [ 1.67487551  0.01210261 -1.03990105 -0.8696167  -1.95547442] (first 5 coordinates)
------- ESS = 5407.5, Acceptance rate = 0.000, Time = 0.32s, Samples = 1000
----------------- Chain 3 started at [-2.27462244  2.07375431  1.393574   -0.1943986  -0.3833226 ] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.41s, Samples = 1000
----------------- Chain 4 started at [ 0.5913011   0.95080271  0.42247691 -0.08892557 -0.50368406] (first 5 coordinates)
------- ESS = 3773.5, Acceptance rate = 0.000, Time = 0.43s, Samples = 1000
----------------- Chain 5 started at [ 0.81291517  1.53530431 -0.61513532  1.18151686  0.79541905] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.33s, Samples = 1000
-ESS = 10727.2, R-hat = 3679854902232043.500, Acceptance rate = 0.000, Objective function = -91996372555801051136.0
+Running 5 chains with L = 11.460, and step size = 0.0100
+---------------- Chain 1 started at [ 0.2735641  -0.16055766] (first 5 coordinates)
+------ ESS = 1979.8, Acceptance rate = 0.976, Time = 2.60s, Samples = 1000
+---------------- Chain 2 started at [2.23026059 1.15638118] (first 5 coordinates)
+------ ESS = 1962.2, Acceptance rate = 0.975, Time = 2.64s, Samples = 1000
+---------------- Chain 3 started at [-0.99495431  0.32088249] (first 5 coordinates)
+------ ESS = 1897.8, Acceptance rate = 0.974, Time = 2.74s, Samples = 1000
+---------------- Chain 4 started at [ 0.46400007 -0.39775723] (first 5 coordinates)
+------ ESS = 2025.0, Acceptance rate = 0.977, Time = 2.63s, Samples = 1000
+---------------- Chain 5 started at [-0.57526822  1.26617999] (first 5 coordinates)
+------ ESS = 2107.6, Acceptance rate = 0.974, Time = 2.60s, Samples = 1000
+ESS = 1994.5, R-hat = 1.001, Acceptance rate = 0.975, Objective function = 1963.6
 ######################################### Iteration 14/20
-Running 5 chains with L = 40.000, and step size = 4.0000
----------------- Chain 1 started at [-0.28842518 -0.03226544  0.47964688  0.45305543 -0.19093331] (first 5 coordinates)
------- ESS = 7572.8, Acceptance rate = 0.000, Time = 0.31s, Samples = 1000
----------------- Chain 2 started at [-1.07224381  1.68699994 -1.79329383  0.14131181  0.08037896] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.32s, Samples = 1000
----------------- Chain 3 started at [-0.35037264 -0.00269418  0.97449582  1.33862404 -0.21999416] (first 5 coordinates)
------- ESS = 8740.1, Acceptance rate = 0.000, Time = 0.33s, Samples = 1000
----------------- Chain 4 started at [ 0.66787328 -0.63521932  0.77370335  1.69211296 -0.43493985] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.33s, Samples = 1000
----------------- Chain 5 started at [-1.46667076 -0.03045741 -0.35078074 -0.76286121  1.74426963] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.37s, Samples = 1000
-ESS = 14359.5, R-hat = 4413609988406115.500, Acceptance rate = 0.000, Objective function = -110340249710152843264.0
+Running 5 chains with L = 39.602, and step size = 0.0100
+---------------- Chain 1 started at [0.18911366 1.91306944] (first 5 coordinates)
+------ ESS = 2185.2, Acceptance rate = 0.947, Time = 8.08s, Samples = 1000
+---------------- Chain 2 started at [ 1.20685349 -0.82168037] (first 5 coordinates)
+------ ESS = 2041.4, Acceptance rate = 0.948, Time = 7.89s, Samples = 1000
+---------------- Chain 3 started at [-0.5124873   1.20660492] (first 5 coordinates)
+------ ESS = 1918.5, Acceptance rate = 0.949, Time = 8.06s, Samples = 1000
+---------------- Chain 4 started at [-0.74358119  1.05858067] (first 5 coordinates)
+------ ESS = 1952.9, Acceptance rate = 0.946, Time = 7.89s, Samples = 1000
+---------------- Chain 5 started at [ 1.82178508 -0.67660122] (first 5 coordinates)
+------ ESS = 2103.0, Acceptance rate = 0.942, Time = 7.88s, Samples = 1000
+ESS = 2040.2, R-hat = 1.000, Acceptance rate = 0.946, Objective function = 2034.5
 ######################################### Iteration 15/20
-Running 5 chains with L = 1.775, and step size = 0.0100
----------------- Chain 1 started at [ 2.47023727  1.15579562  0.19829471 -0.89771744  0.36263338] (first 5 coordinates)
------- ESS = 1276.3, Acceptance rate = 0.998, Time = 0.60s, Samples = 1000
----------------- Chain 2 started at [ 2.60658358 -0.17665827 -0.75347737  1.07372717 -1.09140906] (first 5 coordinates)
------- ESS = 1376.8, Acceptance rate = 0.998, Time = 0.58s, Samples = 1000
----------------- Chain 3 started at [-0.61525082  0.78082688  0.84140897  1.58806555  0.35997952] (first 5 coordinates)
------- ESS = 1335.2, Acceptance rate = 0.998, Time = 0.55s, Samples = 1000
----------------- Chain 4 started at [ 0.76330145 -1.11603772  1.25658943 -0.70274866  2.8849259 ] (first 5 coordinates)
------- ESS = 1371.8, Acceptance rate = 0.998, Time = 0.76s, Samples = 1000
----------------- Chain 5 started at [-0.66461233  0.13645897  0.58892465 -1.0234755   0.8116149 ] (first 5 coordinates)
------- ESS = 1258.5, Acceptance rate = 0.998, Time = 0.59s, Samples = 1000
-ESS = 1323.7, R-hat = 1.008, Acceptance rate = 0.998, Objective function = 1123.9
+Running 5 chains with L = 38.903, and step size = 0.2956
+---------------- Chain 1 started at [1.38421456 0.0673159 ] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.75s, Samples = 1000
+---------------- Chain 2 started at [-1.33429229 -1.90249688] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.70s, Samples = 1000
+---------------- Chain 3 started at [0.46780265 1.6186331 ] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.71s, Samples = 1000
+---------------- Chain 4 started at [-0.05979045 -1.04820604] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.72s, Samples = 1000
+---------------- Chain 5 started at [-0.79499931 -1.30629361] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.73s, Samples = 1000
+ESS = 6602.1, R-hat = 2666893904460421.500, Acceptance rate = 0.000, Objective function = -66672347611510513664.0
 ######################################### Iteration 16/20
-Running 5 chains with L = 0.500, and step size = 0.0100
----------------- Chain 1 started at [ 1.2808136  -1.43009004 -0.64151888  0.79986323 -0.56528238] (first 5 coordinates)
------- ESS = 1462.5, Acceptance rate = 0.999, Time = 0.45s, Samples = 1000
----------------- Chain 2 started at [ 0.31971096 -1.31340599 -0.40309413 -0.4490897   0.95146959] (first 5 coordinates)
------- ESS = 1630.7, Acceptance rate = 0.998, Time = 0.41s, Samples = 1000
----------------- Chain 3 started at [ 1.45304718 -0.45099192  0.14879153 -1.23122418 -1.5953396 ] (first 5 coordinates)
------- ESS = 1193.1, Acceptance rate = 0.999, Time = 0.41s, Samples = 1000
----------------- Chain 4 started at [-0.37862921  0.55269983 -1.23075883 -1.06389661  0.05847646] (first 5 coordinates)
------- ESS = 1121.9, Acceptance rate = 0.998, Time = 0.65s, Samples = 1000
----------------- Chain 5 started at [-0.32644468  0.22912077 -0.77628158  0.10797415  0.38335444] (first 5 coordinates)
------- ESS = 1377.1, Acceptance rate = 0.999, Time = 0.47s, Samples = 1000
-ESS = 1357.1, R-hat = 1.169, Acceptance rate = 0.998, Objective function = -2871.8
+Running 5 chains with L = 37.141, and step size = 0.4967
+---------------- Chain 1 started at [-0.59458188  1.85382943] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.57s, Samples = 1000
+---------------- Chain 2 started at [-0.70233682 -1.15733853] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.58s, Samples = 1000
+---------------- Chain 3 started at [-1.53966357 -0.8696062 ] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.67s, Samples = 1000
+---------------- Chain 4 started at [0.45209876 0.25547053] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.66s, Samples = 1000
+---------------- Chain 5 started at [ 0.03244075 -0.32064175] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.67s, Samples = 1000
+ESS = 6602.1, R-hat = 2499563960606374.500, Acceptance rate = 0.000, Objective function = -62489099015159341056.0
 ######################################### Iteration 17/20
-Running 5 chains with L = 1.408, and step size = 0.3399
----------------- Chain 1 started at [ 0.45667872  0.07344246 -0.64007828 -0.10429096 -0.25322833] (first 5 coordinates)
------- ESS = 9521.7, Acceptance rate = 0.000, Time = 0.33s, Samples = 1000
----------------- Chain 2 started at [-0.44685246 -0.89168425 -0.21777163  0.31501893 -1.68207477] (first 5 coordinates)
------- ESS = 3055.4, Acceptance rate = 0.008, Time = 0.36s, Samples = 1000
----------------- Chain 3 started at [0.06927222 1.84016903 1.63826808 1.32909762 0.53391496] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.34s, Samples = 1000
----------------- Chain 4 started at [-1.18007589 -0.30858535  2.06256012 -0.12356969  0.05312221] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.37s, Samples = 1000
----------------- Chain 5 started at [-1.53878267  0.26040652 -0.02496898 -0.12059052  0.28932849] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.52s, Samples = 1000
-ESS = 13612.3, R-hat = 23.101, Acceptance rate = 0.002, Objective function = -545116.9
+Running 5 chains with L = 35.816, and step size = 1.0022
+---------------- Chain 1 started at [ 0.08152443 -2.07335601] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.59s, Samples = 1000
+---------------- Chain 2 started at [-2.92208037  0.7392691 ] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 2.92s, Samples = 1000
+---------------- Chain 3 started at [-1.59889465  0.08971732] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.58s, Samples = 1000
+---------------- Chain 4 started at [-0.68255657 -0.1076977 ] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.52s, Samples = 1000
+---------------- Chain 5 started at [-0.53251059 -1.79891418] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.51s, Samples = 1000
+ESS = 6602.1, R-hat = 1893076078302627.750, Acceptance rate = 0.000, Objective function = -47326901957565669376.0
 ######################################### Iteration 18/20
-Running 5 chains with L = 0.500, and step size = 0.0100
----------------- Chain 1 started at [-0.08981669 -1.17657304  0.12630278  0.67522913 -0.50290465] (first 5 coordinates)
------- ESS = 1579.1, Acceptance rate = 0.998, Time = 0.41s, Samples = 1000
----------------- Chain 2 started at [ 0.55241788 -1.5244015   0.52907955  0.95961124  0.989199  ] (first 5 coordinates)
------- ESS = 1196.4, Acceptance rate = 0.998, Time = 0.44s, Samples = 1000
----------------- Chain 3 started at [-1.09023757 -0.13625645  0.44948914 -0.37677049  1.20397091] (first 5 coordinates)
------- ESS = 1166.2, Acceptance rate = 0.998, Time = 0.45s, Samples = 1000
----------------- Chain 4 started at [0.65200837 0.63643799 1.83028048 0.88343964 0.29447575] (first 5 coordinates)
------- ESS = 1333.1, Acceptance rate = 0.998, Time = 0.41s, Samples = 1000
----------------- Chain 5 started at [-2.12903763 -0.046204    0.04230341  0.1704118  -1.10556095] (first 5 coordinates)
------- ESS = 1277.3, Acceptance rate = 0.999, Time = 0.75s, Samples = 1000
-ESS = 1310.4, R-hat = 1.086, Acceptance rate = 0.998, Objective function = -834.5
+Running 5 chains with L = 39.055, and step size = 0.4614
+---------------- Chain 1 started at [-0.20226531 -0.4464284 ] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.61s, Samples = 1000
+---------------- Chain 2 started at [-0.63806613  0.78785392] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.62s, Samples = 1000
+---------------- Chain 3 started at [0.31873525 0.87944632] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.65s, Samples = 1000
+---------------- Chain 4 started at [-0.53043738  0.70546081] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.61s, Samples = 1000
+---------------- Chain 5 started at [-2.28120391  0.05481537] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.77s, Samples = 1000
+ESS = 6602.1, R-hat = 2312225465205186.000, Acceptance rate = 0.000, Objective function = -57805636630129623040.0
 ######################################### Iteration 19/20
-Running 5 chains with L = 18.698, and step size = 0.1255
----------------- Chain 1 started at [0.60596031 0.59681863 0.09612896 0.33066357 1.47883107] (first 5 coordinates)
------- ESS = 3613.7, Acceptance rate = 0.002, Time = 0.70s, Samples = 1000
----------------- Chain 2 started at [-0.32051296  0.72626762  0.5301478   0.61885967  0.90948883] (first 5 coordinates)
------- ESS = 1777.1, Acceptance rate = 0.001, Time = 0.56s, Samples = 1000
----------------- Chain 3 started at [ 2.05481735 -0.70075667  0.8826758  -0.49024476 -0.80305641] (first 5 coordinates)
------- ESS = 18494.9, Acceptance rate = 0.000, Time = 0.50s, Samples = 1000
----------------- Chain 4 started at [ 0.336331    0.70765448 -0.06501586 -0.74186217 -0.33554017] (first 5 coordinates)
------- ESS = 3034.8, Acceptance rate = 0.002, Time = 0.49s, Samples = 1000
----------------- Chain 5 started at [-0.08067422  0.72415749  0.46764015 -1.2970589  -0.23694824] (first 5 coordinates)
------- ESS = 10606.4, Acceptance rate = 0.000, Time = 0.55s, Samples = 1000
-ESS = 7505.4, R-hat = 11.894, Acceptance rate = 0.001, Objective function = -271065.9
+Running 5 chains with L = 38.139, and step size = 0.4703
+---------------- Chain 1 started at [0.72741359 1.38280279] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.71s, Samples = 1000
+---------------- Chain 2 started at [ 0.10103532 -0.35848249] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.68s, Samples = 1000
+---------------- Chain 3 started at [-0.91201798  1.09159382] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.70s, Samples = 1000
+---------------- Chain 4 started at [-0.51156163  0.59450506] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.68s, Samples = 1000
+---------------- Chain 5 started at [ 0.52582031 -0.93642233] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 0.66s, Samples = 1000
+ESS = 6602.1, R-hat = 2281552407252169.000, Acceptance rate = 0.000, Objective function = -57038810181304197120.0
 ######################################### Iteration 20/20
-Running 5 chains with L = 1.448, and step size = 0.0868
----------------- Chain 1 started at [ 0.25035657 -0.98313015  0.73121368 -0.66911029  1.36223244] (first 5 coordinates)
------- ESS = 1172.1, Acceptance rate = 0.630, Time = 0.36s, Samples = 1000
----------------- Chain 2 started at [ 1.24475184e-01 -9.38339297e-01  1.42100809e+00  2.44060366e-04
-  1.40323916e+00] (first 5 coordinates)
------- ESS = 1226.1, Acceptance rate = 0.589, Time = 0.39s, Samples = 1000
----------------- Chain 3 started at [ 0.44249234 -0.74202878  0.4791829  -0.81787013 -0.56526104] (first 5 coordinates)
------- ESS = 1273.3, Acceptance rate = 0.730, Time = 0.37s, Samples = 1000
----------------- Chain 4 started at [ 0.19589356 -0.11535482  0.06569845  0.03780759 -0.06398535] (first 5 coordinates)
------- ESS = 1085.3, Acceptance rate = 0.595, Time = 0.35s, Samples = 1000
----------------- Chain 5 started at [ 0.09489759 -1.59363395  0.85354309  0.01292842 -0.0766219 ] (first 5 coordinates)
------- ESS = 1261.7, Acceptance rate = 0.694, Time = 0.37s, Samples = 1000
-ESS = 1203.7, R-hat = 1.031, Acceptance rate = 0.647, Objective function = 421.8
+Running 5 chains with L = 32.924, and step size = 0.0540
+---------------- Chain 1 started at [-1.09311393 -1.21524954] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.000, Time = 1.63s, Samples = 1000
+---------------- Chain 2 started at [-0.98665622 -2.27184289] (first 5 coordinates)
+------ ESS = 1107.1, Acceptance rate = 0.007, Time = 1.61s, Samples = 1000
+---------------- Chain 3 started at [ 1.18649575 -1.09351343] (first 5 coordinates)
+------ ESS = 6602.1, Acceptance rate = 0.001, Time = 1.65s, Samples = 1000
+---------------- Chain 4 started at [1.04796391 0.18608734] (first 5 coordinates)
+------ ESS = 6507.7, Acceptance rate = 0.012, Time = 1.65s, Samples = 1000
+---------------- Chain 5 started at [-0.52529394 -0.83921752] (first 5 coordinates)
+------ ESS = 1250.8, Acceptance rate = 0.010, Time = 1.67s, Samples = 1000
+ESS = 4413.9, R-hat = 3.366, Acceptance rate = 0.006, Objective function = -60834.1
 ---------------------------------------BEST HYPERPARAMTEERS ACCORDING TO BAYESOPT-----------------------------------------------------
-Best hyperparameters: L = 1.775, step size = 0.0100
+Best hyperparameters: L = 39.602, step size = 0.0100
 ######################################### VALIDATING: BayesOpt
 Running: 10 chains each of length 5000
-Using hyperparameters: L = 1.775, step_size = 0.01000
----------------- Chain 1 started at [-0.49154546 -1.75407251  0.07855755  1.0105834  -0.96978543] (first 5 coordinates)
------- ESS = 6837.7, Acceptance rate = 0.998, Time = 1.78s, Samples = 5000
----------------- Chain 2 started at [ 1.35362743 -0.0143513  -0.63831107  0.50847129 -0.50321707] (first 5 coordinates)
------- ESS = 7013.2, Acceptance rate = 0.998, Time = 1.30s, Samples = 5000
----------------- Chain 3 started at [-1.96886012  0.48517596  0.75216946 -0.61410113 -0.21010915] (first 5 coordinates)
------- ESS = 6849.5, Acceptance rate = 0.998, Time = 1.26s, Samples = 5000
----------------- Chain 4 started at [ 0.70796715 -1.16041705 -0.13198284 -1.19397846 -0.43895373] (first 5 coordinates)
------- ESS = 7290.7, Acceptance rate = 0.998, Time = 1.27s, Samples = 5000
----------------- Chain 5 started at [ 0.7282279  -0.64406936  0.28508474 -0.55412551 -1.13769199] (first 5 coordinates)
------- ESS = 7157.8, Acceptance rate = 0.998, Time = 1.57s, Samples = 5000
----------------- Chain 6 started at [-1.45077033 -1.04070615 -1.04144726 -1.38331037 -1.004945  ] (first 5 coordinates)
------- ESS = 7068.2, Acceptance rate = 0.998, Time = 1.35s, Samples = 5000
----------------- Chain 7 started at [ 0.05198633 -2.24723979  2.42430981 -0.456476   -0.16464934] (first 5 coordinates)
------- ESS = 6521.1, Acceptance rate = 0.998, Time = 1.28s, Samples = 5000
----------------- Chain 8 started at [-0.24509389  0.30209793  0.5971524  -1.18305068  0.5602926 ] (first 5 coordinates)
------- ESS = 6909.4, Acceptance rate = 0.998, Time = 1.31s, Samples = 5000
----------------- Chain 9 started at [ 0.78220718 -0.04136623 -0.93415911  0.12901297  0.21102544] (first 5 coordinates)
------- ESS = 6480.4, Acceptance rate = 0.998, Time = 1.52s, Samples = 5000
----------------- Chain 10 started at [0.46382222 0.84055979 0.9296179  0.3588784  0.39248488] (first 5 coordinates)
------- ESS = 6691.1, Acceptance rate = 0.998, Time = 1.29s, Samples = 5000
+Using hyperparameters: L = 39.602, step_size = 0.01000
+---------------- Chain 1 started at [-1.63331079  0.53256431] (first 5 coordinates)
+------ ESS = 9885.1, Acceptance rate = 0.951, Time = 37.88s, Samples = 5000
+---------------- Chain 2 started at [-2.1854073   0.82412577] (first 5 coordinates)
+------ ESS = 9940.0, Acceptance rate = 0.948, Time = 37.52s, Samples = 5000
+---------------- Chain 3 started at [ 1.87530999 -1.53016952] (first 5 coordinates)
+------ ESS = 10074.7, Acceptance rate = 0.946, Time = 37.96s, Samples = 5000
+---------------- Chain 4 started at [0.33632355 2.57645543] (first 5 coordinates)
+------ ESS = 10180.9, Acceptance rate = 0.945, Time = 38.03s, Samples = 5000
+---------------- Chain 5 started at [ 1.33633452 -0.43809532] (first 5 coordinates)
+------ ESS = 10699.2, Acceptance rate = 0.942, Time = 37.84s, Samples = 5000
+---------------- Chain 6 started at [2.21046612 1.05399547] (first 5 coordinates)
+------ ESS = 10299.9, Acceptance rate = 0.944, Time = 38.49s, Samples = 5000
+---------------- Chain 7 started at [-2.6190744  -0.69218618] (first 5 coordinates)
+------ ESS = 10184.0, Acceptance rate = 0.947, Time = 37.47s, Samples = 5000
+---------------- Chain 8 started at [ 0.19398964 -0.03230486] (first 5 coordinates)
+------ ESS = 10236.6, Acceptance rate = 0.943, Time = 37.79s, Samples = 5000
+---------------- Chain 9 started at [1.67096402 1.25893407] (first 5 coordinates)
+------ ESS = 10029.0, Acceptance rate = 0.947, Time = 37.64s, Samples = 5000
+---------------- Chain 10 started at [-0.72575157  0.05627708] (first 5 coordinates)
+------ ESS = 9792.7, Acceptance rate = 0.950, Time = 37.77s, Samples = 5000
 
 Validation results for: BayesOpt
-            ESS mean +/- sd: 6881.899 ± 250.344
-                  R-hat max: 1.0020
-Acceptance rate mean +/- sd: 0.998 ± 0.000
-              L mean +/- sd: 1.775 ± 0.000
+            ESS mean +/- sd: 10132.196 ± 243.485
+                  R-hat max: 1.0001
+Acceptance rate mean +/- sd: 0.946 ± 0.003
+              L mean +/- sd: 39.602 ± 0.000
       Step size mean +/- sd: 0.0100 ± 0.0000
- Time per chain mean +/- sd: 1.392s ± 0.166s
-                 Total time: 14.139s
+ Time per chain mean +/- sd: 37.839s ± 0.275s
+                 Total time: 378.866s
 ######################################### VALIDATING: Auto-tuning
 Running: 10 chains each of length 5000
 ######################################### Running Auto Tuning
 Running: 10 chains each of length 5000
----------------- Chain 1 started at [-0.49154546 -1.75407251  0.07855755  1.0105834  -0.96978543] (first 5 coordinates)
-Auto tuning chose: L = 4.472 and step size = 0.04764 and inverse mass matrix = [1. 1. 1. 1. 1.]
------- L = 4.47, step size = 0.04764  ESS = 6946.9, Acceptance rate = 0.905, Time = 5.93s, Samples = 5000
----------------- Chain 2 started at [ 1.35362743 -0.0143513  -0.63831107  0.50847129 -0.50321707] (first 5 coordinates)
-Auto tuning chose: L = 4.472 and step size = 0.04578 and inverse mass matrix = [1. 1. 1. 1. 1.]
------- L = 4.47, step size = 0.04578  ESS = 6903.8, Acceptance rate = 0.921, Time = 4.49s, Samples = 5000
----------------- Chain 3 started at [-1.96886012  0.48517596  0.75216946 -0.61410113 -0.21010915] (first 5 coordinates)
-Auto tuning chose: L = 4.472 and step size = 0.04407 and inverse mass matrix = [1. 1. 1. 1. 1.]
------- L = 4.47, step size = 0.04407  ESS = 6902.7, Acceptance rate = 0.933, Time = 4.23s, Samples = 5000
----------------- Chain 4 started at [ 0.70796715 -1.16041705 -0.13198284 -1.19397846 -0.43895373] (first 5 coordinates)
-Auto tuning chose: L = 4.472 and step size = 0.04914 and inverse mass matrix = [1. 1. 1. 1. 1.]
------- L = 4.47, step size = 0.04914  ESS = 6868.7, Acceptance rate = 0.900, Time = 4.41s, Samples = 5000
----------------- Chain 5 started at [ 0.7282279  -0.64406936  0.28508474 -0.55412551 -1.13769199] (first 5 coordinates)
-Auto tuning chose: L = 4.472 and step size = 0.04456 and inverse mass matrix = [1. 1. 1. 1. 1.]
------- L = 4.47, step size = 0.04456  ESS = 6816.9, Acceptance rate = 0.932, Time = 4.44s, Samples = 5000
----------------- Chain 6 started at [-1.45077033 -1.04070615 -1.04144726 -1.38331037 -1.004945  ] (first 5 coordinates)
-Auto tuning chose: L = 4.472 and step size = 0.04614 and inverse mass matrix = [1. 1. 1. 1. 1.]
------- L = 4.47, step size = 0.04614  ESS = 7978.6, Acceptance rate = 0.905, Time = 5.56s, Samples = 5000
----------------- Chain 7 started at [ 0.05198633 -2.24723979  2.42430981 -0.456476   -0.16464934] (first 5 coordinates)
-Auto tuning chose: L = 4.472 and step size = 0.04864 and inverse mass matrix = [1. 1. 1. 1. 1.]
------- L = 4.47, step size = 0.04864  ESS = 7145.4, Acceptance rate = 0.896, Time = 4.14s, Samples = 5000
----------------- Chain 8 started at [-0.24509389  0.30209793  0.5971524  -1.18305068  0.5602926 ] (first 5 coordinates)
-Auto tuning chose: L = 4.472 and step size = 0.04924 and inverse mass matrix = [1. 1. 1. 1. 1.]
------- L = 4.47, step size = 0.04924  ESS = 6916.8, Acceptance rate = 0.903, Time = 3.90s, Samples = 5000
----------------- Chain 9 started at [ 0.78220718 -0.04136623 -0.93415911  0.12901297  0.21102544] (first 5 coordinates)
-Auto tuning chose: L = 4.472 and step size = 0.04691 and inverse mass matrix = [1. 1. 1. 1. 1.]
------- L = 4.47, step size = 0.04691  ESS = 6896.1, Acceptance rate = 0.915, Time = 3.97s, Samples = 5000
----------------- Chain 10 started at [0.46382222 0.84055979 0.9296179  0.3588784  0.39248488] (first 5 coordinates)
-Auto tuning chose: L = 4.472 and step size = 0.04660 and inverse mass matrix = [1. 1. 1. 1. 1.]
------- L = 4.47, step size = 0.04660  ESS = 7015.0, Acceptance rate = 0.915, Time = 3.94s, Samples = 5000
+---------------- Chain 1 started at [-1.63331079  0.53256431] (first 5 coordinates)
+Auto tuning chose: L = 2.828 and step size = 0.02326 and inverse mass matrix = [1. 1.]
+------ L = 2.83, step size = 0.02326  ESS = 10570.9, Acceptance rate = 0.826, Time = 10.75s, Samples = 5000
+---------------- Chain 2 started at [-2.1854073   0.82412577] (first 5 coordinates)
+Auto tuning chose: L = 2.828 and step size = 0.01709 and inverse mass matrix = [1. 1.]
+------ L = 2.83, step size = 0.01709  ESS = 9918.3, Acceptance rate = 0.927, Time = 9.09s, Samples = 5000
+---------------- Chain 3 started at [ 1.87530999 -1.53016952] (first 5 coordinates)
+Auto tuning chose: L = 2.828 and step size = 0.02007 and inverse mass matrix = [1. 1.]
+------ L = 2.83, step size = 0.02007  ESS = 10320.2, Acceptance rate = 0.887, Time = 8.00s, Samples = 5000
+---------------- Chain 4 started at [0.33632355 2.57645543] (first 5 coordinates)
+Auto tuning chose: L = 2.828 and step size = 0.01865 and inverse mass matrix = [1. 1.]
+------ L = 2.83, step size = 0.01865  ESS = 10432.4, Acceptance rate = 0.899, Time = 8.36s, Samples = 5000
+---------------- Chain 5 started at [ 1.33633452 -0.43809532] (first 5 coordinates)
+Auto tuning chose: L = 2.828 and step size = 0.01998 and inverse mass matrix = [1. 1.]
+------ L = 2.83, step size = 0.01998  ESS = 9837.9, Acceptance rate = 0.894, Time = 8.23s, Samples = 5000
+---------------- Chain 6 started at [2.21046612 1.05399547] (first 5 coordinates)
+Auto tuning chose: L = 2.828 and step size = 0.02053 and inverse mass matrix = [1. 1.]
+------ L = 2.83, step size = 0.02053  ESS = 11154.0, Acceptance rate = 0.872, Time = 7.86s, Samples = 5000
+---------------- Chain 7 started at [-2.6190744  -0.69218618] (first 5 coordinates)
+Auto tuning chose: L = 2.828 and step size = 0.02099 and inverse mass matrix = [1. 1.]
+------ L = 2.83, step size = 0.02099  ESS = 10402.3, Acceptance rate = 0.867, Time = 12.81s, Samples = 5000
+---------------- Chain 8 started at [ 0.19398964 -0.03230486] (first 5 coordinates)
+Auto tuning chose: L = 2.828 and step size = 0.01778 and inverse mass matrix = [1. 1.]
+------ L = 2.83, step size = 0.01778  ESS = 9977.8, Acceptance rate = 0.919, Time = 10.17s, Samples = 5000
+---------------- Chain 9 started at [1.67096402 1.25893407] (first 5 coordinates)
+Auto tuning chose: L = 2.828 and step size = 0.02160 and inverse mass matrix = [1. 1.]
+------ L = 2.83, step size = 0.02160  ESS = 9569.7, Acceptance rate = 0.879, Time = 7.86s, Samples = 5000
+---------------- Chain 10 started at [-0.72575157  0.05627708] (first 5 coordinates)
+Auto tuning chose: L = 2.828 and step size = 0.02072 and inverse mass matrix = [1. 1.]
+------ L = 2.83, step size = 0.02072  ESS = 9644.5, Acceptance rate = 0.883, Time = 8.00s, Samples = 5000
 
 Validation results for: Auto-tuning
-            ESS mean +/- sd: 7039.083 ± 324.635
-                  R-hat max: 1.0013
-Acceptance rate mean +/- sd: 0.912 ± 0.012
-              L mean +/- sd: 4.472 ± 0.000
-      Step size mean +/- sd: 0.0469 ± 0.0017
- Time per chain mean +/- sd: 4.500s ± 0.658s
-                 Total time: 45.024s
+            ESS mean +/- sd: 10182.803 ± 460.402
+                  R-hat max: 1.0012
+Acceptance rate mean +/- sd: 0.885 ± 0.027
+              L mean +/- sd: 2.828 ± 0.000
+      Step size mean +/- sd: 0.0201 ± 0.0017
+ Time per chain mean +/- sd: 9.114s ± 1.562s
+                 Total time: 91.174s
 Saved trace plot: plots/traces_Banana.png
 ##############################################################################
 Results
-BayesOpt ESS mean: 6881.9
-.   Auto ESS mean: 7039.1
+BayesOpt ESS mean: 10132.2
+.   Auto ESS mean: 10182.8

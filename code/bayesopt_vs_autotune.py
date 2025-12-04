@@ -242,7 +242,7 @@ compare_methods_on_target("Correlated Gaussian", target2, dim, initial_position,
 
 ############################# Banana
 # Dimension of target density
-dim = 5
+dim = 2
 # Start at the origin
 initial_position = jnp.zeros(dim)
 

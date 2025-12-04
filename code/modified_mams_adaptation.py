@@ -164,7 +164,7 @@ def adjusted_mclmc_make_L_step_size_adaptation(
     frac_tune2,
     target,
     diagonal_preconditioning,
-    fix_L_first_da=True, ############################## It was False, now it's True
+    fix_L_first_da=True, ############################################################################## It was False, now it's True
     max="avg",
     tuning_factor=1.0,
 ):

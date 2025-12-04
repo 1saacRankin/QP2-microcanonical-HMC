@@ -152,7 +152,7 @@ def plot_trace_and_samples(results_dict, target_name, dim_pair = (0, 1), num_cha
             ax.plot(x, y, color='gray', alpha = 0.1, linewidth = 1)
         ax.set_xlabel(f'Dimension {dim1}', fontsize = 10)
         ax.set_ylabel(f'Dimension {dim2}', fontsize = 10)
-        ax.set_title(f'{method}: Sample Path (Dimensions {dim1}, {dim2})', fontsize = 12, fontweight = 'bold')
+        ax.set_title(f'{method}: Chain Path (Dimensions {dim1}, {dim2})', fontsize = 12, fontweight = 'bold')
         ax.grid(True, alpha = 0.25)
     
     plt.suptitle(f'{target_name}: Traces and Chain Paths', fontsize = 14, fontweight = 'bold', y = 0.98)

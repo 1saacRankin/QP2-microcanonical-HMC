@@ -34,7 +34,7 @@ from modified_mams_adaptation import adjusted_mclmc_find_L_and_step_size
 # https://blackjax-devs.github.io/blackjax/autoapi/blackjax/mcmc/adjusted_mclmc/index.html#
 # https://blackjax-devs.github.io/blackjax/_modules/blackjax/mcmc/adjusted_mclmc.html#as_top_level_api
 
-# Need to change the integrator to (isokinetic) velocity_verlet: https://blackjax-devs.github.io/blackjax/_modules/blackjax/mcmc/integrators.html#isokinetic_velocity_verlet
+# Need to change the integrator to velocity_verlet: https://blackjax-devs.github.io/blackjax/_modules/blackjax/mcmc/integrators.html#isokinetic_velocity_verlet
 
 
 

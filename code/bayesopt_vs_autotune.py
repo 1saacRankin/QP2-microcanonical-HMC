@@ -45,6 +45,12 @@ import os
 os.makedirs('plots', exist_ok = True) ##### Run the script from the code folder then it makes the plots folder, so cd into code
 
 
+# Save all the hyperparameter tuning output and run the script: python bayesopt_vs_autotune.py > tuning_results.txt
+
+
+
+
+
 # Run a few longer chains with the BayesOpt-ed hyperparameters from a few positions
 # Run autotuned chains as well
 # See how they do
@@ -138,7 +144,7 @@ def compare_methods_on_target(target_name, logdensity_fn, dim, initial_position,
         tuning_key,
         num_iterations = 20, # Can mess around with how many BayesOpt iterations and number of chains and length of the chains
         tuning_chains = 5,
-        chain_length = 1000
+        chain_length = 1000 ################################# BayesOpt with chains of length 1000
     )
 
     # Plot the BayesOpt exploration-exploitation and save it
@@ -154,7 +160,7 @@ def compare_methods_on_target(target_name, logdensity_fn, dim, initial_position,
         initial_position,
         val_key,
         num_chains = 10,
-        num_steps = 2000,
+        num_steps = 5000,                                                   ################## Choose how long each validation chain is. Make sure it's the same as for auto tuning.
         L = float(best_params["L"]), # Pull out the best L
         step_size = float(best_params["step_size"]) # And the best step size from BayesOpt
     )
@@ -166,7 +172,7 @@ def compare_methods_on_target(target_name, logdensity_fn, dim, initial_position,
         initial_position,
         val_key, # Same key as for bayes opt
         num_chains = 10,
-        num_steps = 2000,
+        num_steps = 5000,                                                   ################## Make sure this is the same as for validating BayesOpt
         tune_mass_matrix = tune_mass_matrix # Probably always False
     )
 
@@ -216,7 +222,7 @@ def compare_methods_on_target(target_name, logdensity_fn, dim, initial_position,
 
 ############################# Bimodal
 # Dimension of target density
-dim = 8
+dim = 10
 # Start at the origin
 initial_position = jnp.zeros(dim)
 
@@ -226,7 +232,7 @@ compare_methods_on_target("Bimodal Gaussian", target1, dim, initial_position, tu
 
 ############################# Correlated Gaussian
 # Dimension of target density
-dim = 20
+dim = 50
 # Start at the origin
 initial_position = jnp.zeros(dim)
 
@@ -236,7 +242,7 @@ compare_methods_on_target("Correlated Gaussian", target2, dim, initial_position,
 
 ############################# Banana
 # Dimension of target density
-dim = 2
+dim = 5
 # Start at the origin
 initial_position = jnp.zeros(dim)
 

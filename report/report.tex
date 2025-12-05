@@ -320,7 +320,16 @@ Additionally, presentation issues and misleading nomenclature reduce the work's 
 
 
 
-
+% The remainder of the report (no page limit) will be devoted to a small paper-specific project that
+% we decide on together (come to our first meeting with ideas). 
+% Your grade will not be affected by how good the results look, whether your approach improves on past work, 
+% or whether you achieve the initial goal of the project. 
+% The aim of this exercise, from my perspective, is to evaluate your research potential. 
+% This includes taking a problem and formulating it precisely, whiteboarding some ideas with me and on your own, 
+% thinking creatively and independently to develop a solution, asking questions when necessary, selecting
+% ways to investigate / justify claims, choosing appropriate metrics, reflecting on and communicating results,
+% choosing the next course of action / reformulating the problem when things don’t turn out well, thinking of
+% future directions, etc. 
 
 \newpage
 \section{Project: Comparison of MAMS Hyperparameter Tuning Schemes}
@@ -365,7 +374,8 @@ While the implementation of MAMS appears correct, it was necessary to modify the
 during the dual averaging adaptation of $\epsilon$, as this functionality was not accessible by default.
 The adaptation function had to be duplicated and modified to allow the sequential tuning protocol described by RCS.
 
-The code to reproduce the experiments is available on GitHub: \href{https://github.com/1saacRankin/QP2-microcanonical-HMC}{https://github.com/1saacRankin/QP2-microcanonical-HMC}.
+The code to reproduce the experiments is available on GitHub:\\
+\href{https://github.com/1saacRankin/QP2-microcanonical-HMC}{https://github.com/1saacRankin/QP2-microcanonical-HMC}.
 
 
 
@@ -415,13 +425,11 @@ and updating the GP model based on the observed results.
 \end{algorithm}
 
 
-
 The objective function aims to maximize effective sample size (ESS) while heavily penalizing configurations
 that lead to non-convergent chains or artificially inflated ESS due to extremely low acceptance rates:
 \[
     f(L, \epsilon) = \text{ESS}(L, \epsilon) - P_{\hat{R}}(L, \epsilon) - P_{\alpha}(L, \epsilon).
 \]
-
 The convergence penalty $P_{\hat{R}}$ ensures that we only trust ESS estimates from chains that have actually converged according to $\hat{R}$ \cite{gelman1992inference}:
 \[
     P_{\hat{R}}(L, \epsilon) = C^2 \cdot N_{\text{tune}} \cdot \max(\hat{R}(L, \epsilon) - 1.0, 0).
@@ -436,7 +444,6 @@ To avoid this illusion of good performance, we linearly decrease the acceptance 
         0                                                            & \text{otherwise}
     \end{cases}
 \]
-
 After 20 iterations, each using 5 chains of length 1000, that is, 100000 samples, we select the hyperparameters that achieved the highest objective value.
 These optimal hyperparameters $(L^*, \epsilon^*)$ are then used for all subsequent validation chains.
 
@@ -490,6 +497,10 @@ The challenge of this target density is achieving adequate mixing between the tw
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{../code/plots/traces_Bimodal Gaussian.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
     \includegraphics[width=0.85\textwidth]{../code/plots/bayesopt_progress_Bimodal Gaussian.png}
 \end{figure}
 
@@ -499,21 +510,21 @@ The challenge of this target density is achieving adequate mixing between the tw
 
 \subsection{Correlated Gaussian}
 
-The correlated Gaussian target is a multivariate normal distribution centered at the origin with a specific correlation structure:
+The correlated Gaussian target is a centered at the origin with a specific correlation structure:
 \[
     p(\skx) = \Norm(\skx | \s[k]0, \s[k]\Sigma)
 \]
-where the covariance matrix has constant correlation $\rho = 0.8$ across all pairs of dimensions:
+where the covariance matrix has constant correlation $\rho = 0.8$:
 \[
     \s[k]\Sigma = (1-\rho)\skI + \rho\s[k]1\s[k]1^T
 \]
 
-This creates a covariance matrix with ones on the diagonal and $\rho = 0.8$ in all off-diagonal entries. The log density is:
+This covariance matrix has ones on the diagonal and $\rho = 0.8$ in all off-diagonal entries.
+Notice that a diagonal preconditioning cannot capture the off-diagonal correlation structure.
+The log density is:
 \[
     \log p(\skx) \propto -\frac{1}{2}\skx^T \s[k]\Sigma^{-1} \skx
 \]
-
-The uniform correlation structure across all dimension pairs means that diagonal preconditioning cannot capture the off-diagonal correlation structure any better than an identity matrix. This target tests whether samplers can efficiently explore distributions with strong global correlation without the benefit of adaptive preconditioning.
 
 \begin{table}[h]
     \centering
@@ -531,6 +542,10 @@ The uniform correlation structure across all dimension pairs means that diagonal
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{../code/plots/traces_Correlated Gaussian.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
     \includegraphics[width=0.85\textwidth]{../code/plots/bayesopt_progress_Correlated Gaussian.png}
 \end{figure}
 
@@ -541,16 +556,19 @@ The uniform correlation structure across all dimension pairs means that diagonal
 
 \subsection{Banana Distribution}
 
-The banana distribution, also known as the Rosenbrock density, features a curved ridge that presents a significant challenge for samplers. In $d = 10$ dimensions, the density is:
+The banana distribution, also known as the Rosenbrock or crescent distribution, has a curved shape that can be a significant challenge for samplers.
+In $d$ dimensions, the density is:
 \[
-    p(\skx) \propto \exp\lt(-\sum_{i=1}^{d-1}\lt[(a - x_i)^2 + b(x_{i+1} - x_i^2)^2\rt]\rt)
+    p(\skx) \propto \exp \lt( -\sum_{i=1}^{d-1} \lt[ (a - x_i)^2 + b(x_{i+1} - x_i^2)^2 \rt] \rt).
 \]
-with parameters $a = 1$ and $b = 100$. The log density is:
+When $d = 2$ with parameters $a = 1$ and $b = 100$, the log density becomes:
 \[
-    \log p(\skx) \propto -\sum_{i=1}^{d-1}\lt[(1 - x_i)^2 + 100(x_{i+1} - x_i^2)^2\rt]
+    \log p(\skx) \propto  -(1 - x_1)^2 - 100(x_2 - x_1^2)^2
 \]
 
-This distribution creates strong nonlinear dependencies between consecutive dimensions. The high curvature parameter $b = 100$ creates a narrow curved valley along which the probability mass concentrates, requiring samplers to navigate this valley efficiently while avoiding becoming stuck in local regions. The geometry presents a fundamentally different challenge than either the multimodal or correlated Gaussian targets.
+This distribution creates strong nonlinear dependencies between consecutive dimensions.
+The high curvature results in a narrow curved ridge with the probability mass.
+This is a difficult target density for samplers, and its geometry is a different challenge than either the multimodal or correlated Gaussian targets.
 
 \begin{table}[h]
     \centering
@@ -568,6 +586,10 @@ This distribution creates strong nonlinear dependencies between consecutive dime
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{../code/plots/traces_Banana.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
     \includegraphics[width=0.85\textwidth]{../code/plots/bayesopt_progress_Banana.png}
 \end{figure}
 
@@ -578,17 +600,92 @@ This distribution creates strong nonlinear dependencies between consecutive dime
 
 \subsection{Discussion}
 
-[Results summary and comparison across all three targets to be filled in after completing experiments]
+For all three target distributions, both BayesOpt and Auto-tuning hyperparameter tuning methods produced similar sampling performances.
+This suggests that for these targets, the $(L, \epsilon)$ hyperparameter space contains regions where hyperparamater configurations perform similarly,
+and so these targets do not require precise tuning.
 
-Several important limitations should be noted. First, the Bayesian optimization procedure is computationally expensive, particularly for the initial hyperparameter search phase. Second, our implementation does not tune the inverse mass matrix, instead holding it fixed at the identity throughout. Third, preliminary results suggest that the BayesOpt search may not have run for sufficient iterations to fully converge to the optimal hyperparameters. Fourth, the choice of objective function, while motivated by practical considerations, lacks rigorous theoretical justification. Fifth, we have not compared either method to non-microcanonical sampling algorithms such as standard HMC or NUTS. Finally, our experiments focus on relatively low-dimensional targets ($d = 10$), and the comparative performance may differ substantially in higher-dimensional settings where the geometry of the target distribution becomes more complex.
+We can examine the EEE, $\hat{R}$, and objective as BayesOpt iteratively explores the hyperparameter space.
+For the bimodal Gaussian, as the chains never mixed well, the best hyperparamaters appear to have minimized $\hat{R}$.
+For none of the three targets do we see the hyperparameters which maximize the objective function occuring near the end of the chain.
+Perhaps if BayesOpt was granted more iterations we would see more optimization rather than exploration.
+
+For each target and each tuning method, we plot the trace of the chain for its first dimension to assess convergence.
+The bimodal target has clear poor mixing.
+We also show a scatterplot of the first two dimensions.
+For the banana, we can see that the BayesOpt tuning allows for much greater distances between consecutive samples.
+
+For the bimodal Gaussian, both methods fail to achieve adequate convergence, with $\hat{R} > 2$.
+Neither method found hyperparameters capable of easily mode-switching in the validation chain length of 5000.
+The mean ESS values are nearly identical (61023 for BayesOpt versus 61091 for auto-tuning), which are much greater than the chain length of 5000,
+and both methods have high acceptance rates above 0.96.
+The notable difference lies in the discovered hyperparameters:
+BayesOpt selected a much longer trajectory length of $14.901$ paired with a larger step size of $2.242$ compared to those
+of Auto-tuning with $L = 1.310 \pm 0.119$ and $\epsilon = 1.191 \pm 0.108$.
+Notice that $\lceil 1.310 / 1.191 \rceil = 2$ and so the trajectory simulated is very short.
+Here, the standard deviations of $L$ and $\epsilon$ between chains is not negligible,
+though it is possible that $\lceil L \epsilon \rceil = n = 2$ holds for all 10 chains.
+BayesOpt achieves substantially faster wall-clock time (0.742 seconds versus 2.908 seconds),
+likely due to having pre-optimized hyperparameters.
+
+
+Both methods succesfuly converge for the correlated Gaussian, both with $\hat{R} = 1.003$.
+Here again, ESS values are nearly identical (3186 for BayesOpt versus 3223 for auto-tuning).
+Again, BayesOpt chooses a longer trajectory and larger step size, $24.776$ versus $14.142$, and $3.572$ versus $2.650$ respectively.
+The auto-tuning method achieves higher acceptance rates (0.891 versus 0.756).
+BayesOpt performed better in terms of wall-clock time, completing chains in 0.763 seconds compared to 3.590 seconds for auto-tuning.
+
+
+For the banana distribution, both methods achieve excellent convergence with $\hat{R} \approx 1.000$.
+Both methods have nearly identical ESS values (10132 for BayesOpt versus 10182 for auto-tuning).
+The hyperparameter differences are extreme.
+BayesOpt selected an extremely long trajectory $L = 39.602$ with a very small step size $\epsilon = 0.010$.
+These are nearly at the bounds of the hyperparameter search space with $L \in [0.5, 40.0]$ and $\epsilon \in [0.01, 4.0]$.
+Auto-tuning chose much shorter trajectories $L = 2.828$ with slightly larger step sizes $\epsilon = 0.020$, both with small variability.
+These represent fundamentally different strategies with BayesOpt choosing many small steps along a long trajectory
+whereas Auto-tuning chose fewer larger steps along a short trajectory.
+And interestingly, BayesOpt with the lower trajectory had higher acceptance rates.
+The wall-clock time relationship seen for the bimodal Gaussian and correlated Gaussian reverses for this target,
+with auto-tuning completing chains in $9.114 \pm 1.562$ seconds compared to BayesOpt's $37.839 \pm 0.275$ seconds.
+This is not surprising as the BayesOpt trajectory requires many more computations than that of auto-tuning.
+
+
+
+Interestingly, auto-tuning discovers hyperparameters with low variability across chains,
+suggesting this hyperparameter tuning algorithm converges to a local optima.
+
+In our experiments, auto-tuning was slower for the bimodal and correlated Gaussian targets.
+For the banana distribution, BayesOpt's extremely long trajectories made it slower.
+
+For computational cost, for each target here, BayesOpt spends 100000 samples upfront but reuses the same hyperparameters for all chains.
+Auto-tuning discarded 1000 samples adapting each of the 10 chains of length 5000, discarding 10000 samples total for the validation portion of the analysis.
+For large-scale applications with many chains, BayesOpt's amortized cost may be lower.
+That said, you could also share hyperparameters found through auto-tuning across chains.
+
+
+Our approach has several limitations.
+We only tune trajectory length and step size, leaving the inverse mass matrix fixed.
+We do not consider the Langevin-like version of MAMS, which has an additional partial momentum resampling hyperparameter.
+The BayesOpt search uses 20 iterations, which may be insufficient for some targets and hyperparameter search space.
+The hyperparamater search space used here allows for the step size to be greater than the trajectory length,
+though this did not become a problem, it should be fixed in the future.
+Our objective function, lacks rigorous theoretical justification.
+It was constructed to that way to avoid high ESS from poor mixing and many rejections.
+Here, we have not compared either tuning method to a canonical HMC algorithm,
+and so it is possible that the sampler can be outperformed regardless of the tuning method.
+Finally, our experiments are limited to three relatively low-dimensional targets with $d \leq 50$.
+Performance in higher dimensions remains untested.
+
 
 \subsection{Conclusion}
 
-We compared the sequential step size and trajectory length tuning algorithm described by RCS to a joint optimization approach using Bayesian optimization. Our initial results suggest that [conclusions to be filled in after completing experiments and analysis].
-
-For workflows requiring many chains, the key tradeoff is between BayesOpt's upfront investment in a single high-quality hyperparameter search versus sequential tuning's requirement to discard 30\% of each chain for independent adaptation. The relative merits of each approach likely depend on the specific characteristics of the target distribution, the dimensionality of the problem, and the total number of chains required.
-
-
+We compared the sequential tuning algorithm of RCS to joint optimization via Bayesian optimization.
+Our results indicate that the choice of tuning method has minimal impact on sampling performance.
+The two methods choose drastically different trajectory lengths and step sizes.
+Despite discovering substantially different hyperparameter configurations,
+both methods achieve similar effective sample sizes and $\hat{R}$ values across all three targets tested.
+This means one can choose a tuning method based on convenience and computational budget.
+BayesOpt requires a one-time upfront optimization, auto-tuning requires adaptation every per chain.
+Which is preferable depends on which discards fewer samples.
 
 
 

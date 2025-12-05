@@ -1,0 +1,614 @@
+\documentclass{article}
+
+% Command + Option + V to view the PDF in VSCode
+
+% Trevor's ShorTeX
+\usepackage{shortex}
+
+% Page setup
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\setlength{\parindent}{0pt} % No indent at the beginning of paragraphs
+\setlength{\parskip}{7pt}  % Gap between paragraphs
+
+% Choose between bibliography and references
+% \renewcommand{\refname}{Bibliography}
+\renewcommand{\refname}{References}
+
+
+\begin{document}
+
+\begin{center}
+    \huge{\underline{Qualifying Paper 2} \\
+        \vspace{5pt}
+        Metropolis Adjusted Microcanonical \\
+        \vspace{5pt}
+        Hamiltonian Monte Carlo}
+
+    \vspace{1cm}
+
+    \Large{Professor: Trevor Campbell}
+
+    \vspace{1cm}
+
+    \Large{Isaac Rankin}
+
+    \vspace{1cm}
+
+    \large \today
+\end{center}
+
+\newpage
+
+
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+
+
+% The first section of the report should provide a critical analysis (max 5 pages) of the paper. 
+% It should summarize the problem the paper addresses in the context of previous work, 
+% limitations of previous work, the solution technique, important results, why they are important, 
+% and limitations of the paper. 
+% Papers listed below may have multiple contribution areas (theory, modelling, computation), 
+% and the summary should reflect that. 
+% The goal of this portion of the report is to show that you can take a complex body of work
+% (one paper and earlier relevant work), digest it, 
+% and present a concise summary of the important points, and comment on them. 
+
+
+
+\section{Introduction}
+
+Suppose we wish to draw samples from a possibly unnormalised density $p: \reals^d \to \reals$.
+Markov chain Monte Carlo (MCMC) algorithms construct a sequence $\{ \skx_i \}_{i = 1}^n$ where each $\skx_i \in \reals^d$ \cite{neal2011mcmc}.
+When the MCMC algorithm is designed carefully, the empirical distribution of the sequence, or chain, approximates $p$.
+In many applications, practitioners desire \cite{robnik2023microcanonical, robnik2025metropolis} that asymptotically,
+the distribution of chain converges to $p$, ensuring that the samples can be used to make unbiased inferences.
+
+When gradient information is available, gradient-based MCMC methods can achieve substantially better efficiency than random-walk methods,
+particularly in high dimensions \cite{neal2011mcmc, betancourt2017conceptual}.
+For interdisciplinary applications, automatic hyperparameter tuning schemes are highly desirable,
+as they allow practitioners to obtain samples without requiring expertise in the algorithm's implementation.
+Such automatically tuned algorithms are often referred to as \textit{blackbox}.
+
+Robnik, Cohn-Gordon, and Seljak (RCS) propose the Metropolis-adjusted microcanonical sampler (MAMS) \cite{robnik2025metropolis},
+which adds a Metropolis-Hastings correction to the earlier asymptotically biased microcanonical Hamiltonian Monte Carlo (MCHMC)
+and its variant, microcanonical Langevin-like Hamiltonian Monte Carlo (MCLMC).
+The primary contribution is deriving the correct acceptance probability for dynamics whose numerical integrator is not volume-preserving.
+
+This report critically examines the manuscript
+\textit{Metropolis Adjusted Microcanonical Hamiltonian Monte Carlo} \cite{robnik2025metropolis} which introduced MAMS.
+We analyze the technical details, discuss the contributions of the work,
+and identify limitations and unanswered questions regarding the novel algorithm.
+We supplement this analysis with a project comparing RCS's hyperparameter tuning scheme to a Bayesian optimization approach.
+
+
+
+
+
+
+
+\section{Hamiltonian Monte Carlo and related work}
+
+We shall now briefly introduce Hamiltonian Monte Carlo (HMC) and discuss work related to that of RCS.
+
+We write the target density as $p(\skx) = e^{-\scL(\skx)}/Z$ where $Z = \int e^{-\scL(\skx)} d\skx$ is the normalizing constant, and $\scL(\skx) = -\log p(\skx) - \log Z$.
+Note that gradients of $p$ are proportional to those of $\scL$: $\grad \scL(\skx) = -\grad p(\skx) / p(\skx) \propto \grad p(\skx)$.
+
+HMC augments the target `position' $\skx$ with an ancillary `momentum' $\sku \in \reals^d$, forming a so-called `phase-space' \cite{neal2011mcmc, betancourt2017conceptual}.
+Following RCS's nomenclature, we refer to the standard HMC dynamics as the `canonical' Hamiltonian dynamics: $\sokx = \sku, \; \soku = -\grad \scL(\skx)$,
+where $\sokx$ and $\soku$ are the time derivatives of the position and momentum respectively.
+A solution to this system of differential equations corresponds to trajectories on level sets of the separable Hamiltonian $H(\skx, \sku) = \scL(\skx) + \frac{1}{2}\sku^T \sku$.
+Typically, we write $H(\skx, \sku) = V(\skx) + K(\sku)$, where the potential energy is $V(\skx) = \scL(\skx)$, and the kinetic energy is $K(\sku) = \frac{1}{2}\sku^T \sku$ \cite{neal2011mcmc}.
+The stationary distribution describing $(\skx, \sku)$ on phase-space is $p(\skx) \; \Norm(\sku; \s[k]0, \s[k]I)$ \cite{neal2011mcmc, betancourt2017conceptual}.
+Crucially, the numerical integrator for canonical HMC, typically the leapfrog (Verlet) integrator, is symplectic \cite{neal2011mcmc, robnik2025metropolis, betancourt2017conceptual}, that is,
+it preserves phase-space volume and so its corresponding Jacobian determinant is one, simplifying the Metropolis-Hastings acceptance probability calculation.
+
+Robnik and Seljak, collaborating with Bruno De Luca and Silverstein, previously introduced
+microcanonical Hamiltonian Monte Carlo (MCHMC) and microcanonical Langevin-like Hamiltonian Monte Carlo (MCLMC) \cite{robnik2023microcanonical},
+which simulate `microcanonical dynamics' with unit-norm momentum $\| \sku \| = 1$.
+The microcanonical dynamics are defined as:
+\[
+    \sokx = \sku, \qquad \soku = -\frac{I - \sku\sku^T}{d-1} \grad \scL(\skx).
+\]
+The projection operator $(I - \sku\sku^T)/(d-1)$ ensures $\s[ok]u \perp \sku$, preserving $\| \sku \| = 1$
+and constraining the momentum to the unit sphere $S^{d-1}$ \cite{robnik2023microcanonical, robnik2025metropolis, robnik2023fluctuation, robnik2024black}.
+When integrated exactly, these dynamics have stationary distribution $p(\skx) \; \scU_{S^{d-1}}(\sku)$ \cite{robnik2023microcanonical}.
+In contrast to canonical HMC, the leapfrog integrator for microcanonical dynamics is not symplectic \cite{robnik2023microcanonical,robnik2025metropolis,betancourt2017conceptual}.
+The projection operator compresses or expands the phase-space volume depending on alignment between momentum and gradient.
+This means the Jacobian determinant is not one, and computing the acceptance probability requires additional work.
+The prior work on MCHMC and MCLMC avoided this issue by not including a Metropolis-Hastings step, accepting the resulting asymptotic bias \cite{robnik2023microcanonical, robnik2025metropolis, robnik2023fluctuation, robnik2024black}.
+Note that the algorithms MCHMC and MCLMC differ by momentum resampling.
+MCHMC samples a unit-norm momentum vector every $k \in \nats$ trajectories whereas MCLMC pertubes the momentum frequently during the trajectory \cite{robnik2023microcanonical, robnik2023fluctuation}.
+Either MCHMC and MCLMC can be augmented with a Metropolis accept-reject step to ensure asymptotic unbiasedness \cite{robnik2025metropolis}.
+From here on, we refer to MAMS as the Metropolis-adjusted MCHMC with $k = 1$.
+
+For both the canonical and microcanonical dynamics, $p(\skx) = \int p(\skx) \; \Norm(\sku; \s[k]0, \s[k]I) d\sku = \int p(\skx) \; \scU_{S^{d-1}}(\sku) d\sku$ and so sampling from $p$
+is equivalent to simulating the dynamics to obtain a position-momentum pair $(\skx, \sku)$ and discarding the momentum $\sku$.
+As solving this system exactly is typically intractable, we use numerical integrators whose discretisation error requires a Metropolis-Hastings correction to ensure the
+sampler targets the joint distribution of $(\skx, \sku)$ exactly \cite{neal2011mcmc, betancourt2017conceptual}.
+Note that RCS call on terminology from statistical physics, calling their method `microcanonical' because the momentum magnitude is fixed,
+analogous to fixed energy in NVE (microcanonical) ensembles, rather than varying energy as for NVT (canonical) ensembles \cite{robnik2023microcanonical, robnik2025metropolis, tong2009university}
+
+Several previous HMC variants have modified either the dynamics, or the mass structure (and hence the momentum).
+Note that by setting the `mass' of the fictitious particle equal to one, we can use the terms `momentum' and `velocity' interchangeably.
+Riemannian manifold HMC \cite{girolami2011riemann} uses a position-dependent mass matrix $M(\skx)$ with kinetic energy $K(\skx, \sku) = \frac{1}{2}\sku^T M(\skx)^{-1} \sku$, adapting to local curvature.
+Relativistic HMC \cite{lu2017relativistic} uses $K(\sku) = \sqrt{1 + \| \sku \|^2}$ (with additional hyperparameters set to 1 here), bounding velocity for stability to large gradients.
+Magnetic HMC \cite{tripuraneni2017magnetic} introduces non-canonical dynamics, has an accept-reject step, but crucially the integrator for these dynamics is volume preserving.
+Magnetic HMC follows the dynamics $\s[ok]x = F\sku + E \grad U(\skx) \; \s[ok]u = F^T \grad U(\skx) + G \sku$ where $F, E, \text{and} G$ form an antisymmetric block matrix,
+generalizing the canonical dynamics which can be written in matrix notation with the positive and negative identity matrix on the diagonal, and the zero matrix on the off diagonal.
+Pakman \cite{pakman2025super} explore non-standard dynamics, sampling momentum from the Laplace distribution yeilding a Hamiltonian (choosing constants equal to 1) $H(\skx, \sku) = - \cos(\skx) + |\sku|$.
+Ver Steeg and Galstyan chose a `kinetic' energy $K(\sku) = \frac{d}{2} \log \| \frac{\sku}{d} \|$ \cite{ver2021hamiltonian}.
+They argued that in machine learning applications, enforcing physicallity is irrelevant \cite{ver2021hamiltonian}, justifying their `non-Newtonian' momentum.
+The microcanonical dynamics used by RCS are equivalent to those employed by Ver Steeg and Galstyan, though doubts have been raised as to whether
+their deterministic algorithm produces an ergodic chain \cite{robnik2023microcanonical, robnik2025metropolis}.
+
+
+There have also been advancements in hyperparamater tuning schemes.
+Proposals are generated by numerically integrating the chosen dynamics, often using the leapfrog or Verlet integrator \cite{neal2011mcmc, betancourt2017conceptual}.
+The leapfrog integrator approximating the dynamics, requires tuning of step size $\epsilon$ and trajectory length $L$.
+In order to make an algorithm blackbox, $\epsilon$ and $L$, and in some cases a preconditioner matrix to make variability comparable across dimensions \cite{hird2025quantifying},
+must be selected without input from the practitioner.
+Too large of step sizes can cause instability and low acceptance rates; small step sizes waste computation through small moves causing slow exploration \cite{campbell2021gradient}.
+Trajectory lengths must balance exploration with efficiency to avoid retracing paths \cite{hoffman2014no}.
+The No-U-Turn sampler (NUTS) \cite{hoffman2014no} automates trajectory length selection by growing trajectories until they double back, eliminating manual tuning of $L$.
+Step size adaptation during warmup uses dual averaging \cite{hoffman2014no, nesterov2009primal} based on acceptance rate tracking.
+There are many strategies for tuning hyperparameters.
+This problem will be the focus of the project in Section 7.
+
+
+
+
+
+\section{Deriving the acceptance probability}
+
+MAMS adds a Metropolis-Hastings acceptance step to MCHMC to eliminate asymptotic bias.
+The primary technical challenge--and main contribution of RCS--is deriving the correct acceptance probability for dynamics whose numerical integrator is not volume-preserving.
+For canonical HMC, the symplectic integrator ensures the Jacobian determinant equals one \cite{neal2011mcmc}, simplifying the acceptance probability to a potential energy difference.
+For microcanonical dynamics, this simplification does not hold.
+
+The microcanonical dynamics are approximated using leapfrog integration with step size $\epsilon$ and trajectory length $L$, yielding $n = \lceil L/\epsilon \rceil$ steps.
+The leapfrog integrator is the composition:
+\[
+    \rho = \scT \circ (B_{\epsilon/2} \circ A_\epsilon \circ B_{\epsilon/2}) \circ \cdots \circ (B_{\epsilon/2} \circ A_\epsilon \circ B_{\epsilon/2})
+\]
+where
+\[
+    B_{\epsilon/2}: & \quad \sku \leftarrow \sku - \frac{\epsilon}{2} \frac{I - \sku \sku^T}{d-1} \grad \scL(\skx), \\
+    A_\epsilon:     & \quad \skx \leftarrow \skx + \epsilon \sku
+\]
+and $(B_{\epsilon/2} \circ A_\epsilon \circ B_{\epsilon/2})$ is composed $n$ times.
+After $n$ steps, momentum is flipped: $\scT(\skx, \sku) = (\skx, -\sku)$.
+The integrator $\rho$ is reversible, that is, an involution $\rho \circ \rho = id$, where $id$ denotes the identity $id(\skx) = \skx$ for every $\skx \in \reals^d$.
+Crucially, unlike canonical HMC, the leapfrog integrator for microcanonical dynamics is \textit{not volume-preserving}, necessitating computing a determinant of a Jacobian.
+
+For a proposal $\skz' = (\skx', \sku')$ from current state $\skz = (\skx, \sku)$, the required acceptance probability \cite{neal2011mcmc} is:
+\[
+    \min \left( 1, \frac{p(\skz')}{p(\skz)} \frac{q(\skz | \skz')}{q(\skz' | \skz)} \right) = \min \left( 1, e^{-W(\skz', \skz)} \right).
+\]
+Since $\sku$ and $\sku'$ are both uniformly distributed on $S^{d-1}$, we have $\scU_{S^{d-1}}(\sku) = \scU_{S^{d-1}}(\sku')$, and so the density ratio becomes:
+\[
+    \frac{p(\skz')}{p(\skz)} = \frac{p(\skx') \; \scU_{S^{d-1}}(\sku')}{p(\skx) \; \scU_{S^{d-1}}(\sku)} = \frac{p(\skx')}{p(\skx)} = e^{-(\scL(\skx') - \scL(\skx))}.
+\]
+The proposal density ratio requires more careful treatment as $\rho$ is not volumne preserving.
+As $\rho$ is deterministic and reversible, $q(\skz' | \skz) = \delta(\skz' - \rho(\skz))$ and $q(\skz | \skz') = \delta(\skz - \rho(\skz'))$ where $\delta(\cdot)$ is the Dirac delta function.
+Using a change of variables:
+\[
+    \delta(\skz - \rho(\skz')) = \delta(\skz' - \rho(\skz)) \left|\frac{\partial \rho}{\partial \skz}(\skz)\right|
+\]
+therefore:
+\[
+    \frac{q(\skz | \skz')}{q(\skz' | \skz)} = \frac{\delta(\skz - \rho(\skz'))}{\delta(\skz' - \rho(\skz))} = \left|\frac{\partial \rho}{\partial \skz}(\skz)\right|.
+\]
+Applying Liouville's theorem to the microcanonical dynamics written as vector field $\dot{\skz}(t) = F(\skz(t)) = (\sku(s), -\frac{I - \sku(s)\sku(s)^T}{d-1} \grad \scL(\skx(s)))$ for which $\rho$ approximates, he have:
+\[
+    \log\left|\frac{\partial \rho}{\partial \skz}(\skz)\right| \approx \int_0^L \grad \cdot F(\skz(s)) \, ds
+\]
+where equality would be achieved if $\rho$ solves the dynamics exactly.
+But this divergence can be computed as follows:
+\[
+    \grad \cdot F(\skz(s))
+    &= \grad_{\skx} \cdot (\sku) + \grad_{\sku} \cdot (-\frac{I - \sku\sku^T}{d-1} \grad \scL(\skx)) \\
+    &= 0 - \frac{1}{d-1}\grad_{\sku} \cdot \left( (I - \sku \sku^T) \grad \scL(\skx) \right) \\
+    &= -\frac{1}{d-1}\sku^T \grad \scL(\skx).
+\]
+$W(\skz', \skz)$ from the acceptance probability $\min(1, e^{-W(\skz', \skz)})$ is therefore:
+\[
+    W(\skz', \skz) = \scL(\skx') - \scL(\skx) + \int_0^L \frac{1}{d-1} \sku(s)^T \grad \scL(\skx(s)) \, ds
+\]
+this integral is zero for the canonical case as $\rho$ is simpletic but accounts for volume compression or expansion in the microcanonical case.
+$\sku(s)^T \grad \scL(\skx(s))$ measures the alignment between the log-density and the momentum.
+
+As $\rho$ approximates these dynamics using discrete steps, we can calculate \cite{robnik2025metropolis} $W(\rho(\skz), \skz)$ as: \\
+$W(\rho(\skz), \skz) = \sum_{k=1}^n \left[ V(A_{\epsilon_k}(\skz_{k-1})) - V(\skz_{k-1}) + K(B_{\epsilon_k} \circ A_{\epsilon_k}(\skz_{k-1})) - K(A_{\epsilon_k}(\skz_{k-1})) \right]$.
+
+The potential energy change is the same as for canonical HMC: $V(A_\epsilon(\skz)) - V(\skz) = - \log \frac{p(\skx')}{p(\skx)}$.
+For canonical HMC with step size $\epsilon$, the kinetic energy change is: $K(B_\epsilon(\skz)) - K(\skz) = \frac{1}{2}\|\sku'\|^2 - \frac{1}{2}\|\sku\|^2$.
+For MAMS: $K(B_\epsilon(\skz)) - K(\skz) = (d-1) \log(\cosh \delta + \ske \cdot \sku \sinh \delta)$ where $\ske = -\grad \scL(\skx) / \|\grad \scL(\skx) \|$ and $\delta = \epsilon \|\grad \scL(\skx)\| / (d-1)$.
+Which was found by solving a nonlinear first order differential equation \cite{robnik2023microcanonical, robnik2025metropolis, ver2021hamiltonian}.
+So, for both HMC and MAMS, the Metropolis-Hastings acceptance probability can be computed by tracking the total energy change $W$ along the discretized trajectory.
+The crucial difference is that MAMS requires the volume correction term from the divergence of the velocity update, while HMC using canonical dynamics does not.
+The derivation is mathematically sound and resolves the limitation that prior microcanonical samplers (MCHMC, MCLMC) were asymptotically biased.
+
+
+
+
+
+\section{Behaviour of microcanonical dynamics}
+
+A key property of microcanonical dynamics emphasized by RCS is stability to large gradients.
+To understand this property, consider the behavior of particles under both systems of differential equations along a trajectory without momentum resampling.
+
+The canonical dynamics $\sokx = \sku, \soku = -\grad\scL(\skx)$ leave momentum magnitude $\| \sku \|$ unconstrained and varying according to the gradient.
+When $\| \grad\scL(\skx) \|$ is large, the update $\sku_{k+1} = \sku_k - \epsilon\grad\scL(\skx_k)$ can produce $\| \sku_{k+1} \| \gg \| \sku_k \|$,
+leading to very large position steps $\skx_{k+2} = \skx_{k+1} + \epsilon\sku_{k+1}$.
+This potentially causes rejection of the proposed state or numerical instability.
+
+The microcanonical dynamics $\sokx = \sku, \soku = -\frac{I - \sku\sku^T}{d-1}\grad\scL(\skx)$ enforce the constraint $\| \sku \| = 1$, implying $\| \sokx \| = \| \sku \| = 1$ always.
+The projection operator ensures $\soku \perp \sku$, so momentum changes alter the direction, but not magnitude of $\sku$.
+Even when $\|\grad\scL(\skx) \|$ is large, the speed remains constant.
+Large gradients cannot cause unbounded momentum growth.
+
+The momentum restriction has implications for the characteristics of the particle’s phase-space exploration.
+
+For canonical dynamics, energy conservation in the Hamiltonian $H(\skx, \sku) = V(\skx) + K(\sku)$ creates an inverse relationship between kinetic and potential energy.
+In high-probability regions, $p(\skx)$ is high and thus $\scL(\skx) = -\log p(\skx)$ is low.
+Potential energy is low and so kinetic energy must be correspondingly high.
+Particles move rapidly through high-density regions.
+Conversely, in low-probability regions with high potential energy, kinetic energy is low and particles may struggle to traverse these areas.
+
+For microcanonical dynamics, the momentum magnitude is independent of the density at any point, ensuring a consistent speed of exploration through all regions.
+In steep regions, the particle's direction changes sharply due to the projection operator but speed remains constant.
+The Metropolis step can reject proposals to lower-density regions, preventing excessive exploration there.
+A potential issue arises when a ridge divides a flat region between two modes.
+Upon encountering such a ridge, the particle's momentum rotates but may fail to traverse the ridge,
+possibly causing the particle to fail to explore the full space.
+
+
+
+
+
+
+\section{Limitations}
+
+MAMS represents a technically correct algorithmic development that extends MCHMC and MCLMC with a Metropolis-Hastings correction,
+eliminating asymptotic bias through derivation of the acceptance probability for non-volume-preserving microcanonical dynamics.
+However, substantial theoretical and empirical gaps remain.
+
+MAMS lacks convergence rate bounds for classes of target densities.
+For instance, canonical HMC has mixing time bounds for strongly log-concave targets \cite{chen2019optimal} but no analogous results exist for MAMS.
+Without such an analysis, it is unclear when MAMS is guaranteed to converge faster than canonical methods and how performance scales with the dimension of the problem.
+
+The paper provides no characterization of when the unit-norm constraint helps versus hinders exploration,
+nor diagnostic tools for MAMS-specific failure modes such as when volume corrections dominate acceptance decisions.
+It remains unclear for which target geometries favour microcanonical dynamics.
+In addition, MAMS exceeds standard HMC leapfrog implementation complexity as it requires computing the volume change.
+
+In the case $d = 1$, the constraint that $\| \sku \| = 1$ reduces to $\sku \in \{-1, 1\}$.
+The projection operator $\frac{I - \sku\sku^T}{d-1}$ becomes undefined due to division by $d-1 = 0$.
+Regardless, in one dimension $I - \sku\sku^T = 0$, so the momentum never changes.
+Ver Steeg and Galstyan \cite{ver2021hamiltonian} noted this but dismissed it as the issue does not occur for higher dimensions.
+
+The term `Hamiltonian Monte Carlo' refers to methods based on Hamiltonian mechanics with volume-preserving dynamics \cite{neal2011mcmc, betancourt2017conceptual}.
+MAMS does not employ true Hamiltonian dynamics as noted by RCS \cite{robnik2025metropolis}.
+RCS also note that the 'kinetic energy' for microcanonical dynamics is not in the standard sense.
+Drawing parallels to Hamiltonian dynamics and kinetic energy can confuse readers and practitioners.
+
+The manuscript suffers from several presentation issues that detract from its technical contributions.
+Notation is inconsistent, with variables appearing in both script and non-script forms.
+The reference list contains duplicate entries with varying capitalization.
+More concerning is the self-citation.
+The manuscript exists as two arXiv versions (v1 from March 2025, v2 from May 2025, both arXiv:2503.01707), yet version 2 cites version 1.
+
+
+
+
+\section{Conclusion}
+
+The Metropolis-adjusted microcanonical sampler makes a technical contribution by deriving the acceptance probability for non-volume-preserving microcanonical dynamics,
+correcting the asymptotic bias present in MCHMC and MCLMC.
+The derivation is mathematically correct and demonstrates that Metropolis correction can be applied to dynamics whose integrators do not preserve phase-space volume.
+The unit-norm momentum constraint provides stability to large gradients, a property that may be of benefit in some cases.
+
+A theoretical analysis of when and why microcanonical dynamics outperform canonical dynamics would be beneficial for this new methodology to gain trust and support.
+Additionally, presentation issues and misleading nomenclature reduce the work's accessibility.
+
+
+
+
+
+
+
+
+\newpage
+\section{Project: Comparison of MAMS Hyperparameter Tuning Schemes}
+
+\subsection{Introduction}
+
+
+The Metropolis-adjusted microcanonical sampler (MAMS) algorithm requires careful tuning of two key hyperparameters:
+the trajectory length $L$, and the step size $\epsilon$.
+While it is also possible to tune a preconditioner matrix, we simplify our analysis by setting it equal to the identity matrix.
+We focus on the MCHMC variant of MAMS, which samples a new unit-norm momentum vector between trajectories,
+but does not partially refresh the momentum within the trajectory, as would be done in the MCLMC variant.
+
+The approach to tuning MAMS proposed by RCS \cite{robnik2025metropolis} is a sequential optimization that tunes hyperparameters one at a time across three distinct phases,
+each of length $0.1N$ samples where $N$ is the desired chain length.
+However, this sequential approach has a fundamental limitation: it cannot capture interactions between $L$ and $\epsilon$
+as each parameter is optimized while holding the other fixed.
+When $\epsilon$ is optimized with $L$ held constant, then $L$ is optimized with $\epsilon$ fixed,
+the resulting configuration may represent only a local optima.
+
+We hypothesize that jointly exploring the $(L, \epsilon)$ space using Bayesian optimization (BayesOpt)
+will yield hyperparameter pairs closer to the global optimum.
+Instead of fixing one parameter while tuning the other, BayesOpt proposes candidate pairs from the hyperparameter space,
+evaluates their performance, updates its acquisition function based on the result, and iterates.
+After a chosen number of iterations, the hyperparameters which maximized a carefully chosen objective function are selected and used in all further chains.
+
+For every chain, sequential tuning requires and discards an additional 20\% of the desired chain length (or 30\% when also tuning the preconditioner matrix)
+for the chain's idependent hyperparameter adaptation.
+If there is variability between hyperparamaters found for each chain, this suggests that the RCS tuning method converged to local optima.
+In contrast, BayesOpt invests heavily in an initial search phase but then reuses the optimal $(L^*, \epsilon^*)$ pair for all subsequent chains,
+effectively amortizing the initial computational cost.
+While this method may be more computationally expensive for small sampling projects,
+for large projects, the investment to find a potentially superior configuration without discarding a tuning phase for each chain may be beneficial.
+BayesOpt produces a single set of hyperparameters for all future chains, whereas auto-tuning produces different hyperparamater for each chain.
+BayesOpt explores the $(L, \epsilon)$ space jointly, capturing potential interactions that sequential tuning cannot detect.
+Our hypothesis is that joint optimization of $(L, \epsilon)$ through BayesOpt should discover better configurations with more consistent behaviour across chains.
+
+We evaluate both methods on three target densities: the banana distribution, a correlated Gaussian, and an equal mixture of two Gaussians.
+The correlated Gaussian and bimodal Gaussian are specifically constructed to have equal marginal variance, so diagonal preconditioning ought to be ineffective.
+We implement MAMS using the BlackJAX \cite{cabezas2024blackjax} library in JAX \cite{bradbury2021jax}.
+While the implementation of MAMS appears correct, it was necessary to modify the adaptation function to enable fixing $L$
+during the dual averaging adaptation of $\epsilon$, as this functionality was not accessible by default.
+The adaptation function had to be duplicated and modified to allow the sequential tuning protocol described by RCS.
+
+The code to reproduce the experiments is available on GitHub: \href{https://github.com/1saacRankin/QP2-microcanonical-HMC}{https://github.com/1saacRankin/QP2-microcanonical-HMC}.
+
+
+
+\subsection{Sequential Auto-Tuning Method}
+
+The sequential tuning approach, as described by RCS in their manuscript \cite{robnik2025metropolis}, adapts hyperparameters across three stages.
+The algorithm is initialized with $L = \sqrt{d}$ where $d$ is the dimension of the target density,
+and sets the inverse mass matrix to the identity matrix $\skM^{-1} = \skI$.
+In Stage 1, which runs for $0.10N$ steps, dual averaging tunes $\epsilon$ to target a 90\% acceptance rate while holding $L$ fixed.
+Stage 2, also running for $0.10N$ steps, estimates a diagonal preconditioning matrix (though we skipped this stage in our experiments).
+Stage 3 refines $L$ based on autocorrelation time estimates while holding $\epsilon$ fixed, again for $0.10N$ steps.
+
+After these tuning phases, the algorithm runs a chain of length $N$ using the tuned $(L, \epsilon)$ pair.
+A critical feature of this approach is that each chain runs this tuning procedure independently, producing its own hyperparameters.
+This means that chains may converge to different $(L, \epsilon)$ pairs,
+which could indicate either a broad range of hyperparamters are effective, or that there is instability in the tuning procedure.
+
+Note: as the chain automatically produces hyperparameters for itself, from the word automatically and the Greek prefix for self,
+we shall refer to this tuning method as `Auto-tuning'.
+
+
+\subsection{Bayesian Optimization Method}
+
+Our BayesOpt approach jointly optimizes $(L, \epsilon)$ by modeling sampler performance as a function of both hyperparameters simultaneously.
+We use a Gaussian process (GP) with a radial basis function (RBF) kernel as our surrogate model,
+and use the upper confidence bound (UCB) acquisition function to balance exploration and exploitation.
+The search proceeds by iteratively proposing hyperparameter pairs, evaluating their performance across multiple chains,
+and updating the GP model based on the observed results.
+
+\begin{algorithm}
+    \caption{Bayesian Optimization for MAMS}
+    \begin{algorithmic}%[1]
+        \State \textbf{Input:} Target density, iterations $T = 20$, chains per evaluation $C = 5$, chain length $N_{\text{tune}} = 1000$
+        \State Initialize search space: $L \in [0.5, 40.0]$, $\epsilon \in [0.01, 4.0]$
+        \State Initialize Gaussian process with RBF kernel
+        \For{$t = 1$ to $T$}
+        \State Select $(L_t, \epsilon_t)$ by maximizing $\text{UCB}(L, \epsilon) = \mu(L, \epsilon) + 2 \cdot \sigma(L, \epsilon)$
+        \State Run $C$ independent chains of length $N_{\text{tune}}$ with hyperparameters $(L_t, \epsilon_t)$
+        \State Compute minimum ESS across dimensions for each chain, then average over the $C$ chains
+        \State Compute maximum $\hat{R}$ across dimensions for each chain, then average over the $C$ chains
+        \State Compute mean acceptance rate $\alpha$ for each chain, then average over the $C$ chains
+        \State Evaluate objective: $f_t(L_t, \epsilon_t) = \text{ESS}(L, \epsilon) - P_{\hat{R}}(L_t, \epsilon_t) - P_{\alpha}(L_t, \epsilon_t)$
+        \State Update GP with observation $(L_t, \epsilon_t, f_t)$
+        \EndFor
+        \State \textbf{Return:} Hyperparameters $(L^*, \epsilon^*) = (L_t, \epsilon_t)$ where $t = \argmax_{t} f_t$
+    \end{algorithmic}
+\end{algorithm}
+
+
+
+The objective function aims to maximize effective sample size (ESS) while heavily penalizing configurations
+that lead to non-convergent chains or artificially inflated ESS due to extremely low acceptance rates:
+\[
+    f(L, \epsilon) = \text{ESS}(L, \epsilon) - P_{\hat{R}}(L, \epsilon) - P_{\alpha}(L, \epsilon).
+\]
+
+The convergence penalty $P_{\hat{R}}$ ensures that we only trust ESS estimates from chains that have actually converged according to $\hat{R}$ \cite{gelman1992inference}:
+\[
+    P_{\hat{R}}(L, \epsilon) = C^2 \cdot N_{\text{tune}} \cdot \max(\hat{R}(L, \epsilon) - 1.0, 0).
+\]
+The acceptance penalty $P_{\alpha}$ prevents high ESS values that can arise when acceptance rates are extremely low.
+When the sampler rarely moves, the samples can have low autocorrelation, and so high ESS.
+To avoid this illusion of good performance, we linearly decrease the acceptance penalty as acceptance rates increase from 0 to 0.25:
+\[
+    P_{\alpha}(L, \epsilon) =
+    \begin{cases}
+        C^2 \cdot N_{\text{tune}} \cdot (0.25 - \alpha(L, \epsilon)) & \text{if } \alpha < 0.25 \\
+        0                                                            & \text{otherwise}
+    \end{cases}
+\]
+
+After 20 iterations, each using 5 chains of length 1000, that is, 100000 samples, we select the hyperparameters that achieved the highest objective value.
+These optimal hyperparameters $(L^*, \epsilon^*)$ are then used for all subsequent validation chains.
+
+
+\subsection{Validation Protocol}
+
+We validate both methods using 10 independent chains of length 5000, each initialized from a different random location.
+For BayesOpt, all chains use the single hyperparameter pair $(L^*, \epsilon^*)$ identified during the tuning phase.
+For sequential auto-tuning, each chain independently discovers its own pair $(L^*_i, \epsilon^*_i)$ for $i = 1, 2, \ldots, 10$,
+following the adaptation protocol described before.
+
+We compare the methods across several key metrics.
+The minimum effective sample size across all dimensions measures sampling efficiency \cite{vehtari2021rank}.
+The maximum $\hat{R}$ across dimensions assesses convergence, with values near 1.0 indicating more likely convergence.
+We also track the mean acceptance rate and wall-clock time per chain.
+For the 10 validation chains, we present $\hat{R}$, and the mean and standard deviation of ESS, acceptance rate, and time per chain.
+For Auto-tuned chains, we additionally examine the variability in the $L$ and $\epsilon$ values
+across chains to assess the consistency of the tuning procedure.
+
+
+\subsection{Bimodal Isotropic Gaussian}
+
+The bimodal isotropic Gaussian target consists of two separated modes with equal weight and identity covariance matrices.
+The density is defined as an equal mixture:
+\[
+    p(\skx) = \frac{1}{2} \Norm(\skx | \s[k]\mu_1, \skI) + \frac{1}{2} \Norm(\skx | \s[k]\mu_2, \skI)
+\]
+where $\s[k]\mu_1 = [-2, -2, \ldots, -2]^T$ and $\s[k]\mu_2 = [2, 2, \ldots, 2]^T$ in $d = 10$ dimensions.
+The log density is proportional to:
+\[
+    \log p(\skx) \propto -\frac{1}{2}\| \skx - \s[k]\mu_1 \|^2 -\frac{1}{2}\| \skx - \s[k]\mu_2 \|^2
+\]
+
+This target tests the sampler's ability to switch between modes and properly explore both regions of high probability.
+All dimensions have symmetric structure and are independent within each mode, so diagonal preconditioning offers no advantage over an identity matrix.
+The challenge of this target density is achieving adequate mixing between the two modes.
+
+\begin{table}[h]
+    \centering
+    \caption{Performance comparison on Bimodal Gaussian ($d=10$)}
+    \begin{tabular}{lcccccc}
+        \hline
+        Method      & $\hat{R}$ & ESS              & Acceptance Rate   & Time/chain (s)    & $L$               & $\epsilon$        \\
+        \hline
+        BayesOpt    & 2.300     & 61023 $\pm$ 778  & 0.964 $\pm$ 0.001 & 0.742 $\pm$ 0.167 & 14.901            & 2.242             \\
+        Auto-tuning & 2.189     & 61091 $\pm$ 1129 & 0.988 $\pm$ 0.003 & 2.908 $\pm$ 0.693 & 1.310 $\pm$ 0.119 & 1.191 $\pm$ 0.108 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{../code/plots/traces_Bimodal Gaussian.png}
+    \includegraphics[width=0.85\textwidth]{../code/plots/bayesopt_progress_Bimodal Gaussian.png}
+\end{figure}
+
+
+
+
+
+\subsection{Correlated Gaussian}
+
+The correlated Gaussian target is a multivariate normal distribution centered at the origin with a specific correlation structure:
+\[
+    p(\skx) = \Norm(\skx | \s[k]0, \s[k]\Sigma)
+\]
+where the covariance matrix has constant correlation $\rho = 0.8$ across all pairs of dimensions:
+\[
+    \s[k]\Sigma = (1-\rho)\skI + \rho\s[k]1\s[k]1^T
+\]
+
+This creates a covariance matrix with ones on the diagonal and $\rho = 0.8$ in all off-diagonal entries. The log density is:
+\[
+    \log p(\skx) \propto -\frac{1}{2}\skx^T \s[k]\Sigma^{-1} \skx
+\]
+
+The uniform correlation structure across all dimension pairs means that diagonal preconditioning cannot capture the off-diagonal correlation structure any better than an identity matrix. This target tests whether samplers can efficiently explore distributions with strong global correlation without the benefit of adaptive preconditioning.
+
+\begin{table}[h]
+    \centering
+    \caption{Performance comparison on Correlated Gaussian ($d = 50$)}
+    \begin{tabular}{lcccccc}
+        \hline
+        Method      & $\hat{R}$ & ESS           & Acceptance Rate   & Time/chain (s)    & $L$                & $\epsilon$        \\
+        \hline
+        BayesOpt    & 1.003     & 3186 $\pm$ 31 & 0.756 $\pm$ 0.003 & 0.763 $\pm$ 0.155 & 24.776             & 3.572             \\
+        Auto-tuning & 1.003     & 3223 $\pm$ 34 & 0.891 $\pm$ 0.031 & 3.590 $\pm$ 0.781 & 14.142 $\pm$ 0.000 & 2.650 $\pm$ 0.085 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{../code/plots/traces_Correlated Gaussian.png}
+    \includegraphics[width=0.85\textwidth]{../code/plots/bayesopt_progress_Correlated Gaussian.png}
+\end{figure}
+
+
+
+
+
+
+\subsection{Banana Distribution}
+
+The banana distribution, also known as the Rosenbrock density, features a curved ridge that presents a significant challenge for samplers. In $d = 10$ dimensions, the density is:
+\[
+    p(\skx) \propto \exp\lt(-\sum_{i=1}^{d-1}\lt[(a - x_i)^2 + b(x_{i+1} - x_i^2)^2\rt]\rt)
+\]
+with parameters $a = 1$ and $b = 100$. The log density is:
+\[
+    \log p(\skx) \propto -\sum_{i=1}^{d-1}\lt[(1 - x_i)^2 + 100(x_{i+1} - x_i^2)^2\rt]
+\]
+
+This distribution creates strong nonlinear dependencies between consecutive dimensions. The high curvature parameter $b = 100$ creates a narrow curved valley along which the probability mass concentrates, requiring samplers to navigate this valley efficiently while avoiding becoming stuck in local regions. The geometry presents a fundamentally different challenge than either the multimodal or correlated Gaussian targets.
+
+\begin{table}[h]
+    \centering
+    \caption{Performance comparison on Banana Distribution ($d = 2$)}
+    \begin{tabular}{lcccccc}
+        \hline
+        Method      & $\hat{R}$ & ESS             & Acceptance Rate   & Time/chain (s)     & $L$               & $\epsilon$        \\
+        \hline
+        BayesOpt    & 1.000     & 10132 $\pm$ 243 & 0.946 $\pm$ 0.003 & 37.839 $\pm$ 0.275 & 39.602            & 0.010             \\
+        Auto-tuning & 1.001     & 10182 $\pm$ 460 & 0.885 $\pm$ 0.027 & 9.114 $\pm$ 1.562  & 2.828 $\pm$ 0.000 & 0.020 $\pm$ 0.002 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{../code/plots/traces_Banana.png}
+    \includegraphics[width=0.85\textwidth]{../code/plots/bayesopt_progress_Banana.png}
+\end{figure}
+
+
+
+
+
+
+\subsection{Discussion}
+
+[Results summary and comparison across all three targets to be filled in after completing experiments]
+
+Several important limitations should be noted. First, the Bayesian optimization procedure is computationally expensive, particularly for the initial hyperparameter search phase. Second, our implementation does not tune the inverse mass matrix, instead holding it fixed at the identity throughout. Third, preliminary results suggest that the BayesOpt search may not have run for sufficient iterations to fully converge to the optimal hyperparameters. Fourth, the choice of objective function, while motivated by practical considerations, lacks rigorous theoretical justification. Fifth, we have not compared either method to non-microcanonical sampling algorithms such as standard HMC or NUTS. Finally, our experiments focus on relatively low-dimensional targets ($d = 10$), and the comparative performance may differ substantially in higher-dimensional settings where the geometry of the target distribution becomes more complex.
+
+\subsection{Conclusion}
+
+We compared the sequential step size and trajectory length tuning algorithm described by RCS to a joint optimization approach using Bayesian optimization. Our initial results suggest that [conclusions to be filled in after completing experiments and analysis].
+
+For workflows requiring many chains, the key tradeoff is between BayesOpt's upfront investment in a single high-quality hyperparameter search versus sequential tuning's requirement to discard 30\% of each chain for independent adaptation. The relative merits of each approach likely depend on the specific characteristics of the target distribution, the dimensionality of the problem, and the total number of chains required.
+
+
+
+
+
+% % Bibliography
+% % \clearpage
+% % \addcontentsline{toc}{section}{Bibliography} % Adds "Bibliography" to the table of contents
+% % \bibliographystyle{unsrt} % Other options are plain, unsrt, apalike
+% % \bibliography{references}   % Looks for references.bib
+
+% References
+\clearpage
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}
+
+
+
+
+
+
+

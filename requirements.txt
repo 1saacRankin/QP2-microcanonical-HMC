@@ -1,0 +1,5 @@
+jax==0.4.38
+jaxlib==0.4.38
+blackjax==1.2.5
+matplotlib==3.10.7
+numpy==2.3.4

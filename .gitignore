@@ -294,5 +294,5 @@ __pycache__/
 # All pdf
 *.pdf
 
-# All txt
-*.txt
+# Saved Python output txt
+code/tuning_results.txt

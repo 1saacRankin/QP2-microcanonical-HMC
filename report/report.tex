@@ -65,7 +65,7 @@ Suppose we wish to draw samples from a possibly unnormalised density $p: \reals^
 Markov chain Monte Carlo (MCMC) algorithms construct a sequence $\{ \skx_i \}_{i = 1}^n$ where each $\skx_i \in \reals^d$ \cite{neal2011mcmc}.
 When the MCMC algorithm is designed carefully, the empirical distribution of the sequence, or chain, approximates $p$.
 In many applications, practitioners desire \cite{robnik2023microcanonical, robnik2025metropolis} that asymptotically,
-the distribution of chain converges to $p$, ensuring that the samples can be used to make unbiased inferences.
+the distribution of the chain converges to $p$, ensuring that the samples can be used to make unbiased inferences.
 
 When gradient information is available, gradient-based MCMC methods can achieve substantially better sampling efficiency than random-walk methods,
 particularly in high dimensions \cite{neal2011mcmc, betancourt2017conceptual}.
@@ -76,13 +76,13 @@ Such automatically tuned algorithms are often referred to as \textit{blackbox}.
 Robnik, Cohn-Gordon, and Seljak (RCS) propose the Metropolis-adjusted microcanonical sampler (MAMS) \cite{robnik2025metropolis},
 which adds a Metropolis-Hastings correction to the earlier asymptotically biased microcanonical Hamiltonian Monte Carlo (MCHMC)
 and its variant, microcanonical Langevin-like Hamiltonian Monte Carlo (MCLMC).
-The primary contribution is deriving the correct acceptance probability for dynamics whose numerical integrator is not volume-preserving.
+The primary contribution is deriving the correct acceptance probability for dynamics whose numerical integrator is not volume preserving.
 
 This report critically examines the manuscript
 \textit{Metropolis Adjusted Microcanonical Hamiltonian Monte Carlo} \cite{robnik2025metropolis} which introduced MAMS.
-We analyze the technical details, discuss the contributions of the work,
+We analyse the technical details, discuss the contributions of the work,
 and identify limitations and unanswered questions regarding the novel algorithm.
-We supplement this analysis with a project comparing RCS's hyperparameter tuning scheme to a Bayesian optimization approach.
+We supplement this analysis with a project comparing RCS's hyperparameter tuning scheme to a Bayesian optimisation approach.
 
 
 
@@ -94,7 +94,7 @@ We supplement this analysis with a project comparing RCS's hyperparameter tuning
 
 We shall now briefly introduce Hamiltonian Monte Carlo (HMC) and discuss work related to that of RCS.
 
-We write the target density as $p(\skx) = e^{-\scL(\skx)}/Z$ where $Z = \int e^{-\scL(\skx)} d\skx$ is the normalizing constant, and $\scL(\skx) = -\log p(\skx) - \log Z$.
+We write the target density as $p(\skx) = e^{-\scL(\skx)}/Z$ where $Z = \int e^{-\scL(\skx)} d\skx$ is the normalising constant, and $\scL(\skx) = -\log p(\skx) - \log Z$.
 Note that gradients of $p$ are proportional to those of $\scL$: $\grad \scL(\skx) = -\grad p(\skx) / p(\skx) \propto \grad p(\skx)$.
 
 HMC augments the target `position' $\skx$ with an ancillary `momentum' $\sku \in \reals^d$, forming a so-called `phase-space' \cite{neal2011mcmc, betancourt2017conceptual}.
@@ -136,18 +136,18 @@ Several previous HMC variants have modified either the dynamics, or the mass str
 Note that by setting the `mass' of the fictitious particle equal to one, we can use the terms `momentum' and `velocity' interchangeably.
 Riemannian manifold HMC \cite{girolami2011riemann} uses a position-dependent mass matrix $M(\skx)$ with kinetic energy $K(\skx, \sku) = \frac{1}{2}\sku^T M(\skx)^{-1} \sku$, adapting to local curvature.
 Relativistic HMC \cite{lu2017relativistic} uses $K(\sku) = \sqrt{1 + \| \sku \|^2}$ (with additional hyperparameters set to 1 here), bounding velocity for stability to large gradients.
-Magnetic HMC \cite{tripuraneni2017magnetic} introduces non-canonical dynamics, has an accept-reject step, but crucially the integrator for these dynamics is volume preserving.
-Magnetic HMC follows the dynamics $\s[ok]x = F\sku + E \grad U(\skx) \; \s[ok]u = F^T \grad U(\skx) + G \sku$ where $F, E, \text{and} G$ form an antisymmetric block matrix,
-generalizing the canonical dynamics which can be written in matrix notation with the positive and negative identity matrix on the diagonal, and the zero matrix on the off diagonal.
-Pakman \cite{pakman2025super} explore non-standard dynamics, sampling momentum from the Laplace distribution yeilding a Hamiltonian (choosing constants equal to 1) $H(\skx, \sku) = - \cos(\skx) + |\sku|$.
+Magnetic HMC \cite{tripuraneni2017magnetic} introduces non-canonical dynamics, has an accept-reject step, but crucially, the integrator for these dynamics is volume preserving.
+Magnetic HMC follows the dynamics $\s[ok]x = F\sku + E \grad U(\skx), \; \s[ok]u = F^T \grad U(\skx) + G \sku$ where $F, E$, and $G$ form an antisymmetric block matrix,
+generalizing the canonical dynamics which can be written in matrix notation with the positive and negative identity matrix on the diagonal, and the zero matrix on the off-diagonal.
+Pakman \cite{pakman2025super} explores non-standard dynamics, sampling momentum from the Laplace distribution, yeilding a Hamiltonian (choosing constants equal to 1) $H(\skx, \sku) = - \cos(\skx) + |\sku|$.
 Ver Steeg and Galstyan chose a `kinetic' energy $K(\sku) = \frac{d}{2} \log \| \frac{\sku}{d} \|$ \cite{ver2021hamiltonian}.
-They argued that in machine learning applications, enforcing physicallity is irrelevant \cite{ver2021hamiltonian}, justifying their `non-Newtonian' momentum.
+They argued that in machine learning applications, enforcing physicality is irrelevant \cite{ver2021hamiltonian}, justifying their `non-Newtonian' momentum.
 The microcanonical dynamics used by RCS are equivalent to those employed by Ver Steeg and Galstyan, though doubts have been raised as to whether
 their deterministic algorithm produces an ergodic chain \cite{robnik2023microcanonical, robnik2025metropolis}.
 
 
-There have also been advancements in hyperparamater tuning schemes.
-Proposals are generated by numerically integrating the chosen dynamics, often using the leapfrog or Verlet integrator \cite{neal2011mcmc, betancourt2017conceptual}.
+There have also been advancements in hyperparameter tuning schemes.
+Proposals are generated by numerically integrating the chosen dynamics, often using the leapfrog (or Verlet) integrator \cite{neal2011mcmc, betancourt2017conceptual}.
 The leapfrog integrator approximating the dynamics, requires tuning of step size $\epsilon$ and trajectory length $L$.
 To make an algorithm blackbox, $\epsilon$ and $L$, and in some cases a preconditioner matrix to make variability comparable across dimensions \cite{hird2025quantifying},
 must be selected without input from the practitioner.
@@ -156,7 +156,7 @@ Trajectory lengths must balance exploration with efficiency to avoid retracing p
 The No-U-Turn sampler (NUTS) \cite{hoffman2014no} automates trajectory length selection by growing trajectories until they double back, eliminating manual tuning of $L$.
 Step size adaptation during warmup uses dual averaging \cite{hoffman2014no, nesterov2009primal} based on acceptance rate tracking.
 There are many strategies for tuning hyperparameters.
-In Section 7, we will compare the tuning scheme for MAMS as described by RCS to a Bayesian optimization approach.
+In Section 7, we will compare the tuning scheme for MAMS as described by RCS to a Bayesian optimisation approach.
 
 
 
@@ -165,7 +165,7 @@ In Section 7, we will compare the tuning scheme for MAMS as described by RCS to 
 \section{Deriving the acceptance probability}
 
 MAMS adds a Metropolis-Hastings accept-reject step to MCHMC to eliminate asymptotic bias.
-The primary technical challenge--and main contribution of RCS--is deriving the correct acceptance probability for dynamics whose numerical integrator is not volume-preserving.
+The primary technical challenge--and main contribution of RCS--is deriving the correct acceptance probability for dynamics whose numerical integrator is not volume preserving.
 For canonical HMC, the symplectic integrator ensures the Jacobian determinant equals one \cite{neal2011mcmc}, simplifying the acceptance probability to a potential energy difference.
 For microcanonical dynamics, this simplification does not hold.
 
@@ -182,7 +182,7 @@ where
 and $(B_{\epsilon/2} \circ A_\epsilon \circ B_{\epsilon/2})$ is composed $n$ times.
 After $n$ steps, momentum is flipped: $\scT(\skx, \sku) = (\skx, -\sku)$.
 The integrator $\rho$ is reversible, that is, an involution $\rho \circ \rho = id$, where $id$ denotes the identity $id(\skx) = \skx$ for every $\skx \in \reals^d$.
-Crucially, unlike canonical HMC, the leapfrog integrator for microcanonical dynamics is \textit{not volume preserving}, necessitating computing a determinant of a Jacobian.
+Crucially, unlike canonical HMC, the leapfrog integrator for microcanonical dynamics is not volume preserving, necessitating computing a determinant of a Jacobian.
 
 For a proposal $\skz' = (\skx', \sku')$ from current state $\skz = (\skx, \sku)$, the required acceptance probability \cite{neal2011mcmc} is:
 \[
@@ -192,7 +192,7 @@ Since $\sku$ and $\sku'$ are both uniformly distributed on $S^{d-1}$, we have $\
 \[
     \frac{p(\skz')}{p(\skz)} = \frac{p(\skx') \; \scU_{S^{d-1}}(\sku')}{p(\skx) \; \scU_{S^{d-1}}(\sku)} = \frac{p(\skx')}{p(\skx)} = e^{-(\scL(\skx') - \scL(\skx))}.
 \]
-The proposal density ratio requires more careful treatment as $\rho$ is not volumne preserving.
+The proposal density ratio requires more careful treatment as $\rho$ is not volume preserving.
 As $\rho$ is deterministic and reversible, $q(\skz' | \skz) = \delta(\skz' - \rho(\skz))$ and $q(\skz | \skz') = \delta(\skz - \rho(\skz'))$ where $\delta(\cdot)$ is the Dirac delta function.
 Using a change of variables:
 \[
@@ -218,8 +218,8 @@ $W(\skz', \skz)$ from the acceptance probability $\min(1, e^{-W(\skz', \skz)})$ 
 \[
     W(\skz', \skz) = \scL(\skx') - \scL(\skx) + \int_0^L \frac{1}{d-1} \sku(s)^T \grad \scL(\skx(s)) \, ds
 \]
-this integral is zero for the canonical case as $\rho$ is simplectic but accounts for volume compression or expansion in the microcanonical case.
-$\sku(s)^T \grad \scL(\skx(s))$ measures the alignment between the log-density and the momentum.
+this integral is zero for the canonical case, but accounts for volume compression or expansion in the microcanonical case.
+Here, $\sku(s)^T \grad \scL(\skx(s))$ measures the alignment between the log-density and the momentum.
 
 As $\rho$ approximates these dynamics using discrete steps, we can calculate \cite{robnik2025metropolis} $W(\rho(\skz), \skz)$ as: \\
 $W(\rho(\skz), \skz) = \sum_{k=1}^n \left[ V(A_{\epsilon_k}(\skz_{k-1})) - V(\skz_{k-1}) + K(B_{\epsilon_k} \circ A_{\epsilon_k}(\skz_{k-1})) - K(A_{\epsilon_k}(\skz_{k-1})) \right]$.
@@ -227,7 +227,7 @@ $W(\rho(\skz), \skz) = \sum_{k=1}^n \left[ V(A_{\epsilon_k}(\skz_{k-1})) - V(\sk
 The potential energy change is the same as for canonical HMC: $V(A_\epsilon(\skz)) - V(\skz) = - \log \frac{p(\skx')}{p(\skx)}$.
 For canonical HMC with step size $\epsilon$, the kinetic energy change is: $K(B_\epsilon(\skz)) - K(\skz) = \frac{1}{2}\|\sku'\|^2 - \frac{1}{2}\|\sku\|^2$.
 For MAMS: $K(B_\epsilon(\skz)) - K(\skz) = (d-1) \log(\cosh \delta + \ske \cdot \sku \sinh \delta)$ where $\ske = -\grad \scL(\skx) / \|\grad \scL(\skx) \|$ and $\delta = \epsilon \|\grad \scL(\skx)\| / (d-1)$.
-Which was found by solving a nonlinear first order differential equation \cite{robnik2023microcanonical, robnik2025metropolis, ver2021hamiltonian}.
+Which was found by solving a nonlinear first-order differential equation \cite{robnik2023microcanonical, robnik2025metropolis, ver2021hamiltonian}.
 So, for both HMC and MAMS, the Metropolis-Hastings acceptance probability can be computed by tracking the total energy change $W$ along the discretized trajectory.
 The crucial difference is that MAMS requires the volume correction term from the divergence of the velocity update, while HMC using canonical dynamics does not.
 The derivation is mathematically sound and resolves the limitation that prior microcanonical samplers (MCHMC, MCLMC) were asymptotically biased.
@@ -244,7 +244,6 @@ To understand this property, consider the behaviour of particles under both syst
 The canonical dynamics $\sokx = \sku, \soku = -\grad\scL(\skx)$ leave momentum magnitude $\| \sku \|$ unconstrained and varying according to the gradient.
 When $\| \grad\scL(\skx) \|$ is large, the update $\sku_{k+1} = \sku_k - \epsilon\grad\scL(\skx_k)$ can produce $\| \sku_{k+1} \| \gg \| \sku_k \|$,
 leading to very large position steps $\skx_{k+2} = \skx_{k+1} + \epsilon\sku_{k+1}$.
-This potentially causes rejection of the proposed state or numerical instability.
 
 The microcanonical dynamics $\sokx = \sku, \soku = -\frac{I - \sku\sku^T}{d-1}\grad\scL(\skx)$ enforce the constraint $\| \sku \| = 1$, implying $\| \sokx \| = \| \sku \| = 1$ always.
 The projection operator ensures $\soku \perp \sku$, so momentum changes alter the direction, but not magnitude of $\sku$.
@@ -254,7 +253,7 @@ Large gradients cannot cause unbounded momentum growth.
 The momentum restriction has implications for the characteristics of the particle’s phase-space exploration.
 
 For canonical dynamics, energy conservation in the Hamiltonian $H(\skx, \sku) = V(\skx) + K(\sku)$ creates an inverse relationship between kinetic and potential energy.
-In high-probability regions, $p(\skx)$ is high and thus $\scL(\skx) = -\log p(\skx)$ is low.
+In high-probability regions, $p(\skx)$ is high and thus $\scL(\skx) = -\log p(\skx) - \log Z$ is low.
 Potential energy is low and so kinetic energy must be correspondingly high.
 Particles move rapidly through high-density regions.
 Conversely, in low-probability regions with high potential energy, kinetic energy is low and particles may struggle to traverse these areas.
@@ -278,11 +277,11 @@ eliminating asymptotic bias through derivation of the acceptance probability for
 However, substantial theoretical and empirical gaps remain.
 
 MAMS lacks convergence rate bounds for classes of target densities.
-For instance, canonical HMC has mixing time bounds for strongly log-concave targets \cite{chen2019optimal} but no analogous results exist for MAMS.
+For instance, canonical HMC has mixing time bounds for strongly log-concave targets \cite{chen2019optimal}, but no analogous results exist for MAMS.
 Without such an analysis, it is unclear when MAMS is guaranteed to converge faster than canonical methods and how performance scales with the dimension of the problem.
 
 The paper provides no characterization of when the unit-norm constraint helps versus hinders exploration,
-nor diagnostic tools for MAMS-specific failure modes such as when volume corrections dominate acceptance decisions.
+nor diagnostic tools for MAMS-specific failure modes, such as when volume corrections dominate acceptance decisions.
 It remains unclear for which target geometries favour microcanonical dynamics.
 In addition, MAMS exceeds standard HMC leapfrog implementation complexity as it requires computing the volume change.
 
@@ -291,7 +290,7 @@ The projection operator $\frac{I - \sku\sku^T}{d-1}$ becomes undefined due to di
 Regardless, in one dimension $I - \sku\sku^T = 0$, so the momentum never changes.
 Ver Steeg and Galstyan \cite{ver2021hamiltonian} noted this but dismissed it as the issue does not occur for higher dimensions.
 
-The term `Hamiltonian Monte Carlo' refers to methods based on Hamiltonian mechanics with volume-preserving dynamics \cite{neal2011mcmc, betancourt2017conceptual}.
+The term `Hamiltonian Monte Carlo' refers to methods based on Hamiltonian mechanics with volume preserving dynamics \cite{neal2011mcmc, betancourt2017conceptual}.
 MAMS does not employ true Hamiltonian dynamics as noted by RCS \cite{robnik2025metropolis}.
 RCS also note that the 'kinetic energy' for microcanonical dynamics is not in the standard sense.
 Drawing parallels to Hamiltonian dynamics and kinetic energy may confuse readers and practitioners.
@@ -343,29 +342,26 @@ While it is also possible to tune a preconditioner matrix, we simplify our analy
 We focus on the MCHMC variant of MAMS, which samples a new unit-norm momentum vector between trajectories,
 but does not partially refresh the momentum within the trajectory, as would be done in the MCLMC variant.
 
-The approach to tuning MAMS proposed by RCS \cite{robnik2025metropolis} is a sequential optimization that tunes hyperparameters one at a time across three distinct phases,
+The approach to tuning MAMS proposed by RCS \cite{robnik2025metropolis} is a sequential optimisation that tunes hyperparameters one at a time across three distinct phases,
 each of length $0.1N$ samples where $N$ is the desired chain length.
 However, this sequential approach has a fundamental limitation: it cannot capture interactions between $L$ and $\epsilon$
-as each parameter is optimized while holding the other fixed.
-When $\epsilon$ is optimized with $L$ held constant, then $L$ is optimized with $\epsilon$ fixed,
+as each parameter is optimised while holding the other fixed.
+When $\epsilon$ is optimised with $L$ held constant, then $L$ is optimised with $\epsilon$ fixed,
 the resulting configuration may represent only a local optima.
 
-We hypothesize that jointly exploring the $(L, \epsilon)$ space using Bayesian optimization (BayesOpt)
-will yield hyperparameter pairs closer to the global optimum.
+We hypothesize that jointly exploring the $(L, \epsilon)$ space, using Bayesian optimisation (BayesOpt),
+will yield hyperparameter pairs closer to the global optimum, capturing potential interactions that sequential tuning cannot detect.
 Instead of fixing one parameter while tuning the other, BayesOpt proposes candidate pairs from the hyperparameter space,
 evaluates their performance, updates its acquisition function based on the result, and iterates.
-After a chosen number of iterations, the hyperparameters which maximized a carefully chosen objective function are selected and used in all further chains.
+After a chosen number of iterations, the hyperparameters which maximised a carefully chosen objective function are selected and used in all future chains.
 
 For every chain, sequential tuning requires and discards an additional 20\% of the desired chain length (or 30\% when also tuning the preconditioner matrix)
-for the chain's idependent hyperparameter adaptation.
-If there is variability between hyperparamaters found for each chain, this suggests that the RCS tuning method converged to local optima.
+for the chain's independent hyperparameter adaptation.
+If there is variability between hyperparameters found for each chain, this suggests that the RCS tuning method converged to local optima.
 In contrast, BayesOpt invests heavily in an initial search phase but then reuses the optimal $(L^*, \epsilon^*)$ pair for all subsequent chains,
-effectively amortizing the initial computational cost.
+effectively amortising the initial computational cost.
 While this method may be more computationally expensive for small sampling projects,
 for large projects, the investment to find a potentially superior configuration without discarding a tuning phase for each chain may be beneficial.
-BayesOpt produces a single set of hyperparameters for all future chains, whereas auto-tuning produces different hyperparamater for each chain.
-BayesOpt explores the $(L, \epsilon)$ space jointly, capturing potential interactions that sequential tuning cannot detect.
-Our hypothesis is that joint optimization of $(L, \epsilon)$ through BayesOpt should discover better configurations with more consistent behaviour across chains.
 
 We evaluate both methods on three target densities: the banana distribution, a correlated Gaussian, and an equal mixture of two Gaussians.
 The correlated Gaussian and bimodal Gaussian are specifically constructed to have equal marginal variance, so diagonal preconditioning ought to be ineffective.
@@ -373,6 +369,7 @@ We implement MAMS using the BlackJAX \cite{cabezas2024blackjax} library in JAX \
 While the implementation of MAMS appears correct, it was necessary to modify the adaptation function to enable fixing $L$
 during the dual averaging adaptation of $\epsilon$, as this functionality was not accessible by default.
 The adaptation function had to be duplicated and modified to allow the sequential tuning protocol described by RCS.
+As the repository for the MAMS manuscript is active, it is unclear whether RCS implemented the tuning protocol discussed in their manuscript.
 
 The code to reproduce the experiments is available on GitHub:\\
 \href{https://github.com/1saacRankin/QP2-microcanonical-HMC}{https://github.com/1saacRankin/QP2-microcanonical-HMC}.
@@ -382,7 +379,7 @@ The code to reproduce the experiments is available on GitHub:\\
 \subsection{Sequential Auto-Tuning Method}
 
 The sequential tuning approach, as described by RCS in their manuscript \cite{robnik2025metropolis}, adapts hyperparameters across three stages.
-The algorithm is initialized with $L = \sqrt{d}$ where $d$ is the dimension of the target density,
+The algorithm is initialised with $L = \sqrt{d}$ where $d$ is the dimension of the target density,
 and sets the inverse mass matrix to the identity matrix $\skM^{-1} = \skI$.
 In Stage 1, which runs for $0.10N$ steps, dual averaging tunes $\epsilon$ to target a 90\% acceptance rate while holding $L$ fixed.
 Stage 2, also running for $0.10N$ steps, estimates a diagonal preconditioning matrix (though we skipped this stage in our experiments).
@@ -391,22 +388,22 @@ Stage 3 refines $L$ based on autocorrelation time estimates while holding $\epsi
 After these tuning phases, the algorithm runs a chain of length $N$ using the tuned $(L, \epsilon)$ pair.
 A critical feature of this approach is that each chain runs this tuning procedure independently, producing its own hyperparameters.
 This means that chains may converge to different $(L, \epsilon)$ pairs,
-which could indicate either a broad range of hyperparamters are effective, or that there is instability in the tuning procedure.
+which could indicate either a broad range of hyperparameters are effective, or that there is instability in the tuning procedure.
 
-Note: as the chain automatically produces hyperparameters for itself, from the word automatically and the Greek prefix for self,
-we shall refer to this tuning method as `Auto-tuning'.
+Note: as the chain automatically produces hyperparameters for itself.
+From the word automatically and the Greek prefix for self, we shall refer to this tuning method as `auto-tuning'.
 
 
-\subsection{Bayesian Optimization Method}
+\subsection{Bayesian Optimisation Method}
 
-Our BayesOpt approach jointly optimizes $(L, \epsilon)$ by modeling sampler performance as a function of both hyperparameters simultaneously.
+Our BayesOpt approach jointly optimises $(L, \epsilon)$ by modelling sampler performance as a function of both hyperparameters simultaneously.
 We use a Gaussian process (GP) with a radial basis function (RBF) kernel as our surrogate model,
 and use the upper confidence bound (UCB) acquisition function to balance exploration and exploitation.
 The search proceeds by iteratively proposing hyperparameter pairs, evaluating their performance across multiple chains,
 and updating the GP model based on the observed results.
 
 \begin{algorithm}
-    \caption{Bayesian Optimization for MAMS}
+    \caption{Bayesian optimisation for MAMS}
     \begin{algorithmic}%[1]
         \State \textbf{Input:} Target density, iterations $T = 20$, chains per evaluation $C = 5$, chain length $N_{\text{tune}} = 1000$
         \State Initialize search space: $L \in [0.5, 40.0]$, $\epsilon \in [0.01, 4.0]$
@@ -417,7 +414,7 @@ and updating the GP model based on the observed results.
         \State Compute minimum ESS across dimensions for each chain, then average over the $C$ chains
         \State Compute maximum $\shR$ across dimensions for each chain, then average over the $C$ chains
         \State Compute mean acceptance rate $\alpha$ for each chain, then average over the $C$ chains
-        \State Evaluate objective: $f_t(L_t, \epsilon_t) = \text{ESS}(L, \epsilon) - P_{\shR}(L_t, \epsilon_t) - P_{\alpha}(L_t, \epsilon_t)$
+        \State Evaluate objective: $f_t(L_t, \epsilon_t) = \text{ESS}(L_t, \epsilon_t) - P_{\shR}(L_t, \epsilon_t) - P_{\alpha}(L_t, \epsilon_t)$
         \State Update GP with observation $(L_t, \epsilon_t, f_t)$
         \EndFor
         \State \textbf{Return:} Hyperparameters $(L^*, \epsilon^*) = (L_t, \epsilon_t)$ where $t = \argmax_{t} f_t$
@@ -425,7 +422,7 @@ and updating the GP model based on the observed results.
 \end{algorithm}
 
 
-The objective function aims to maximize effective sample size (ESS) while heavily penalizing configurations
+The objective function aims to maximise effective sample size (ESS) while heavily penalising configurations
 that lead to non-convergent chains or artificially inflated ESS due to extremely low acceptance rates:
 \[
     f(L, \epsilon) = \text{ESS}(L, \epsilon) - P_{\shR}(L, \epsilon) - P_{\alpha}(L, \epsilon).
@@ -436,7 +433,7 @@ The convergence penalty $P_{\shR}$ ensures that we only trust ESS estimates from
 \]
 The acceptance penalty $P_{\alpha}$ prevents high ESS values that can arise when acceptance rates are extremely low.
 When the sampler rarely moves, the samples can have low autocorrelation, and so high ESS.
-To avoid this illusion of good performance, we linearly decrease the acceptance penalty as acceptance rates increase from 0 to 0.25:
+To avoid this illusion of good performance, we linearly decrease the acceptance rate penalty as acceptance rates increase from 0 to 0.25:
 \[
     P_{\alpha}(L, \epsilon) =
     \begin{cases}
@@ -457,10 +454,10 @@ following the adaptation protocol described before.
 
 We compare the methods across several key metrics.
 The minimum effective sample size across all dimensions measures sampling efficiency \cite{vehtari2021rank}.
-The maximum $\shR$ across dimensions assesses convergence, with values near 1.0 indicating more likely convergence.
+The maximum $\shR$ across dimensions assesses convergence \cite{gelman1992inference}, with values near 1.0 indicating more likely convergence.
 We also track the mean acceptance rate and wall-clock time per chain.
 For the 10 validation chains, we present $\shR$, and the mean and standard deviation of ESS, acceptance rate, and time per chain.
-For Auto-tuned chains, we additionally examine the variability in the $L$ and $\epsilon$ values
+For auto-tuned chains, we additionally examine the variability in the $L$ and $\epsilon$ values
 across chains to assess the consistency of the tuning procedure.
 
 
@@ -472,18 +469,18 @@ The density is defined as an equal mixture:
     p(\skx) = \frac{1}{2} \Norm(\skx | \s[k]\mu_1, \skI) + \frac{1}{2} \Norm(\skx | \s[k]\mu_2, \skI)
 \]
 where $\s[k]\mu_1 = [-2, -2, \ldots, -2]^T$ and $\s[k]\mu_2 = [2, 2, \ldots, 2]^T$ in $d = 10$ dimensions.
-The log density is proportional to:
+The log-density is proportional to:
 \[
     \log p(\skx) \propto -\frac{1}{2}\| \skx - \s[k]\mu_1 \|^2 -\frac{1}{2}\| \skx - \s[k]\mu_2 \|^2
 \]
 
 This target tests the sampler's ability to switch between modes and properly explore both regions of high probability.
-All dimensions have symmetric structure and are independent within each mode, so diagonal preconditioning offers no advantage over an identity matrix.
+All dimensions have symmetric structure so diagonal preconditioning offers no advantage over an identity matrix.
 The challenge of this target density is achieving adequate mixing between the two modes.
 
 \begin{table}[h]
     \centering
-    \caption{Performance comparison on Bimodal Gaussian ($d=10$) mean $\pm$ sd}
+    \caption{Performance comparison on the bimodal Gaussian ($d=10$) mean $\pm$ sd}
     \begin{tabular}{lcccccc}
         \hline
         Method      & $\shR$ & ESS              & Acceptance Rate   & Time/chain (s)    & $L$               & $\epsilon$        \\
@@ -504,7 +501,7 @@ The challenge of this target density is achieving adequate mixing between the tw
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../code/plots/bayesopt_progress_Bimodal Gaussian.png}
-    \caption{BayesOpt iterative hyperparameter tuning}
+    \caption{BayesOpt iterative hyperparameter tuning for the bimodal Gaussian}
     \label{fig:bayesopt_bimodal}
 \end{figure}
 
@@ -514,7 +511,7 @@ The challenge of this target density is achieving adequate mixing between the tw
 
 \subsection{Correlated Gaussian}
 
-The correlated Gaussian target is a centered at the origin with a specific correlation structure:
+The correlated Gaussian target is centered at the origin with a specific correlation structure:
 \[
     p(\skx) = \Norm(\skx | \s[k]0, \s[k]\Sigma)
 \]
@@ -532,7 +529,7 @@ The log density is:
 
 \begin{table}[h]
     \centering
-    \caption{Performance comparison on Correlated Gaussian ($d = 50$) mean $\pm$ sd}
+    \caption{Performance comparison on the correlated Gaussian ($d = 50$) mean $\pm$ sd}
     \begin{tabular}{lcccccc}
         \hline
         Method      & $\shR$ & ESS           & Acceptance Rate   & Time/chain (s)    & $L$                & $\epsilon$        \\
@@ -553,7 +550,7 @@ The log density is:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../code/plots/bayesopt_progress_Correlated Gaussian.png}
-    \caption{BayesOpt iterative hyperparameter tuning}
+    \caption{BayesOpt iterative hyperparameter tuning for the correlated Gaussian}
     \label{fig:bayesopt_correlated}
 \end{figure}
 
@@ -576,11 +573,10 @@ When $d = 2$ with parameters $a = 1$ and $b = 100$, the log density becomes:
 
 This distribution creates strong nonlinear dependencies between consecutive dimensions.
 The high curvature results in a narrow curved ridge with the probability mass.
-This is a difficult target density for samplers, and its geometry is a different challenge than either the multimodal or correlated Gaussian targets.
 
 \begin{table}[h]
     \centering
-    \caption{Performance comparison on Banana Distribution ($d = 2$) mean $\pm$ sd}
+    \caption{Performance comparison on the banana distribution ($d = 2$) mean $\pm$ sd}
     \begin{tabular}{lcccccc}
         \hline
         Method      & $\shR$ & ESS             & Acceptance Rate   & Time/chain (s)     & $L$               & $\epsilon$        \\
@@ -612,27 +608,28 @@ This is a difficult target density for samplers, and its geometry is a different
 
 \subsection{Discussion}
 
-For all three target distributions, both BayesOpt and Auto-tuning hyperparameter tuning methods produced similar sampling performances in terms of ESS and $\shR$.
-This suggests that for these targets, the $(L, \epsilon)$ hyperparameter space contains regions where hyperparamater configurations perform similarly, and so precise tuning is not required.
+For all three target distributions, both BayesOpt and auto-tuning hyperparameter tuning methods produced similar sampling performances in terms of ESS and $\shR$.
+This suggests that for these targets, the $(L, \epsilon)$ hyperparameter space contains regions where hyperparameter configurations perform similarly, and so precise tuning is not required.
 
 For the bimodal Gaussian, both methods fail to achieve adequate convergence, with $\shR > 2$.
-The chains never mixed well, and from Figure \ref{fig:bayesopt_bimodal}, the best hyperparamaters appear to be those which minimized $\shR$.
-Neither method found hyperparameters capable of easily mode-switching in the validation chain length of 5000, and this can be seen in the Figure \ref{fig:trace_bimodal}.
+The chains never mixed well, and from Figure \ref{fig:bayesopt_bimodal}, the best hyperparameters found by BayesOpt appear to be those which minimised $\shR$.
+Neither method found hyperparameters capable of easily switching between modes in the validation chains of length 5000, and this can be seen in the Figure \ref{fig:trace_bimodal}.
 The mean ESS values are nearly identical (61023 for BayesOpt versus 61091 for auto-tuning), which are much greater than the chain length of 5000,
 and both methods have high acceptance rates above 0.96.
+Auto-tuning was targeting an acceptance rate of 0.90 but realized a rate of $0.988 \pm 0.003$.
 The notable difference lies in the discovered hyperparameters:
 BayesOpt selected a much longer trajectory length of $14.901$ paired with a larger step size of $2.242$ compared to those
-of Auto-tuning with $L = 1.310 \pm 0.119$ and $\epsilon = 1.191 \pm 0.108$.
+of auto-tuning with $L = 1.310 \pm 0.119$ and $\epsilon = 1.191 \pm 0.108$.
 Notice that $\lceil 1.310 / 1.191 \rceil = 2$ and few leapfrog steps are used.
 Here, the standard deviations of $L$ and $\epsilon$ between chains is not negligible,
 though it is possible that $\lceil L / \epsilon \rceil = n = 2$ holds for all 10 chains.
-BayesOpt achieves substantially faster wall-clock time (0.742 seconds versus 2.908 seconds),
-likely due to having pre-optimized hyperparameters.
+BayesOpt achieved substantially faster wall-clock time (0.742 seconds versus 2.908 seconds),
+likely due to having pre-optimised hyperparameters.
 
-Both methods succesfuly converge for the correlated Gaussian, both with $\shR = 1.003$.
+Both methods successfully converged for the correlated Gaussian, both with $\shR = 1.003$.
 Here again, ESS values are nearly identical (3186 for BayesOpt versus 3223 for auto-tuning).
-Again, BayesOpt chooses a longer trajectory and larger step size, $24.776$ versus $14.142$, and $3.572$ versus $2.650$ respectively.
-The auto-tuning method achieves higher acceptance rates (0.891 versus 0.756).
+Again, BayesOpt chose a longer trajectory and larger step size, $24.776$ versus $14.142$, and $3.572$ versus $2.650$ respectively.
+The auto-tuning method achieved higher acceptance rates (0.891 versus 0.756).
 BayesOpt performed better in terms of wall-clock time, completing chains in 0.763 seconds compared to 3.590 seconds for auto-tuning.
 
 For the banana distribution, both methods achieve excellent convergence with $\shR \approx 1.000$.
@@ -640,36 +637,36 @@ Both methods have nearly identical ESS values (10132 for BayesOpt versus 10182 f
 The hyperparameter differences are extreme.
 BayesOpt tuning allows for much greater distances between consecutive samples as seen in Figure \ref{fig:trace_banana} where grey lines connect consecutive samples.
 BayesOpt selected an extremely long trajectory $L = 39.602$ with a very small step size $\epsilon = 0.010$.
-These are nearly at the bounds of the hyperparameter search space with $L \in [0.5, 40.0]$ and $\epsilon \in [0.01, 4.0]$.
+These are nearly at the bounds of the hyperparameter search space where $L \in [0.5, 40.0]$ and $\epsilon \in [0.01, 4.0]$.
 Auto-tuning chose much shorter trajectories $L = 2.828$ with slightly larger step sizes $\epsilon = 0.020$, both with small variability.
-These represent fundamentally different strategies with BayesOpt choosing many small steps along a long trajectory
-whereas Auto-tuning chose fewer larger steps along a short trajectory.
-And interestingly, BayesOpt with the lower trajectory had higher acceptance rates.
+These represent different strategies with BayesOpt choosing many small steps along a long trajectory
+whereas auto-tuning chose fewer larger steps along a short trajectory.
+Interestingly, BayesOpt with the lower trajectory had higher acceptance rates.
 The wall-clock time relationship seen for the bimodal Gaussian and correlated Gaussian reverses for this target,
 with auto-tuning completing chains in $9.114 \pm 1.562$ seconds compared to BayesOpt's $37.839 \pm 0.275$ seconds.
-This is not surprising as the BayesOpt trajectory requires many more computations than that of auto-tuning.
+This is not surprising as the BayesOpt trajectory requires many more computations than those of auto-tuning.
 
 
 Interestingly, auto-tuning discovers hyperparameters with low variability across chains,
 suggesting this hyperparameter tuning algorithm converges to a local optima.
-For none of the three targets do we see the hyperparameters which maximize the objective function occuring near the end of the chain.
-Perhaps if BayesOpt was granted more iterations we would see more optimization rather than exploration.
+For BayesOpt, for none of the three targets do we see the hyperparameters which maximise the objective function occurring near the end of the chain.
+Perhaps if BayesOpt was granted more iterations we would see more optimisation rather than exploration.
 
 In our experiments, auto-tuning was slower for the bimodal and correlated Gaussian targets.
 For the banana distribution, BayesOpt's extremely long trajectories made it slower.
 For computational cost, for each target here, BayesOpt spends 100000 samples upfront but reuses the same hyperparameters for all chains.
 Auto-tuning discarded 1000 samples adapting each of the 10 chains of length 5000, discarding 10000 samples total for the validation portion of the analysis.
-For large-scale applications with many chains, BayesOpt's amortized cost may be lower.
-That said, you could also share hyperparameters found through auto-tuning across chains.
+For large-scale applications with many chains, BayesOpt's amortised cost may be lower.
+That said, one could also share hyperparameters found through auto-tuning across chains.
 
 
 Our approach has several limitations.
 We have only tuned trajectory length and step size, leaving the inverse mass matrix fixed.
-We have not consider the Langevin-like version of MAMS, which has an additional partial momentum resampling hyperparameter.
-The BayesOpt search used 20 iterations, which may be insufficient for some targets and hyperparameter search space.
-The hyperparamater search space used here allows for the step size to be greater than the trajectory length,
+We have not considered the Langevin-like version of MAMS, which has an additional partial momentum resampling hyperparameter.
+The BayesOpt search used 20 iterations, which may be insufficient for some targets and hyperparameter search spaces.
+The hyperparameter search space used here allows for the step size to be greater than the trajectory length,
 though this did not become a problem, it should be fixed in the future.
-Our objective function, lacks rigorous theoretical justification.
+Our objective function lacks rigorous theoretical justification.
 It was constructed to avoid high ESS from poor mixing and many rejections.
 Here, we have not compared either tuning method to a canonical HMC algorithm.
 Finally, our experiments are limited to three relatively low-dimensional targets with $d \leq 50$.
@@ -678,13 +675,13 @@ Performance in higher dimensions remains untested.
 
 \subsection{Conclusion}
 
-We compared the sequential tuning algorithm of RCS to joint tuning using Bayesian optimization.
-The two methods choose drastically different trajectory lengths and step sizes.
+We compared the sequential tuning algorithm of RCS to joint tuning using Bayesian optimisation.
+The two methods chose drastically different trajectory lengths and step sizes.
 Despite discovering substantially different hyperparameter configurations,
 both methods achieve similar effective sample sizes and $\shR$ values across all three targets tested.
 This means one can choose a tuning method based on convenience and computational budget.
-BayesOpt requires a one-time upfront optimization, auto-tuning requires adaptation every per chain.
-Which is preferable depends on which discards fewer samples.
+BayesOpt requires a one-time upfront optimisation, and auto-tuning requires adaptation for every chain.
+Which is preferable depends on the problem at hand.
 
 
 

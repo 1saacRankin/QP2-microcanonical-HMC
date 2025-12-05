@@ -3,3 +3,5 @@ jaxlib==0.4.38
 blackjax==1.2.5
 matplotlib==3.10.7
 numpy==2.3.4
+boax==0.20
+arviz==0.22.0
